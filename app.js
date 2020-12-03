@@ -9,9 +9,16 @@ let productList = document.querySelector(".product-list");
 //Function creating new product elements from form inputs
 let newProduct = function(name, description, price) {
    
-    //Creating new product in HTML
+    //Creating new product card
     let productCard = document.createElement("div");  //Div-card to wrap product content
     productCard.classList.add("product-card");        //Adds class .product-card
+
+    //Creates image
+    let productImg = document.createElement("img");   
+    productImg.classList.add("product-img");          //Adds class .product-img
+    let att = document.createAttribute("alt");        //Create alt attribute
+    att.value = "Produktbild";                        //Set attribute
+    productImg.setAttributeNode(att);                     //Add attribute to image
 
     let productInfo = document.createElement("div");  //Div to wrap product info
     productInfo.classList.add("product-info");        //Adds class .product-info
@@ -29,13 +36,24 @@ let newProduct = function(name, description, price) {
     productPrice.classList.add("product-price");        //Adds class .product-price 
     productPrice.innerText = price;                     //Adds content 'price' from input
 
+    //Creates 'add to cart'-button
+    let addToCart = document.createElement("button");
+    addToCart.classList.add("add-cart");                //Adds class .add-cart
+    addToCart.innerText = "Lägg till i kundvagn";       //Adds button text
+
+
     //Inserts spans to the product info wrapper
     productInfo.appendChild(productName);
     productInfo.appendChild(productDescription);
     productInfo.appendChild(productPrice);
 
-    //Inserts product info wrapper to the product card
+    //Inserts image into product card
+    productCard.appendChild(productImg);
+
+    //Inserts product info wrapper into the product card
     productCard.appendChild(productInfo);
+
+    productCard.appendChild(addToCart);
 
     //Inserts card into product list
     productList.appendChild(productCard);
@@ -85,9 +103,9 @@ let adminRights = function() {
 
         //Sets new innerText to product info: name, description, price
         editBtn.addEventListener("click", function(){
-            editBtn.parentNode.previousSibling.querySelector(".product-name").innerText = prompt("New name: ");
-            editBtn.parentNode.previousSibling.querySelector(".product-description").innerText = prompt("New description: ");
-            editBtn.parentNode.previousSibling.querySelector(".product-price").innerText = prompt("New Price: ");
+            editBtn.parentNode.previousElementSibling.previousElementSibling.querySelector(".product-name").innerText = prompt("New name: ");
+            editBtn.parentNode.previousElementSibling.previousElementSibling.querySelector(".product-description").innerText = prompt("New description: ");
+            editBtn.parentNode.previousElementSibling.previousElementSibling.querySelector(".product-price").innerText = prompt("New Price: ");
         });
 
         document.querySelectorAll(".button-wrapper")[i].appendChild(editBtn);

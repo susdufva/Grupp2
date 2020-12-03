@@ -69,8 +69,17 @@ NEW_PRODUCT.addEventListener("submit", function(e){
 
 //Pseudo-login-button click-event
 document.querySelector(".admin-login").addEventListener("click", function(){
-    document.querySelector(".admin-login").innerText = "Inloggad";              //Changes button text to 'Inloggad'
-    adminRights();                                                              //Runs admin rights
+
+    //Check if login is valid
+    let username = prompt("Enter username: ");
+    let password = prompt("Enter password: ");
+
+    if (username=="admin" && password=="admin"){
+        document.querySelector(".admin-login").innerText = "Inloggad";      //Changes button text to 'Inloggad'
+        adminRights();                                                      //Runs admin rights
+    } else {
+        alert("Wrong username/password");                                   //If login is invalid, alert user
+    }
 });
 
 //Function to enable admin rights. Should create buttons to remove and edit products in product list. Should also create formula to create new products.

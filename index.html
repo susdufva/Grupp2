@@ -24,32 +24,34 @@
         <a href="#" class="add-cart">Add to Cart</a>
     </div>
     <main>
-        <form>
-            <p>Add to cart</p>
-        
-            Namn: 
-            <input type="text">
-            Pris: 
-            <input type="value">
-            Description: 
-            <input type="text">
+        <button class="admin-login">Logga in som admin</button>
+        <form id="new-product">
+            <p>Add new product</p>
+            <label for="new-product__name">Namn</label> 
+            <input type="text" id="new-product__name">
+            <label for="new-product__description">Beskrivning</label>
+            <input type="text" id="new-product__description">
+            <label for="new-product__price">Pris</label>
+            <input type="text" id="new-product__price">
             <button>Add</button>
+        </form>
 
-        <div>
+        <section class="product-list">
             <!-- Här läggs in nya produkt-cards -->
 
-            <div>
-                <img src="" alt="produktbild">
-                <p>Produktnamn</p>
-                <p>Produktbeskrivning</p>
-                <p>x SEK</p>
-                <button>Lägg till i kundvagn</button>
+            <!-- Exempelprodukt -->
+            <div class="product-card">
+                <img src="" alt="Produktbild">
+                <div class="product-info"><!--
+                    --><span class="product-name">Produktnamn</span><!--
+                    --><span class="product-description">Produktbeskrivning</span><!--
+                    --><span class="product-price">x SEK</span>
+                </div>
+                <button class="add-cart">Lägg till i kundvagn</button>
             </div>
 
+        </section>
 
-        </div>
-
-        </form>
     </main>
     <script src="app.js"></script>
     <script src="shopping-cart.js"></script>

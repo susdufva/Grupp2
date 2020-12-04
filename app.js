@@ -6,6 +6,15 @@ const NEW_PRODUCT_DESCRIPTION = document.querySelector("#new-product__descriptio
 
 let productList = document.querySelector(".product-list");
 
+let adminLoggedIn = false; //Status of admin logged in or logged out. Default is false, logged out.
+
+//Function creating form that admin uses to add new products
+let addForm = function() {
+
+    
+}
+
+
 //Function creating new product elements from form inputs
 let newProduct = function(name, description, price) {
    
@@ -57,6 +66,7 @@ let newProduct = function(name, description, price) {
 
     //Inserts card into product list
     productList.appendChild(productCard);
+
 }
 
 //Adds submit event to NEW_PRODUCT form
@@ -70,19 +80,30 @@ NEW_PRODUCT.addEventListener("submit", function(e){
 //Pseudo-login-button click-event
 document.querySelector(".admin-login").addEventListener("click", function(){
 
-    //Check if login is valid
-    let username = prompt("Enter username: ");
-    let password = prompt("Enter password: ");
+    //Check admin is logged out
+    if (adminLoggedIn == false){
+    
+        //Login input
+        let username = prompt("Enter username: ");
+        let password = prompt("Enter password: ");
 
-    if (username=="admin" && password=="admin"){
-        document.querySelector(".admin-login").innerText = "Inloggad";      //Changes button text to 'Inloggad'
-        adminRights();                                                      //Runs admin rights
-    } else {
-        alert("Wrong username/password");                                   //If login is invalid, alert user
+        //Check if login is valid
+        if (username=="admin" && password=="admin"){
+            adminLoggedIn = true;                                               //adminLoggedIn switched to true
+            document.querySelector(".admin-login").innerText = "Logga ut";      //Changes button text to 'Logga ut'
+            adminRights();                                                      //Runs admin rights
+        } else {
+            alert("Wrong username/password");                                   //If login is invalid, alert user
+        }
+
+    } else if (adminLoggedIn == true){
+        adminLoggedIn = false;
+        document.querySelector(".admin-login").innerHTML = "Logga in som admin";
     }
+
 });
 
-//Function to enable admin rights. Should create buttons to remove and edit products in product list. Should also create formula to create new products.
+//Function to enable admin rights. Should create buttons to remove and edit products in product list. Should also create form to create new products.
 let adminRights = function() {
     for (i=0; i<document.querySelectorAll(".product-card").length; i++){
 
@@ -119,4 +140,5 @@ let adminRights = function() {
 
         document.querySelectorAll(".button-wrapper")[i].appendChild(editBtn);
     }
+
 }

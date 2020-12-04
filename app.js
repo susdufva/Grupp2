@@ -1,9 +1,3 @@
-//Form variables
-const NEW_PRODUCT = document.querySelector("#new-product");                             //New product form
-const NEW_PRODUCT_NAME = document.querySelector("#new-product__name");                  //New product name
-const NEW_PRODUCT_PRICE = document.querySelector("#new-product__price");                //New product price
-const NEW_PRODUCT_DESCRIPTION = document.querySelector("#new-product__description");    //New product description
-
 let productList = document.querySelector(".product-list");
 
 let adminLoggedIn = false; //Status of admin logged in or logged out. Default is false, logged out.
@@ -11,7 +5,62 @@ let adminLoggedIn = false; //Status of admin logged in or logged out. Default is
 //Function creating form that admin uses to add new products
 let addForm = function() {
 
+    let form = document.createElement("form");  //New form
+    form.classList.add(".new-product");         //Adds class .new-product
     
+    let inputMaker = function(inputId, elementContent){
+        let label = document.createElement("label");      //New label
+        label.innerText = elementContent;                 //Set label content
+        let textInput = document.createElement("input");  //New input
+
+        //Create label attribute 'for'
+        let attFor = document.createAttribute("for");
+        //Set attribute value
+        attFor.value = inputId;
+        //Add attribute to label
+        label.setAttributeNode(attFor);
+        //Create input attribute 'type' and 'id'
+        let attType = document.createAttribute("type");
+        let attId = document.createAttribute("id");
+        //Set attribute value
+        attType.value = "text";
+        attId.value = inputId;
+        //Add atttribute to input
+        textInput.setAttributeNode(attType);
+        textInput.setAttributeNode(attId);
+
+        //Inserts label and text-input into form
+        form.appendChild(label);
+        form.appendChild(textInput);
+    }
+
+    //Creats labels and inputs to form with id and innertext of the arguements
+    inputMaker("new-product__name", "Namn");
+    inputMaker("new-product__description", "Beskrivning");
+    inputMaker("new-product__price", "Pris");
+
+    let addBtn = document.createElement("button");  //Button for form
+    addBtn.innerText = "Lägg till";
+    
+    form.appendChild(addBtn);
+
+    //Add event listener to new form
+    form.addEventListener("submit", function(e){
+        e.preventDefault(); //Prevents default submit behavior
+
+        console.log("supposed to create new product from inputs")
+        let newProductName = document.querySelector("#new-product__name");                  //New product name
+        let newProductDescription = document.querySelector("#new-product__description");    //New product description
+        let newProductPrice = document.querySelector("#new-product__price");                //New product price
+        
+        // Creating new product with form inputs as arguments for function newProduct(name, price, description)
+        newProduct(newProductName.value, newProductDescription.value, Number(newProductPrice.value));
+
+    });
+
+
+    document.querySelector("main").prepend(form); //Adds form before first child of main
+
 }
 
 
@@ -27,7 +76,7 @@ let newProduct = function(name, description, price) {
     productImg.classList.add("product-img");          //Adds class .product-img
     let att = document.createAttribute("alt");        //Create alt attribute
     att.value = "Produktbild";                        //Set attribute
-    productImg.setAttributeNode(att);                     //Add attribute to image
+    productImg.setAttributeNode(att);                 //Add attribute to image
 
     let productInfo = document.createElement("div");  //Div to wrap product info
     productInfo.classList.add("product-info");        //Adds class .product-info
@@ -69,14 +118,6 @@ let newProduct = function(name, description, price) {
 
 }
 
-//Adds submit event to NEW_PRODUCT form
-NEW_PRODUCT.addEventListener("submit", function(e){
-    e.preventDefault();     //Prevents default submit behavior
-
-    //Creating new product with form inputs as arguments for function newProduct(name, price, description)
-    newProduct(NEW_PRODUCT_NAME.value, NEW_PRODUCT_DESCRIPTION.value, Number(NEW_PRODUCT_PRICE.value));
-});
-
 //Pseudo-login-button click-event
 document.querySelector(".admin-login").addEventListener("click", function(){
 
@@ -89,22 +130,30 @@ document.querySelector(".admin-login").addEventListener("click", function(){
 
         //Check if login is valid
         if (username=="admin" && password=="admin"){
-            adminLoggedIn = true;                                               //adminLoggedIn switched to true
             document.querySelector(".admin-login").innerText = "Logga ut";      //Changes button text to 'Logga ut'
+            addForm(); //Adds form to create products
             adminRights();                                                      //Runs admin rights
+            adminLoggedIn = true;                                               //adminLoggedIn switched to true
         } else {
             alert("Wrong username/password");                                   //If login is invalid, alert user
         }
 
     } else if (adminLoggedIn == true){
-        adminLoggedIn = false;
         document.querySelector(".admin-login").innerHTML = "Logga in som admin";
+        adminLoggedIn = false;
     }
 
 });
 
-//Function to enable admin rights. Should create buttons to remove and edit products in product list. Should also create form to create new products.
+
 let adminRights = function() {
+
+    createAdminButtons();
+}
+
+//Adds admin 'remove' and 'edit' buttons for existing products
+let createAdminButtons = function(){
+    //Add buttons for all existing objects if admin is logged out when logging in
     for (i=0; i<document.querySelectorAll(".product-card").length; i++){
 
         //Creates a div to wrap both buttons
@@ -140,5 +189,4 @@ let adminRights = function() {
 
         document.querySelectorAll(".button-wrapper")[i].appendChild(editBtn);
     }
-
 }

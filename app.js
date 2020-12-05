@@ -6,7 +6,7 @@ let adminLoggedIn = false; //Status of admin logged in or logged out. Default is
 let addForm = function() {
 
     let form = document.createElement("form");  //New form
-    form.classList.add(".new-product");         //Adds class .new-product
+    form.classList.add("new-product");         //Adds class .new-product
     
     let inputMaker = function(inputId, elementContent){
         let label = document.createElement("label");      //New label
@@ -55,6 +55,8 @@ let addForm = function() {
         
         // Creating new product with form inputs as arguments for function newProduct(name, price, description)
         newProduct(newProductName.value, newProductDescription.value, Number(newProductPrice.value));
+
+        createAdminButtons();
 
     });
 
@@ -140,7 +142,7 @@ document.querySelector(".admin-login").addEventListener("click", function(){
 
     } else if (adminLoggedIn == true){
         document.querySelector(".admin-login").innerHTML = "Logga in som admin";
-        adminLoggedIn = false;
+        logOut();
     }
 
 });
@@ -154,14 +156,13 @@ let adminRights = function() {
 //Adds admin 'remove' and 'edit' buttons for existing products
 let createAdminButtons = function(){
     //Add buttons for all existing objects if admin is logged out when logging in
-    for (i=0; i<document.querySelectorAll(".product-card").length; i++){
+    for (let i=0; i<document.querySelectorAll(".product-card").length; i++){
 
         //Creates a div to wrap both buttons
         let btnWrapper = document.createElement("div");
         btnWrapper.classList.add("button-wrapper");
-        document.querySelectorAll(".product-card")[i].appendChild(btnWrapper);
 
-        //Add button that can remove current element
+        //Add button that can remove current product card
         let delBtn = document.createElement("button");
         delBtn.classList.add("delete-btn");
         let delBtnContent = document.createTextNode("Remove product");
@@ -169,10 +170,9 @@ let createAdminButtons = function(){
         
         //Removes current .product-card
         delBtn.addEventListener("click", function(){
-            delBtn.parentNode.parentNode.remove();      
+            delBtn.parentNode.parentNode.remove();    
         });
         
-        document.querySelectorAll(".button-wrapper")[i].appendChild(delBtn);
 
         //Add button that can edit product info of the product card containing this edit button
         let editBtn = document.createElement("button");
@@ -187,6 +187,27 @@ let createAdminButtons = function(){
             editBtn.parentNode.previousElementSibling.previousElementSibling.querySelector(".product-price").innerText = prompt("New Price: ");
         });
 
+
+        document.querySelectorAll(".product-card")[i].appendChild(btnWrapper);
+
         document.querySelectorAll(".button-wrapper")[i].appendChild(editBtn);
+
+
+        document.querySelectorAll(".button-wrapper")[i].appendChild(delBtn);
+
+        document.querySelectorAll(".product-card")[i].appendChild(btnWrapper);
+        
     }
 }
+
+//Should remove all admin-buttons, and the form to create new products, and change log out button text
+let logOut = function(){
+    //Removes form
+    document.querySelector(".new-product").remove();
+
+
+
+
+    //Set admin logged in status to false
+    adminLoggedIn = false;
+};

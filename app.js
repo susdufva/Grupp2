@@ -1,156 +1,184 @@
+//Variable declarations
 let productList = document.querySelector(".product-list");
 
 let adminLoggedIn = false; //Status of admin logged in or logged out. Default is false, logged out.
 
-//Function creating form that admin uses to add new products
+
+//Creates form that admin uses to add new products
 let addForm = function() {
 
-    let form = document.createElement("form");  //New form
-    form.classList.add("new-product");         //Adds class .new-product
-    
-    let inputMaker = function(inputId, elementContent){
-        let label = document.createElement("label");      //New label
-        label.innerText = elementContent;                 //Set label content
-        let textInput = document.createElement("input");  //New input
+    //Creating new element nodes:
 
-        //Create label attribute 'for'
-        let attFor = document.createAttribute("for");
-        //Set attribute value
-        attFor.value = inputId;
-        //Add attribute to label
-        label.setAttributeNode(attFor);
-        //Create input attribute 'type' and 'id'
-        let attType = document.createAttribute("type");
-        let attId = document.createAttribute("id");
-        //Set attribute value
-        attType.value = "text";
-        attId.value = inputId;
-        //Add atttribute to input
-        textInput.setAttributeNode(attType);
-        textInput.setAttributeNode(attId);
+    //<form class="new-product"></form>
+    let form = document.createElement("form");
+    form.classList.add("new-product");
+     
+    //Creates label and input elements and appends them into form
+    let inputMaker = function(elementContent, attributeValue){
 
-        //Inserts label and text-input into form
+        //<label for="attributeValue">elementContent</label>
+        let label = document.createElement("label");      //New label element
+        label.innerText = elementContent;                 //Sets innertext
+        let attFor = document.createAttribute("for");     //New attribute
+        attFor.value = attributeValue;                    //Sets attribute value
+        label.setAttributeNode(attFor);                   //Adds 'for' attribute to label element
+
+        //<input type="text" id="attributeValue">
+        let textInput = document.createElement("input");  //New input element
+        let attType = document.createAttribute("type");   //New attribute
+        let attId = document.createAttribute("id");       //New attribute
+        attType.value = "text";                           //Sets attribute value
+        attId.value = attributeValue;                     //Sets attribute value
+        textInput.setAttributeNode(attType);              //Adds 'type' attribute to input element
+        textInput.setAttributeNode(attId);                //Adds 'type' attribute to input element
+
+        //Appends new label and input into form
         form.appendChild(label);
         form.appendChild(textInput);
+
     }
 
-    //Creats labels and inputs to form with id and innertext of the arguements
-    inputMaker("new-product__name", "Namn");
-    inputMaker("new-product__description", "Beskrivning");
-    inputMaker("new-product__price", "Pris");
+    //Makes labels & inputs and appends into form with inputMaker 
+    inputMaker("Namn", "new-product__name");
+    inputMaker("Beskrivning", "new-product__description");
+    inputMaker("Pris", "new-product__price");
 
-    let addBtn = document.createElement("button");  //Button for form
-    addBtn.innerText = "Lägg till";
+    //Creates button
+    //<button>Lägg till</button>
+    let addBtn = document.createElement("button");         //New button element
+    addBtn.innerText = "Lägg till";                        //Sets innertext
     
+    //Appends new button into form
     form.appendChild(addBtn);
 
-    //Add event listener to new form
+    /*New form:
+    <form class="new-product">
+        <label for="new-product__name">Namn</label>
+        <input id="new-product__name">
+        <label for="new-product__description">Beskrivning</label>
+        <input id="new-product__description">
+        <label for="new-product__price">Pris</label>
+        <input id="new-product__price">
+        <button>Lägg till</button>
+    </form>*/
+
+    //Adds event listener to the form
     form.addEventListener("submit", function(e){
         e.preventDefault(); //Prevents default submit behavior
 
-        console.log("supposed to create new product from inputs")
         let newProductName = document.querySelector("#new-product__name");                  //New product name
         let newProductDescription = document.querySelector("#new-product__description");    //New product description
         let newProductPrice = document.querySelector("#new-product__price");                //New product price
         
-        // Creating new product with form inputs as arguments for function newProduct(name, price, description)
+        //Creates new products using form input values as arguments for function newProduct(name, price, description)
         newProduct(newProductName.value, newProductDescription.value, Number(newProductPrice.value));
 
-        createAdminButtons();
+        //Adds admin buttons to the products created by newProduct
+        createAdminButtons();  
 
     });
 
-
-    document.querySelector("main").prepend(form); //Adds form before first child of main
+    //Prepends new form in main
+    document.querySelector("main").prepend(form); 
 
 }
 
 
-//Function creating new product elements from form inputs
+//Function creating new product cards from form inputs
 let newProduct = function(name, description, price) {
    
-    //Creating new product card
-    let productCard = document.createElement("div");  //Div-card to wrap product content
+    //Creates product card div to wrap product content
+    //<div class ="product-card"></div>
+    let productCard = document.createElement("div");  //New div element
     productCard.classList.add("product-card");        //Adds class .product-card
 
     //Creates image
-    let productImg = document.createElement("img");   
+    //<img class ="product-img" alt="Produktbild">
+    let productImg = document.createElement("img");   //New image element
     productImg.classList.add("product-img");          //Adds class .product-img
-    let att = document.createAttribute("alt");        //Create alt attribute
-    att.value = "Produktbild";                        //Set attribute
-    productImg.setAttributeNode(att);                 //Add attribute to image
+    let att = document.createAttribute("alt");        //New attribute
+    att.value = "Produktbild";                        //Sets attribute value
+    productImg.setAttributeNode(att);                 //Adds 'alt' attribute to image
 
-    let productInfo = document.createElement("div");  //Div to wrap product info
+    //Creates product info div to wrap product info
+    //<div class="product-info"></div>
+    let productInfo = document.createElement("div");  //New div element
     productInfo.classList.add("product-info");        //Adds class .product-info
 
-    //Creates span, class and content
-    let productName = document.createElement("span"); //Span for product name
+    //Creates span for product name
+    //<span class="product-name">name<span>
+    let productName = document.createElement("span"); //New span
     productName.classList.add("product-name");        //Adds class .product-name
-    productName.innerText = name;                     //Adds content 'name' from input
-
-    let productDescription = document.createElement("span"); //Span for product description
+    productName.innerText = name;                     //Sets innertext from input value
+    
+    //Creates span for product description
+    //<span class="product-description">description<span>
+    let productDescription = document.createElement("span"); //New span
     productDescription.classList.add("product-description"); //Adds class .product-description
-    productDescription.innerText = description;              //Adds content 'description' from input
+    productDescription.innerText = description;              //Sets innertext from input value
 
-    let productPrice = document.createElement("span");  //Span for product price
+    //Creates span for product price
+    //<span class="product-price">price<span>
+    let productPrice = document.createElement("span");  //New span
     productPrice.classList.add("product-price");        //Adds class .product-price 
-    productPrice.innerText = price;                     //Adds content 'price' from input
+    productPrice.innerText = price;                     //Sets innertext from input value
 
     //Creates 'add to cart'-button
-    let addToCart = document.createElement("button");
+    //<button class="add-cart">Lägg till i kundvagn></button>
+    let addToCart = document.createElement("button");   //New button
     addToCart.classList.add("add-cart");                //Adds class .add-cart
     addToCart.innerText = "Lägg till i kundvagn";       //Adds button text
 
+    //Appends image into product card
+    productCard.appendChild(productImg);
 
-    //Inserts spans to the product info wrapper
+    //Appends spans to the product info wrapper
     productInfo.appendChild(productName);
     productInfo.appendChild(productDescription);
     productInfo.appendChild(productPrice);
 
-    //Inserts image into product card
-    productCard.appendChild(productImg);
-
-    //Inserts product info wrapper into the product card
+    //Appends product info wrapper into the product card
     productCard.appendChild(productInfo);
 
+    //Appends 'add to cart'-button to the product card
     productCard.appendChild(addToCart);
 
-    //Inserts card into product list
+    /*New product card:
+    <div class="product-card">
+        <img class ="product-img" alt="Produktbild">
+        <div class="product-info">
+            <span class="product-name">name<span>
+            <span class="product-description">description<span>
+            <span class="product-price">price<span>
+        </div>
+        <button>Lägg till i kundvagn</button>
+    </div>*/
+
+    //Appends product card into product list
     productList.appendChild(productCard);
 
 }
 
+
 //Pseudo-login-button click-event
 document.querySelector(".admin-login").addEventListener("click", function(){
 
-    //Check admin is logged out
-    if (adminLoggedIn == false){
-    
-        //Login input
-        let username = prompt("Enter username: ");
-        let password = prompt("Enter password: ");
+    if (adminLoggedIn == false){        //If logged out,
+        logIn();                        //log in
 
-        //Check if login is valid
-        if (username=="admin" && password=="admin"){
-            document.querySelector(".admin-login").innerText = "Logga ut";      //Changes button text to 'Logga ut'
-            addForm(); //Adds form to create products
-            adminRights();                                                      //Runs admin rights
-            adminLoggedIn = true;                                               //adminLoggedIn switched to true
-        } else {
-            alert("Wrong username/password");                                   //If login is invalid, alert user
-        }
-
-    } else if (adminLoggedIn == true){
-        logOut();
+    } else if (adminLoggedIn == true){  //If logged in,
+        logOut();                       //log out
     }
 
 });
 
 
+//Function to run admin rights
 let adminRights = function() {
-
-    createAdminButtons();
+    addForm();              //Adds form to create products
+    createAdminButtons();   //Adds admin buttons to products
 }
+
 
 //Adds admin 'remove' and 'edit' buttons for existing products
 let createAdminButtons = function(){
@@ -164,11 +192,25 @@ let createAdminButtons = function(){
     }
 }
 
+let logIn = function(){
+    //Login input
+    let username = prompt("Enter username: ");
+    let password = prompt("Enter password: ");
+
+    //Check if login is valid
+    if (username=="admin" && password=="admin"){
+        document.querySelector(".admin-login").innerText = "Logga ut";      //Changes button text to 'Logga ut'
+        adminRights();                                                      //Runs admin rights
+        adminLoggedIn = true;                                               //adminLoggedIn switched to true
+    } else {
+        alert("Wrong username/password");                                   //If login is invalid, alert user
+    }
+}
+
 //Should remove all admin-buttons, and the form to create new products, and change log out button text
 let logOut = function(){
     //Removes form
     document.querySelector(".admin-login").innerHTML = "Logga in som admin";
-
     document.querySelector(".new-product").remove();
 
     //Remove all admin buttons from products
@@ -206,7 +248,6 @@ let adminButtonCreator = function(){
         editBtn.parentNode.previousElementSibling.previousElementSibling.querySelector(".product-description").innerText = prompt("New description: ");
         editBtn.parentNode.previousElementSibling.previousElementSibling.querySelector(".product-price").innerText = prompt("New Price: ");
     });
-
 
     btnWrapper.appendChild(delBtn);
     btnWrapper.appendChild(editBtn);

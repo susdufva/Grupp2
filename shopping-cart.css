@@ -37,7 +37,7 @@ li a{
 }
 
 .add-cart{
-    position: absolute;
+    /* position: absolute; */
     width: auto;
     background-color: grey;
     text-decoration: none;

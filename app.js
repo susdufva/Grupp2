@@ -141,7 +141,6 @@ document.querySelector(".admin-login").addEventListener("click", function(){
         }
 
     } else if (adminLoggedIn == true){
-        document.querySelector(".admin-login").innerHTML = "Logga in som admin";
         logOut();
     }
 
@@ -158,56 +157,58 @@ let createAdminButtons = function(){
     //Add buttons for all existing objects if admin is logged out when logging in
     for (let i=0; i<document.querySelectorAll(".product-card").length; i++){
 
-        //Creates a div to wrap both buttons
-        let btnWrapper = document.createElement("div");
-        btnWrapper.classList.add("button-wrapper");
-
-        //Add button that can remove current product card
-        let delBtn = document.createElement("button");
-        delBtn.classList.add("delete-btn");
-        let delBtnContent = document.createTextNode("Remove product");
-        delBtn.appendChild(delBtnContent);
-        
-        //Removes current .product-card
-        delBtn.addEventListener("click", function(){
-            delBtn.parentNode.parentNode.remove();    
-        });
-        
-
-        //Add button that can edit product info of the product card containing this edit button
-        let editBtn = document.createElement("button");
-        editBtn.classList.add("edit-btn");
-        let editBtnContent = document.createTextNode("Edit product");
-        editBtn.appendChild(editBtnContent);
-
-        //Sets new innerText to product info: name, description, price
-        editBtn.addEventListener("click", function(){
-            editBtn.parentNode.previousElementSibling.previousElementSibling.querySelector(".product-name").innerText = prompt("New name: ");
-            editBtn.parentNode.previousElementSibling.previousElementSibling.querySelector(".product-description").innerText = prompt("New description: ");
-            editBtn.parentNode.previousElementSibling.previousElementSibling.querySelector(".product-price").innerText = prompt("New Price: ");
-        });
-
-
-        document.querySelectorAll(".product-card")[i].appendChild(btnWrapper);
-
-        document.querySelectorAll(".button-wrapper")[i].appendChild(editBtn);
-
-
-        document.querySelectorAll(".button-wrapper")[i].appendChild(delBtn);
-
-        document.querySelectorAll(".product-card")[i].appendChild(btnWrapper);
-        
+        //Inserts button wrapper to product card
+        if (document.querySelectorAll(".product-card")[i].classList.contains("button-wrapper") == false){
+            document.querySelectorAll(".product-card")[i].appendChild(adminButtonCreator());
+        }
     }
 }
 
 //Should remove all admin-buttons, and the form to create new products, and change log out button text
 let logOut = function(){
     //Removes form
+    document.querySelector(".admin-login").innerHTML = "Logga in som admin";
+
     document.querySelector(".new-product").remove();
 
-
+    //Remove all admin buttons from products
 
 
     //Set admin logged in status to false
     adminLoggedIn = false;
 };
+
+let adminButtonCreator = function(){
+    //Creates a div to wrap both buttons
+    let btnWrapper = document.createElement("div");
+    btnWrapper.classList.add("button-wrapper");
+
+    //Creates button that can remove current product card
+    let delBtn = document.createElement("button");
+    delBtn.classList.add("delete-btn");
+    delBtn.innerText = "Remove product";
+    
+    //Adds event to button to remove current product-card
+    delBtn.addEventListener("click", function(){
+        delBtn.parentNode.parentNode.remove();    
+    });
+    
+    //Add button that can edit product info of the product card containing this edit button
+    let editBtn = document.createElement("button");
+    editBtn.classList.add("edit-btn");
+    editBtn.innerText = "Edit product";
+
+    //Adds event to button to set new innerText to product info: name, description, price
+    editBtn.addEventListener("click", function(){
+        editBtn.parentNode.previousElementSibling.previousElementSibling.querySelector(".product-name").innerText = prompt("New name: ");
+        editBtn.parentNode.previousElementSibling.previousElementSibling.querySelector(".product-description").innerText = prompt("New description: ");
+        editBtn.parentNode.previousElementSibling.previousElementSibling.querySelector(".product-price").innerText = prompt("New Price: ");
+    });
+
+
+    btnWrapper.appendChild(delBtn);
+    btnWrapper.appendChild(editBtn);
+
+    return btnWrapper;
+
+}

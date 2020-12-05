@@ -4,6 +4,50 @@ let productList = document.querySelector(".product-list");
 let adminLoggedIn = false; //Status of admin logged in or logged out. Default is false, logged out.
 
 
+//Pseudo-login-button click-event
+document.querySelector(".admin-login").addEventListener("click", function(){
+    if (adminLoggedIn == false){        //If logged out,
+        logIn();                        //log in
+    } else if (adminLoggedIn == true){  //If logged in,
+        logOut();                       //log out
+    }
+});
+
+
+//Psuedo-login
+let logIn = function(){
+    //Takes user input for username and password
+    let username = prompt("Enter username: ");
+    let password = prompt("Enter password: ");
+
+    //Checks if login is valid, if both username & password is "admin"
+    if (username=="admin" && password=="admin"){
+        document.querySelector(".admin-login").innerText = "Logga ut";      //Change login-button text to 'Logga ut'
+        adminRights();                                                      //Calls adminRights to add admin elements to DOM
+        adminLoggedIn = true;                                               //Sets admin logged in status to true
+    } else {
+        alert("Wrong username/password");                                   //If login is invalid, alert user
+    }
+}
+
+
+//Psuedo-logout
+let logOut = function(){
+    //Removes the form that creates new products
+    document.querySelector(".new-product").remove();
+
+    //Changes button text to "Logga in"
+    document.querySelector(".admin-login").innerHTML = "Logga in";          
+
+    //Removes admin buttons from all products
+    for (let i=document.querySelectorAll(".button-wrapper").length - 1; i>=0; i--){
+        document.querySelectorAll(".button-wrapper")[i].remove();
+    }
+
+    adminLoggedIn = false;  //Sets admin logged in status to false
+};
+
+
 //Creates form that admin uses to add new products
 let addForm = function() {
 
@@ -74,13 +118,12 @@ let addForm = function() {
         newProduct(newProductName.value, newProductDescription.value, Number(newProductPrice.value));
 
         //Adds admin buttons to the products created by newProduct
-        createAdminButtons();  
+        addAdminButtons();  
 
     });
 
     //Prepends new form in main
     document.querySelector("main").prepend(form); 
-
 }
 
 
@@ -127,7 +170,7 @@ let newProduct = function(name, description, price) {
     //<button class="add-cart">Lägg till i kundvagn></button>
     let addToCart = document.createElement("button");   //New button
     addToCart.classList.add("add-cart");                //Adds class .add-cart
-    addToCart.innerText = "Lägg till i kundvagn";       //Adds button text
+    addToCart.innerText = "Lägg till i kundvagn";       //Sets innertext
 
     //Appends image into product card
     productCard.appendChild(productImg);
@@ -156,102 +199,71 @@ let newProduct = function(name, description, price) {
 
     //Appends product card into product list
     productList.appendChild(productCard);
-
 }
-
-
-//Pseudo-login-button click-event
-document.querySelector(".admin-login").addEventListener("click", function(){
-
-    if (adminLoggedIn == false){        //If logged out,
-        logIn();                        //log in
-
-    } else if (adminLoggedIn == true){  //If logged in,
-        logOut();                       //log out
-    }
-
-});
 
 
 //Function to run admin rights
 let adminRights = function() {
     addForm();              //Adds form to create products
-    createAdminButtons();   //Adds admin buttons to products
+    addAdminButtons();      //Adds admin buttons to products
 }
 
 
 //Adds admin 'remove' and 'edit' buttons for existing products
-let createAdminButtons = function(){
-    //Add buttons for all existing objects if admin is logged out when logging in
+let addAdminButtons = function(){
+    //Adds admin buttons for current product cards when admin logs in
     for (let i=0; i<document.querySelectorAll(".product-card").length; i++){
 
-        //Inserts button wrapper to product card if item doesn't have a button wrapper already
+        //Inserts button wrapper for admin buttons to product card only if product card doesn't contain such button wrapper already
         if (!document.querySelectorAll(".product-card")[i].contains(document.querySelectorAll(".button-wrapper")[i])){
-            document.querySelectorAll(".product-card")[i].appendChild(adminButtonCreator());
+            document.querySelectorAll(".product-card")[i].appendChild(adminButtonsMaker());
         }
     }
 }
 
-let logIn = function(){
-    //Login input
-    let username = prompt("Enter username: ");
-    let password = prompt("Enter password: ");
 
-    //Check if login is valid
-    if (username=="admin" && password=="admin"){
-        document.querySelector(".admin-login").innerText = "Logga ut";      //Changes button text to 'Logga ut'
-        adminRights();                                                      //Runs admin rights
-        adminLoggedIn = true;                                               //adminLoggedIn switched to true
-    } else {
-        alert("Wrong username/password");                                   //If login is invalid, alert user
-    }
-}
+//Creates admin buttons
+let adminButtonsMaker = function(){
 
-//Should remove all admin-buttons, and the form to create new products, and change log out button text
-let logOut = function(){
-    //Removes form
-    document.querySelector(".admin-login").innerHTML = "Logga in som admin";
-    document.querySelector(".new-product").remove();
-
-    //Remove all admin buttons from products
-    for (let i=document.querySelectorAll(".button-wrapper").length - 1; i>=0; i--){
-        document.querySelectorAll(".button-wrapper")[i].remove();
-    }
-
-    //Set admin logged in status to false
-    adminLoggedIn = false;
-};
-
-let adminButtonCreator = function(){
     //Creates a div to wrap both buttons
-    let btnWrapper = document.createElement("div");
-    btnWrapper.classList.add("button-wrapper");
+    //<div class="button-wrapper"></div>
+    let btnWrapper = document.createElement("div");             //New div element
+    btnWrapper.classList.add("button-wrapper");                 //Adds class .button-wrapper
 
-    //Creates button that can remove current product card
-    let delBtn = document.createElement("button");
-    delBtn.classList.add("delete-btn");
-    delBtn.innerText = "Remove product";
+    //Creates button to remove current product card
+    //<button class="delete-btn">Ta bort</button>
+    let delBtn = document.createElement("button");              //New div element
+    delBtn.classList.add("delete-btn");                         //Adds class .delete-btn
+    delBtn.innerText = "Ta bort";                               //Sets innertext
     
     //Adds event to button to remove current product-card
     delBtn.addEventListener("click", function(){
-        delBtn.parentNode.parentNode.remove();    
+        delBtn.parentNode.parentNode.remove();                  //1st parent is button wrapper, 2nd parent is product-card
     });
     
-    //Add button that can edit product info of the product card containing this edit button
-    let editBtn = document.createElement("button");
-    editBtn.classList.add("edit-btn");
-    editBtn.innerText = "Edit product";
+    //Adds button to edit product info of current product card
+    //<button class="edit-btn">Redigera</button>
+    let editBtn = document.createElement("button");             //New div element
+    editBtn.classList.add("edit-btn");                          //Adds class .edit-btn
+    editBtn.innerText = "Redigera";                             //Sets innertext
 
-    //Adds event to button to set new innerText to product info: name, description, price
+    //Adds event to button to set new innerText to product info elements: name, description, price
+    //1st parent is button wrapper, 1st previous sibling is 'add to cart'-button, 2nd previous sibling is 'product info'-wrapper
     editBtn.addEventListener("click", function(){
-        editBtn.parentNode.previousElementSibling.previousElementSibling.querySelector(".product-name").innerText = prompt("New name: ");
-        editBtn.parentNode.previousElementSibling.previousElementSibling.querySelector(".product-description").innerText = prompt("New description: ");
-        editBtn.parentNode.previousElementSibling.previousElementSibling.querySelector(".product-price").innerText = prompt("New Price: ");
+        editBtn.parentNode.previousElementSibling.previousElementSibling.querySelector(".product-name").innerText = prompt("Produktnamn: ");
+        editBtn.parentNode.previousElementSibling.previousElementSibling.querySelector(".product-description").innerText = prompt("Produktbeskrivning: ");
+        editBtn.parentNode.previousElementSibling.previousElementSibling.querySelector(".product-price").innerText = prompt("Pris: ");
     });
 
+    //Appends buttons to button wrapper
     btnWrapper.appendChild(delBtn);
     btnWrapper.appendChild(editBtn);
 
-    return btnWrapper;
+    /*New button wrapper
+    <div class="button-wrapper">
+        <button class="delete-btn">Ta bort</button>
+        <button class="edit-btn">Redigera</button>
+    </div>*/
 
+    return btnWrapper;
 }

@@ -157,8 +157,8 @@ let createAdminButtons = function(){
     //Add buttons for all existing objects if admin is logged out when logging in
     for (let i=0; i<document.querySelectorAll(".product-card").length; i++){
 
-        //Inserts button wrapper to product card
-        if (document.querySelectorAll(".product-card")[i].classList.contains("button-wrapper") == false){
+        //Inserts button wrapper to product card if item doesn't have a button wrapper already
+        if (!document.querySelectorAll(".product-card")[i].contains(document.querySelectorAll(".button-wrapper")[i])){
             document.querySelectorAll(".product-card")[i].appendChild(adminButtonCreator());
         }
     }
@@ -172,7 +172,9 @@ let logOut = function(){
     document.querySelector(".new-product").remove();
 
     //Remove all admin buttons from products
-
+    for (let i=document.querySelectorAll(".button-wrapper").length - 1; i>=0; i--){
+        document.querySelectorAll(".button-wrapper")[i].remove();
+    }
 
     //Set admin logged in status to false
     adminLoggedIn = false;

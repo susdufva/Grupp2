@@ -57,7 +57,7 @@ let logOut = function(){
     document.querySelector(".new-product").remove();
 
     //Changes button text to "Logga in"
-    document.querySelector(".admin-login").innerHTML = "Logga in";          
+    document.querySelector(".admin-login").innerHTML = "Logga in som admin";          
 
     //Removes admin buttons from all products
     for (let i=document.querySelectorAll(".button-wrapper").length - 1; i>=0; i--){

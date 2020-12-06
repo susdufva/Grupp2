@@ -10,6 +10,12 @@ function login(){
     if(username == "admin", password == "admin"){
         console.log("testa login")
     }
+    else{
+        let wrong = document.createElement("p");
+        wrong.innerText = "Fel användarnamn eller lösenord"
+        var div = document.querySelector(".login-box");
+        div.appendChild(wrong);
+    }
 }
 
 //Variable declarations

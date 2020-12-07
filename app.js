@@ -7,7 +7,7 @@ function login(){
     let password = document.querySelector("#password").value;
     
 
-    if(username == "admin", password == "admin"){
+    if(username == "admin" && password == "admin"){
         console.log("testa login")
     }
     else{

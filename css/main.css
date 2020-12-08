@@ -98,4 +98,28 @@ nav {
   padding: 0.3rem;
   border-radius: 0.2rem;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* first design for mobile phones 280px*/
+footer {
+  display: flex;
+  text-align: center;
+  background-color: #63574c;
+  color: whitesmoke;
+  font-size: 1.5rem;
+}
+
+.opening, .location-1, .location-2, .contact {
+  padding: 1.5rem;
+  margin: auto;
+}
+
+.copyright {
+  padding: 1rem;
+}
 /*# sourceMappingURL=main.css.map */

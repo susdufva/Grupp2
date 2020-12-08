@@ -1,3 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 .login-page{
     background-color: rgb(7, 6, 31);
 }
@@ -27,11 +34,11 @@ input{
     margin: 20px;
     padding: 5px;
     color: white;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: normal;
 }
 .login-box p{
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 #login{
     background: none;

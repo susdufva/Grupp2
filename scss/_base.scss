@@ -6,66 +6,7 @@ box-sizing: border-box;
 
 /* first design for phone 280px*/
 
-header {
-    height: 25rem;
-    font-family: 'Bebas Neue';
-    font-size: 2rem;
-    background-color: burlywood;
-    background: url(../img/background-header.jpg);
-    text-align: center;
-}
 
-nav{
-    display: inline-flex;
-    flex-direction: column;
-    margin: auto;
-}
-
-.logo {
-    margin-top: 5rem;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-size: 2.5rem;
-    font-weight: bold;
-    cursor: pointer;
-    color: rgb(99, 87, 76);  
-    text-shadow: 2.5px 2.5px rgba(255, 255, 255, 0.699);
-}
-
-.nav-links {
-    margin-top: 15rem;
-    border: 2px rgb(99, 87, 76) solid;
-    width: 40%;
-    list-style: none;
-    align-self: flex-end;
-    background: rgba(255, 255, 255, 0.589);
-}
-
-.nav-links a {
-    text-decoration: none;
-    letter-spacing: 3px;
-    color:  rgba(0, 0, 0, 0.808);
-    text-shadow: 1px 1px rgba(255, 255, 255, 0.699);
-}
-
-.cart {
-    right: 5rem;
-    align-self: flex-end;
-    text-align: center; 
-}
-
-
-.admin-login {
-    margin-top: 4rem;
-    margin-bottom: 2rem;
-    padding: 0.5rem;
-    border: 2px inset  rgba(0, 0, 0, 0.116) ;
-    background-image: linear-gradient(to right,  #c6c09c, #EEB462);
-    width: 100%;
-    font-family: 'Yantramanav', sans-serif;
-    font-size: 1.1rem;
-}
 
 .add-cart{
     /* position: absolute; */

@@ -1,22 +1,22 @@
-const loginButton = document.querySelector("#login");
-loginButton.addEventListener("click", login);
+// const loginButton = document.querySelector("#login");
+// loginButton.addEventListener("click", login);
 
 
-function login(){
-    let username = document.querySelector("#username").value;
-    let password = document.querySelector("#password").value;
+// function login(){
+//     let username = document.querySelector("#username").value;
+//     let password = document.querySelector("#password").value;
     
 
-    if(username == "admin" && password == "admin"){
-        console.log("testa login")
-    }
-    else{
-        let wrong = document.createElement("p");
-        wrong.innerText = "Fel användarnamn eller lösenord"
-        var div = document.querySelector(".login-box");
-        div.appendChild(wrong);
-    }
-}
+//     if(username == "admin" && password == "admin"){
+//         console.log("testa login")
+//     }
+//     else{
+//         let wrong = document.createElement("p");
+//         wrong.innerText = "Fel användarnamn eller lösenord"
+//         var div = document.querySelector(".login-box");
+//         div.appendChild(wrong);
+//     }
+// }
 
 //Variable declarations
 let productList = document.querySelector(".product-list");
@@ -57,7 +57,7 @@ let logOut = function(){
     document.querySelector(".new-product").remove();
 
     //Changes button text to "Logga in"
-    document.querySelector(".admin-login").innerHTML = "Logga in";          
+    document.querySelector(".admin-login").innerHTML = "Logga in som admin";          
 
     //Removes admin buttons from all products
     for (let i=document.querySelectorAll(".button-wrapper").length - 1; i>=0; i--){
@@ -191,6 +191,9 @@ let newProduct = function(name, description, price) {
     let addToCart = document.createElement("button");   //New button
     addToCart.classList.add("add-cart");                //Adds class .add-cart
     addToCart.innerText = "Lägg till i kundvagn";       //Sets innertext
+    addToCart.addEventListener('click', () =>{          //Adds eventlistener
+            cartNumbers();
+    });
 
     //Appends image into product card
     productCard.appendChild(productImg);

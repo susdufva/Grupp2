@@ -1,0 +1,90 @@
+/* media queries for larger devices, Ipads & Tablets etc */
+
+@media (min-width: 768px) {
+    header {
+        font-size: 2.5rem;
+        
+    }
+
+    .logo {
+        font-size: 5rem;
+        margin-top: 20%;
+    }
+
+    .nav-links {
+        margin-top: 10rem;
+        width: 30%;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    .admin-login {
+        background-color: rgb(202, 198, 193);
+        margin-top: -0.10%;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .product-card {
+        display: inline-block;
+        width: 35%;
+        justify-content: center; 
+        margin-top: 3rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .product-pic, .product-name, .product-description, .product-price {
+        flex-direction: row;
+        
+    }
+
+
+    .footer {
+        font-size: 1.3rem;
+        justify-content: space-evenly;
+        border-top: 2rem solid rgba(0, 0, 0, 0.425);
+        border-bottom: 2rem solid rgba(0, 0, 0, 0.425);
+    }
+}
+
+
+@media (min-width: 1200px) {
+
+    .logo {
+        font-size: 6rem;
+        margin-top: 9rem;
+    }
+    
+    .nav-links {
+    margin-top: 5rem;
+    width: 15%;
+    }
+
+    .product-card {
+        display: inline-block;
+        width: 25%;
+        margin-top: 4rem;
+    }
+
+
+    .footer {
+        font-size: 1.2rem;
+        display: inline-flex;
+        width:100%;
+        flex-direction: row;
+        height: 20rem;
+    }
+
+    .opening, .location-1, .loctation-2, .contact {
+    padding: 1rem;
+    }
+
+    .copyright {
+        background-color: rgba(255, 255, 255, 0.842);
+        color: rgba(0, 0, 0, 0.733);
+        font-size: 1rem;
+    }
+}

@@ -1,15 +1,15 @@
 let carts = document.querySelectorAll('.add-cart');
-//Malins kort 
+
 let products =[{
 
     name: "Tacos",
-    description: "mexikanskt",
+    tag: "tacos",
     price: 100,
     inCart: 0, 
 },
 {
     name: "Produktnamn",
-    description: "Produktbeskrivning",
+    tag: "",
     price: 5,
     inCart: 0,
 }]
@@ -92,7 +92,7 @@ function displayCart(){
         Object.values(cartItems).map(item => {
             productContainer.innerHTML += `
             <div class="product">
-                <img src="${item.tag}"/>
+                <img src="img/${item.tag}.jpg"/>
                 <span>${item.name}</span>
             </div>
             <div class="price">

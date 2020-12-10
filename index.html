@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Andrés, Malin, Susanna, Thomas">
-    <title>Festhjälpen - Catering online</title>
+    <title>Foodie Express - Catering online</title>
     <link href="https://pbs.twimg.com/profile_images/425275803132121088/bUBlwHSf.png" rel="shortcut icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -22,31 +22,38 @@
 <body>
     <header>
         <nav>
-            <a class="logo" href="index.html">Festhjälpen</a>
+            <a class="logo" href="index.html">Foodie Express</a>
             <ul class="nav-links">
-                <li>
-                    <!-- <a href="login.html">
-                        Logga in
-                    </a> -->
-                </li>
                 <li class="cart">
                     <a href="shopping-cart.html">
                         Cart<span>0</span>
                     </a>
                 </li>
             </ul>
+            <div class="dropdown">
+                <button class="dropbtn">LOGGA IN</button>
+                <div class="dropdown-content">
+                    <div class="login-box"> 
+                        <p id="drop-p">Här kan du logga in med administratörs rättigheter för att redigera produkter:</p>
+                        <input class="admin" type="text" name="" placeholder="Användarnamn" id="username">
+                        <input class="admin" type="password" name="" placeholder="Lösenord" id="password">
+                        <button class="admin-login" id="login">Logga in</button>
+                    </div>
+                </div>
+            </div>
         </nav>
     </header>
     <main>
-        <!--lägg till arrow på knappen -->
-        <button class="admin-login">Logga in som admin</button>
+        <!--lägg till arrow på knappen 
+        <button class="admin-login">Logga in som admin</button>-->
 
         <section class="product-list">
             <!-- Här läggs in nya produkt-cards -->
 
             <!-- Produktkort -->
             <div class="product-card">
-                <img class="product-pic" src="" alt="productpic">
+                <!--Test bild bara-->
+                <img class="product-pic" src="img/tacos.jpg" alt="productpic">
                 <div class="product-info">
                     <div class="product-name">Tacos</div>
                     <div class="product-description">Mat</div>

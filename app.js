@@ -1,54 +1,67 @@
-// const loginButton = document.querySelector("#login");
-// loginButton.addEventListener("click", login);
-
-
-// function login(){
-//     let username = document.querySelector("#username").value;
-//     let password = document.querySelector("#password").value;
-    
-
-//     if(username == "admin", password == "admin"){
-//         console.log("testa login")
-//     }
-//     else{
-//         let wrong = document.createElement("p");
-//         wrong.innerText = "Fel användarnamn eller lösenord"
-//         var div = document.querySelector(".login-box");
-//         div.appendChild(wrong);
-//     }
-// }
-
-//Variable declarations
+const loginButton = document.querySelector("#login");
+loginButton.addEventListener("click", first);
 let productList = document.querySelector(".product-list");
 
-let adminLoggedIn = false; //Status of admin logged in or logged out. Default is false, logged out.
+let adminLoggedIn = false; 
 
-
-//Pseudo-login-button click-event
-document.querySelector(".admin-login").addEventListener("click", function(){
+function first(){
     if (adminLoggedIn == false){        //If logged out,
         logIn();                        //log in
     } else if (adminLoggedIn == true){  //If logged in,
         logOut();                       //log out
     }
-});
+}
+
+
+ function logIn(){
+    let username = document.querySelector("#username").value;
+    let password = document.querySelector("#password").value;
+    
+
+    if(username == "admin" && password == "admin"){
+        console.log("testa login")
+        document.querySelector("#login").innerText = "Logga ut";
+        adminRights();
+        adminLoggedIn = true;   
+    }
+    else{
+        let wrong = document.createElement("p");
+        wrong.innerText = "Fel användarnamn eller lösenord"
+        var div = document.querySelector(".login-box");
+        div.appendChild(wrong);
+    }
+}
+
+//Variable declarations
+//let productList = document.querySelector(".product-list");
+
+//let adminLoggedIn = false; //Status of admin logged in or logged out. Default is false, logged out.
+
+
+//Pseudo-login-button click-event
+//document.querySelector(".admin-login").addEventListener("click", function(){
+//document.querySelector("#login").addEventListener("click", function(){
+    //if (adminLoggedIn == false){        //If logged out,
+    //    logIn();                        //log in
+    //} else if (adminLoggedIn == true){  //If logged in,
+    //    logOut();                       //log out
+    //}
+//});
 
 
 //Psuedo-login
-let logIn = function(){
-    //Takes user input for username and password
-    let username = prompt("Enter username: ");
-    let password = prompt("Enter password: ");
+// let username = document.querySelector("#username").value; //prompt("Enter username: ");
+    //let password = ocument.querySelector("#password").value; //prompt("Enter password: ");
 
     //Checks if login is valid, if both username & password is "admin"
-    if (username=="admin" && password=="admin"){
-        document.querySelector(".admin-login").innerText = "Logga ut";      //Change login-button text to 'Logga ut'
-        adminRights();                                                      //Calls adminRights to add admin elements to DOM
-        adminLoggedIn = true;                                               //Sets admin logged in status to true
-    } else {
-        alert("Wrong username/password");                                   //If login is invalid, alert user
-    }
-}
+    //if (username=="admin" && password=="admin"){
+       // document.querySelector(".admin-login").innerText = "Logga ut";      //Change login-button text to 'Logga ut'
+       // adminRights();                                                      //Calls adminRights to add admin elements to DOM
+       // adminLoggedIn = true;                                               //Sets admin logged in status to true
+    //} else {
+      //  alert("Wrong username/password");                                   //If login is invalid, alert user
+    //}
+//}
 
 
 //Psuedo-logout

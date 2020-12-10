@@ -78,6 +78,20 @@
   padding: 1rem;
 }
 
+.contact-us {
+  text-decoration: none;
+  color: #b68282;
+}
+
+.contact-us:hover {
+  color: black;
+  text-decoration-line: underline;
+}
+
+#fedex {
+  font-size: 1.9rem;
+}
+
 /*header*/
 header {
   height: 25rem;

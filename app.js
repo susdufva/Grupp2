@@ -1,36 +1,64 @@
-const loginButton = document.querySelector("#login");
-loginButton.addEventListener("click", first);
+const loginForm = document.querySelector("#login");
+const dropbtn = document.querySelector(".dropbtn");
 let productList = document.querySelector(".product-list");
+
 
 let adminLoggedIn = false; 
 
-function first(){
+//Adds login function to login form
+loginForm.addEventListener("submit", function(e){
+    e.preventDefault();
+
     if (adminLoggedIn == false){        //If logged out,
         logIn();                        //log in
-    } else if (adminLoggedIn == true){  //If logged in,
+    }
+
+});
+
+//Adds logout function to logout button
+dropbtn.addEventListener("click", function(){
+    if (adminLoggedIn == true){         //If logged in,
         logOut();                       //log out
     }
-}
+});
 
 
- function logIn(){
+function logIn(){
     let username = document.querySelector("#username").value;
     let password = document.querySelector("#password").value;
-    
 
     if(username == "admin" && password == "admin"){
         console.log("testa login")
-        document.querySelector("#login").innerText = "Logga ut";
+        
+        document.querySelector(".dropbtn").innerText = "Logga ut";
         adminRights();
-        adminLoggedIn = true;   
-    }
-    else{
+
+        adminLoggedIn = true;
+    } else {
         let wrong = document.createElement("p");
         wrong.innerText = "Fel användarnamn eller lösenord"
         var div = document.querySelector(".login-box");
         div.appendChild(wrong);
     }
+
 }
+
+//Psuedo-logout
+let logOut = function(){
+    //Removes the form that creates new products
+    document.querySelector(".new-product").remove();
+
+    //Changes button text to "Logga in"
+    document.querySelector(".dropbtn").innerHTML = "Logga in";          
+
+    //Removes admin buttons from all products
+    for (let i=document.querySelectorAll(".button-wrapper").length - 1; i>=0; i--){
+        document.querySelectorAll(".button-wrapper")[i].remove();
+    }
+
+    adminLoggedIn = false;  //Sets admin logged in status to false
+};
+
 
 //Variable declarations
 //let productList = document.querySelector(".product-list");
@@ -64,21 +92,6 @@ function first(){
 //}
 
 
-//Psuedo-logout
-let logOut = function(){
-    //Removes the form that creates new products
-    document.querySelector(".new-product").remove();
-
-    //Changes button text to "Logga in"
-    document.querySelector(".admin-login").innerHTML = "Logga in som admin";          
-
-    //Removes admin buttons from all products
-    for (let i=document.querySelectorAll(".button-wrapper").length - 1; i>=0; i--){
-        document.querySelectorAll(".button-wrapper")[i].remove();
-    }
-
-    adminLoggedIn = false;  //Sets admin logged in status to false
-};
 
 
 //Creates form that admin uses to add new products

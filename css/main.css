@@ -65,6 +65,7 @@
   padding: 1rem;
 }
 
+/*header*/
 header {
   height: 25rem;
   font-family: 'Bebas Neue';
@@ -160,7 +161,7 @@ nav {
 #login {
   margin: 8px 2px 0 0px;
   position: relative;
-  left: 21%;
+  left: 20%;
   padding: 2px 7px;
   border-radius: 2px;
   border: 2px inset rgba(0, 0, 0, 0.116);
@@ -238,9 +239,11 @@ nav {
     font-size: 1.2rem;
     display: inline-flex;
     width: 100%;
+    flex-direction: row;
+    height: 20rem;
   }
   .opening, .location-1, .loctation-2, .contact {
-    flex-direction: row;
+    padding: 1rem;
   }
   .copyright {
     background-color: rgba(255, 255, 255, 0.842);

@@ -74,16 +74,17 @@
         font-size: 1.2rem;
         display: inline-flex;
         width:100%;
+        flex-direction: row;
+        height: 20rem;
     }
 
     .opening, .location-1, .loctation-2, .contact {
-        flex-direction: row;
+    padding: 1rem;
     }
 
     .copyright {
         background-color: rgba(255, 255, 255, 0.842);
         color: rgba(0, 0, 0, 0.733);
         font-size: 1rem;
-
     }
 }

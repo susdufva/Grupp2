@@ -1,3 +1,5 @@
+
+/*header*/
 header {
     height: 25rem;
     font-family: 'Bebas Neue';
@@ -90,13 +92,14 @@ nav{
 #login{
       margin: 8px 2px 0 0px ;
       position: relative;
-      left: 21%;
+      left: 20%;
       padding: 2px 7px;
       border-radius: 2px;
       border: 2px inset  rgba(0, 0, 0, 0.116) ;
       background-color: white;
       font-family: 'Yantramanav', sans-serif;
       font-size: 16px; 
+
 }  
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}

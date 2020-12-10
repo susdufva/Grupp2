@@ -12,7 +12,7 @@
     }
 
     .nav-links {
-        margin-top: 11.25%;
+        margin-top: 10rem;
         width: 30%;
     }
 
@@ -25,14 +25,15 @@
         margin-top: -0.10%;
         text-decoration: none;
         text-align: center;
-        border-radius: 0.3;
     }
 
     .product-card {
         display: inline-block;
-        width: 40%;
+        width: 35%;
         justify-content: center; 
         margin-top: 3rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
 
     .product-pic, .product-name, .product-description, .product-price {
@@ -40,4 +41,49 @@
         
     }
 
+
+    .footer {
+        font-size: 1.3rem;
+        justify-content: space-evenly;
+        border-top: 2rem solid rgba(0, 0, 0, 0.425);
+        border-bottom: 2rem solid rgba(0, 0, 0, 0.425);
+    }
+}
+
+
+@media (min-width: 1200px) {
+
+    .logo {
+        font-size: 6rem;
+        margin-top: 9rem;
+    }
+    
+    .nav-links {
+    margin-top: 5rem;
+    width: 15%;
+    }
+
+    .product-card {
+        display: inline-block;
+        width: 25%;
+        margin-top: 4rem;
+    }
+
+
+    .footer {
+        font-size: 1.2rem;
+        display: inline-flex;
+        width:100%;
+    }
+
+    .opening, .location-1, .loctation-2, .contact {
+        flex-direction: row;
+    }
+
+    .copyright {
+        background-color: rgba(255, 255, 255, 0.842);
+        color: rgba(0, 0, 0, 0.733);
+        font-size: 1rem;
+
+    }
 }

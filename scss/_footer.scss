@@ -1,18 +1,15 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    }
-
     /* first design for mobile phones 280px*/
 
     
-    footer {
+    .footer {
         display: flex;
         text-align: center;
         background-color:rgb(99, 87, 76);
         color: whitesmoke;
         font-size: 1.5rem;
+        height: 50rem;
+        width: auto;
+        flex-direction: column;
     }
 
     .opening, .location-1, .location-2, .contact {

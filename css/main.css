@@ -18,10 +18,11 @@ nav {
   display: inline-flex;
   flex-direction: column;
   margin: auto;
+  width: 100%;
 }
 
 .logo {
-  margin-top: 5rem;
+  margin-top: 10rem;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 5px;
@@ -33,7 +34,7 @@ nav {
 }
 
 .nav-links {
-  margin-top: 15rem;
+  margin-top: 9rem;
   border: 2px #63574c solid;
   width: 40%;
   list-style: none;
@@ -58,7 +59,7 @@ nav {
   margin-top: 4rem;
   padding: 0.5rem;
   border: 2px inset rgba(0, 0, 0, 0.116);
-  background-image: linear-gradient(to right, #e0d177, #ebb161);
+  background-image: linear-gradient(to right, #f1ebc5, #ffd685);
   width: 100%;
   font-family: 'Yantramanav', sans-serif;
   font-size: 1.1rem;
@@ -76,6 +77,9 @@ nav {
 
 .product-list {
   font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  padding-bottom: 3rem;
+  padding-top: 3rem;
 }
 
 .product-info {
@@ -83,34 +87,33 @@ nav {
 }
 
 .product-card {
-  margin: 1.5rem;
   padding: 1rem;
   display: block;
   background-color: rgba(218, 201, 127, 0.393);
   text-align: center;
-  border: 5px inset rgba(99, 87, 76, 0.596);
+  border: 5px solid rgba(99, 87, 76, 0.555);
   border-radius: 12px;
+  margin: auto;
+  margin-bottom: 2rem;
+  width: 70%;
 }
 
 .product-pic, .product-name, .product-description, .product-price {
   flex-direction: column;
-  padding: 0.3rem;
+  padding: 0.1rem;
   border-radius: 0.2rem;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 /* first design for mobile phones 280px*/
-footer {
+.footer {
   display: flex;
   text-align: center;
   background-color: #63574c;
   color: whitesmoke;
   font-size: 1.5rem;
+  height: 50rem;
+  width: auto;
+  flex-direction: column;
 }
 
 .opening, .location-1, .location-2, .contact {
@@ -132,7 +135,7 @@ footer {
     margin-top: 20%;
   }
   .nav-links {
-    margin-top: 11.25%;
+    margin-top: 10rem;
     width: 30%;
   }
   nav {
@@ -143,16 +146,52 @@ footer {
     margin-top: -0.10%;
     text-decoration: none;
     text-align: center;
-    border-radius: 0.3;
   }
   .product-card {
     display: inline-block;
-    width: 40%;
+    width: 35%;
     justify-content: center;
     margin-top: 3rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
   .product-pic, .product-name, .product-description, .product-price {
     flex-direction: row;
+  }
+  .footer {
+    font-size: 1.3rem;
+    justify-content: space-evenly;
+    border-top: 2rem solid rgba(0, 0, 0, 0.425);
+    border-bottom: 2rem solid rgba(0, 0, 0, 0.425);
+  }
+}
+
+@media (min-width: 1200px) {
+  .logo {
+    font-size: 6rem;
+    margin-top: 9rem;
+  }
+  .nav-links {
+    margin-top: 5rem;
+    width: 15%;
+  }
+  .product-card {
+    display: inline-block;
+    width: 25%;
+    margin-top: 4rem;
+  }
+  .footer {
+    font-size: 1.2rem;
+    display: inline-flex;
+    width: 100%;
+  }
+  .opening, .location-1, .loctation-2, .contact {
+    flex-direction: row;
+  }
+  .copyright {
+    background-color: rgba(255, 255, 255, 0.842);
+    color: rgba(0, 0, 0, 0.733);
+    font-size: 1rem;
   }
 }
 /*# sourceMappingURL=main.css.map */

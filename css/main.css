@@ -1,7 +1,8 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 /* first design for phone 280px*/
@@ -34,7 +35,10 @@
 }
 
 .product-pic, .product-name, .product-description, .product-price {
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   padding: 0.3rem;
   border-radius: 0.2rem;
 }
@@ -42,11 +46,14 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 /* first design for mobile phones 280px*/
 footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   text-align: center;
   background-color: #63574c;
@@ -73,8 +80,13 @@ header {
 }
 
 nav {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin: auto;
 }
 
@@ -95,7 +107,8 @@ nav {
   border: 2px #63574c solid;
   width: 40%;
   list-style: none;
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   background: rgba(255, 255, 255, 0.589);
 }
 
@@ -108,7 +121,8 @@ nav {
 
 .cart {
   right: 5rem;
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   text-align: center;
 }
 
@@ -136,7 +150,8 @@ nav {
   display: none;
   position: absolute;
   background-color: #fcf9f9;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   padding: 15px;
   width: auto;
@@ -155,7 +170,7 @@ nav {
 }
 
 /*login button in dropdown*/
-#login {
+#login-btn {
   margin: 8px 2px 0 0px;
   position: relative;
   left: 21%;
@@ -176,4 +191,3 @@ nav {
 .dropdown:hover .dropbtn {
   background-color: #f5f1eb;
 }
-/*# sourceMappingURL=main.css.map */

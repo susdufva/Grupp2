@@ -47,6 +47,12 @@ function logIn(){
 let logOut = function(){
     //Removes the form that creates new products
     document.querySelector(".new-product").remove();
+    
+    //Removes .image-wrapper
+    document.querySelector(".img-wrapper").remove();
+
+    //Removes .new-img form
+    document.querySelector(".new-img").remove();
 
     //Changes button text to "Logga in"
     document.querySelector(".dropbtn").innerHTML = "Logga in";          

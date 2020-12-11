@@ -44,3 +44,24 @@ width: 70%;
 .product-pic {
     width: 100%;
 }
+
+.product-img {
+    width: 50%;
+}
+
+.img-wrapper{
+    position: fixed;
+    overflow: scroll;
+    height: 400px;
+    width: 220px;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    // flex-direction: column;
+}
+
+.img-wrapper>img{
+    height: 100px;
+    width: 50%;
+}

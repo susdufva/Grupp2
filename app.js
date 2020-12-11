@@ -255,7 +255,7 @@ let newProduct = function(name, description, price) {
 let adminRights = function() {
     addForm();              //Adds form to create products
     addAdminButtons();      //Adds admin buttons to products
-
+    document.querySelector("main").prepend(imgSearchMaker());   //Add image search in main
 }
 
 
@@ -297,15 +297,42 @@ let adminButtonsMaker = function(){
     editBtn.classList.add("edit-btn");                          //Adds class .edit-btn
     editBtn.innerText = "Redigera";                             //Sets innertext
 
-    //Button to add or change image of current product card
-    //<button class="img-btn">Ändra bild</button>
-    // let imgBtn = document.createElement("button");
-    // imgBtn.classList.add("img-btn");
-    // imgBtn.innerText ="Ändra bild";
+    //Form to add/change image of current product card
+    let imgForm = document.createElement("form");
+    imgForm.classList.add(".img-form");
 
-    // imgBtn.addEventListener("click", function(){
-    //     console.log("Clicking this button should open option to add/change image of current product card")
-    // });
+    //Input to img form
+    let imgUrl = document.createElement("input");
+    imgUrl.classList.add("img-url");
+    let placeholder = document.createAttribute("placeholder");
+    placeholder.value = "Ange URL";
+    imgUrl.setAttributeNode(placeholder);
+    
+    imgForm.appendChild(imgUrl);
+
+    // Button to add or change image of current product card
+    // <button class="img-btn">Ändra bild</button>
+    let imgBtn = document.createElement("button");
+    imgBtn.classList.add("img-btn");
+    imgBtn.innerText ="Ändra bild";
+    
+
+    imgForm.appendChild(imgBtn)
+
+    imgForm.addEventListener("submit", function(e){
+
+        e.preventDefault();
+
+        let currentImg = imgBtn.parentNode.parentNode.parentNode.firstElementChild; //Img of current card
+        console.log(currentImg);
+
+        currentImg.setAttribute("src", imgUrl.value);
+        // currentImg.setAttribute("src", imgSuggest());
+
+        imgUrl.value = "";
+
+        console.log("Clicking this button should change img of current product card to img of url input");
+    });
 
     //Adds event to button to set new innerText to product info elements: name, description, price
     //1st parent is button wrapper, 1st previous sibling is 'add to cart'-button, 2nd previous sibling is 'product info'-wrapper
@@ -318,7 +345,7 @@ let adminButtonsMaker = function(){
     //Appends buttons to button wrapper
     btnWrapper.appendChild(delBtn);
     btnWrapper.appendChild(editBtn);
-    btnWrapper.appendChild(imgSearchMaker());
+    btnWrapper.appendChild(imgForm);
 
     /*New button wrapper
     <div class="button-wrapper">
@@ -373,15 +400,19 @@ function imgSearchMaker(){
 }
 
 function removeImages(){
-    for(i=document.querySelectorAll(".img-suggestion").length; i>=document.querySelectorAll(".img-suggestion").length; i--){
 
-        if(document.querySelectorAll(".img-suggestion").length>0){                //Check first if there are at least one element with class .img-suggestion
-            document.querySelectorAll(".img-suggestion")[i-1].remove();           //Remove element with class .img-suggestion
-        }
+    if(document.querySelector("main").contains(document.querySelector(".img-wrapper"))){
+        document.querySelector(".img-wrapper").remove();
     }
+    // for(i=document.querySelectorAll(".img-suggestion").length; i>=document.querySelectorAll(".img-suggestion").length; i--){
+
+    //     if(document.querySelectorAll(".img-suggestion").length>0){                //Check first if there are at least one element with class .img-suggestion
+    //         document.querySelectorAll(".img-suggestion")[i-1].remove();           //Remove element with class .img-suggestion
+    //     }
+    // }
 }
 
-imgSearchMaker();
+
 
 const apiKey = "6-3PNroGSJbutp9OVfXlkcHpuVysAesfEXAK4R-9vvc"    //50 requests allowed per hour for this API-key. If 0/50 requests remaining, try to another Unsplash API-key.
 
@@ -397,14 +428,14 @@ async function createImages(search) {
     // document.body.appendChild(imgWrapper);
 
     for (i=0; i<data.results.length; i++){
-        console.log(data.results[i].urls.thumb);
+        console.log(data.results[i].urls.small);
 
         let img = document.createElement("img");     //New img
         img.classList.add("img-suggestion");         //Adds class .img-suggestion
 
         //Sets img src
         let src = document.createAttribute("src");   //New attribute
-        src.value = data.results[i].urls.thumb;      //Adds img src
+        src.value = data.results[i].urls.small;      //Adds img src
 
         //Sets img alt
         let alt = document.createAttribute("alt");   //New attribute
@@ -420,7 +451,7 @@ async function createImages(search) {
 
         //Clicking on an image makes it the new product image
         img.addEventListener("click", function(e){
-
+            // imgSuggest();
         })
 
         //Appends image into .img-wrapper

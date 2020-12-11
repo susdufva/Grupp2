@@ -36,11 +36,28 @@ margin-bottom: 2rem;
 width: 70%;
 }
 
- .product-pic, .product-name, .product-description, .product-price {
+ .product-img, .product-name, .product-description, .product-price {
     flex-direction: column;
     padding: 0.1rem;
     border-radius: 0.2rem;
 }
-.product-pic {
+.product-img {
     width: 100%;
+}
+
+.img-wrapper{
+    position: fixed;
+    overflow: scroll;
+    height: 400px;
+    width: 220px;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    // flex-direction: column;
+}
+
+.img-wrapper>img{
+    height: 100px;
+    width: 50%;
 }

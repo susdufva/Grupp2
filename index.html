@@ -20,18 +20,11 @@
 </head>
 
 <body>
-    <header>
-        <nav>
-            <a class="logo" href="index.html">Foodie Express</a>
-            <ul class="nav-links">
-                <li class="cart">
-                    <a href="shopping-cart.html">
-                        Cart<span>0</span>
-                    </a>
-                </li>
-            </ul>
-            <div class="dropdown">
-                <button class="dropbtn">LOGGA IN</button>
+    <nav class="nav-bar">
+        <a class="logo" href="index.html">Foodie Express</a>
+        <ul class="nav-links">
+            <div class="dropdown dropdown-login">
+                <button class="dropbtn">Logga in</button>
                 <div class="dropdown-content">
                     <form class="login-box" id="login"> 
                         <p id="drop-p">Här kan du logga in med administratörs rättigheter för att redigera produkter:</p>
@@ -41,7 +34,16 @@
                     </form>
                 </div>
             </div>
-        </nav>
+            <li class="cart">
+                <a href="shopping-cart.html" class="cart-text">
+                    🛒<span class="cart-nr">0</span>
+                </a>
+            </li>
+        </ul>
+       
+    </nav>
+    <header>
+
     </header>
     <main>
         <!--lägg till arrow på knappen 

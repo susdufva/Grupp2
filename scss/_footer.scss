@@ -1,40 +1,40 @@
     /* first design for mobile phones 280px*/
 
     
-    .footer {
-        display: flex;
-        text-align: center;
-        background-color:rgb(99, 87, 76);
-        color: whitesmoke;
-        font-size: 1.5rem;
-        height: 50rem;
-        width: auto;
-        flex-direction: column;
-    }
+.footer {
+    display: flex;
+    text-align: center;
+    background-color:rgb(99, 87, 76);
+    color: whitesmoke;
+    font-size: 1.5rem;
+    height: 50rem;
+    width: auto;
+    flex-direction: column;
+}
 
-    .opening, .location-1, .location-2, .contact {
-        padding: 1.5rem;
-        margin: auto;
-    }
+.opening, .location-1, .location-2, .contact {
+    padding: 1.5rem;
+    margin: auto;
+}
 
-    .copyright {
-        padding: 1rem;
-    }
+.copyright {
+    padding: 1rem;
+}
 
-    .contact-us {
-        text-decoration: none;
-        color: rgb(182, 130, 130);
-    }
+.contact-us {
+    text-decoration: none;
+    color: rgb(182, 130, 130);
+}
 
-    .contact-us:hover {
-        color: black;
-        text-decoration-line: underline;
-    }
+.contact-us:hover {
+    color: black;
+    text-decoration-line: underline;
+}
 
-    #fedex {
-        font-size: 1.9rem;
-    }
-    
+#fedex {
+    font-size: 1.9rem;
+}
+
 
     
 

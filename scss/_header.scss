@@ -1,10 +1,9 @@
 
 /*header*/
 header {
-    height: 40vh;
+    height: 50vh;
     font-family: 'Bebas Neue';
-    font-size: 2rem;
-    background-color: burlywood;
     background: url(../img/background-header.jpg);
     text-align: center;
+    display: flex;
 }

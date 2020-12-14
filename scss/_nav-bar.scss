@@ -1,16 +1,14 @@
 .nav-bar{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column-reverse;
     margin: auto;
-    position: fixed;
-    background-color: #fcf9f9;
     width: 100%;
 }
 
 
 .nav-links{
     display: flex;
-    justify-content: space-evenly;
+    align-self: flex-end;
 }
 
 .logo {
@@ -22,9 +20,10 @@
     cursor: pointer;
     color: rgb(99, 87, 76);  
     text-shadow: 2.5px 2.5px rgba(255, 255, 255, 0.699);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 60px;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    
 }
 
 .nav-links {
@@ -72,6 +71,7 @@
       display: none;
       position: absolute;
       background-color: #fcf9f9;
+      /*font-size: 1.5rem;*/
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
       z-index: 1;
       padding: 15px;
@@ -79,10 +79,16 @@
 }
 
 /*text paragraf in dropdown*/
-#drop-p{
-    font-size: 1.5rem;
-    max-width: 70%;
-    margin-left: 32px; 
+#drop-p {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-top: 10px;  
+}
+
+.wrong {
+    font-size: 1.2rem;
+    padding-top: 13px;
+    padding-bottom: 7px;
 }
 /*input field*/
 .admin{

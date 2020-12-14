@@ -22,13 +22,14 @@ dropbtn.addEventListener("click", function(){
     }
 });
 
+let wrong = document.createElement("p");
+wrong.classList.add('wrong');
 
 function logIn(){
     let username = document.querySelector("#username").value;
     let password = document.querySelector("#password").value;
 
     if(username == "admin" && password == "admin"){
-        console.log("testa login")
         
         document.querySelector(".dropbtn").innerText = "Logga ut";
         adminRights();
@@ -38,7 +39,6 @@ function logIn(){
         document.querySelector(".dropdown").classList.toggle("dropdown-login"); //Toggles .dropdown-login for CSS, to display dropdown menu when logged out
         
     } else {
-        let wrong = document.createElement("p");
         wrong.innerText = "Fel användarnamn eller lösenord"
         var div = document.querySelector(".login-box");
         div.appendChild(wrong);

@@ -1,8 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* first design for phone 280px*/
@@ -40,10 +39,7 @@
 }
 
 .product-img, .product-name, .product-description, .product-price {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   padding: 0.1rem;
   border-radius: 0.2rem;
 }
@@ -59,11 +55,8 @@
   width: 220px;
   top: 0;
   right: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .img-wrapper > img {
@@ -73,8 +66,6 @@
 
 /* first design for mobile phones 280px*/
 .footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   text-align: center;
   background-color: #63574c;
@@ -82,10 +73,7 @@
   font-size: 1.5rem;
   height: 50rem;
   width: auto;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 .opening, .location-1, .location-2, .contact {
@@ -104,8 +92,7 @@
 
 .contact-us:hover {
   color: black;
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+  text-decoration-line: underline;
 }
 
 #fedex {
@@ -114,12 +101,11 @@
 
 /*header*/
 header {
-  height: 40vh;
+  height: 50vh;
   font-family: 'Bebas Neue';
-  font-size: 2rem;
-  background-color: burlywood;
   background: url(../img/background-header.jpg);
   text-align: center;
+  display: flex;
 }
 
 /* media queries for larger devices, Ipads & Tablets etc */
@@ -142,24 +128,17 @@ header {
   .product-card {
     display: inline-block;
     width: 35%;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     margin-top: 3rem;
     margin-left: 1rem;
     margin-right: 1rem;
   }
   .product-pic, .product-name, .product-description, .product-price {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
   }
   .footer {
     font-size: 1.3rem;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    justify-content: space-evenly;
     border-top: 2rem solid rgba(0, 0, 0, 0.425);
     border-bottom: 2rem solid rgba(0, 0, 0, 0.425);
   }
@@ -179,14 +158,9 @@ header {
   }
   .footer {
     font-size: 1.2rem;
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
     display: inline-flex;
     width: 100%;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
     height: 20rem;
   }
   .opening, .location-1, .loctation-2, .contact {
@@ -200,34 +174,20 @@ header {
 }
 
 .contact-us-1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 .nav-bar {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: column-reverse;
   margin: auto;
-  position: fixed;
-  background-color: #fcf9f9;
   width: 100%;
 }
 
 .nav-links {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  align-self: flex-end;
 }
 
 .logo {
@@ -238,15 +198,9 @@ header {
   cursor: pointer;
   color: #63574c;
   text-shadow: 2.5px 2.5px rgba(255, 255, 255, 0.699);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  padding: 60px;
+  font-size: 3.5rem;
+  margin-bottom: 20px;
 }
 
 .nav-links {
@@ -263,15 +217,9 @@ header {
 }
 
 .cart {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Dropdown Button */
@@ -297,8 +245,8 @@ header {
   display: none;
   position: absolute;
   background-color: #fcf9f9;
-  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  /*font-size: 1.5rem;*/
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   padding: 15px;
   width: auto;
@@ -306,9 +254,15 @@ header {
 
 /*text paragraf in dropdown*/
 #drop-p {
-  font-size: 1.5rem;
-  max-width: 70%;
-  margin-left: 32px;
+  font-size: 1.3rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.wrong {
+  font-size: 1.2rem;
+  padding-top: 13px;
+  padding-bottom: 7px;
 }
 
 /*input field*/
@@ -342,3 +296,4 @@ header {
 .dropdown-login:focus-within .dropbtn {
   background-color: #f5f1eb;
 }
+/*# sourceMappingURL=main.css.map */

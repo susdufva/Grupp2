@@ -68,10 +68,11 @@
 .footer {
   display: flex;
   text-align: center;
-  background-color: #63574c;
+  /*background-color:rgb(99, 87, 76);*/
+  background: url(../img/background-header.jpg);
   color: whitesmoke;
-  font-size: 1.5rem;
-  height: 50rem;
+  font-size: 1.2rem;
+  height: auto;
   width: auto;
   flex-direction: column;
 }
@@ -139,8 +140,7 @@ header {
   .footer {
     font-size: 1.3rem;
     justify-content: space-evenly;
-    border-top: 2rem solid rgba(0, 0, 0, 0.425);
-    border-bottom: 2rem solid rgba(0, 0, 0, 0.425);
+    border-top: 1.2rem solid rgba(0, 0, 0, 0.425);
   }
 }
 
@@ -161,15 +161,18 @@ header {
     display: inline-flex;
     width: 100%;
     flex-direction: row;
-    height: 20rem;
+    height: auto;
   }
   .opening, .location-1, .loctation-2, .contact {
-    padding: 1rem;
+    padding: 2rem 1rem;
   }
   .copyright {
-    background-color: rgba(255, 255, 255, 0.842);
+    /* background-color: rgba(255, 255, 255, 0.842);*/
+    background: url(../img/background-header.jpg);
     color: rgba(0, 0, 0, 0.733);
     font-size: 1rem;
+    border-bottom: 1.2rem solid rgba(0, 0, 0, 0.425);
+    border-top: 2px solid rgba(255, 255, 255, 0.692);
   }
 }
 
@@ -198,9 +201,9 @@ header {
   cursor: pointer;
   color: #63574c;
   text-shadow: 2.5px 2.5px rgba(255, 255, 255, 0.699);
-  padding: 60px;
+  padding: 50px;
   font-size: 3.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .nav-links {

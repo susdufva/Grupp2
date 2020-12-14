@@ -44,8 +44,7 @@
     .footer {
         font-size: 1.3rem;
         justify-content: space-evenly;
-        border-top: 2rem solid rgba(0, 0, 0, 0.425);
-        border-bottom: 2rem solid rgba(0, 0, 0, 0.425);
+        border-top: 1.2rem solid rgba(0, 0, 0, 0.425);
     }
 }
 
@@ -72,16 +71,20 @@
         display: inline-flex;
         width:100%;
         flex-direction: row;
-        height: 20rem;
+        height: auto;
     }
 
     .opening, .location-1, .loctation-2, .contact {
-    padding: 1rem;
+    padding: 2rem 1rem;
     }
 
     .copyright {
-        background-color: rgba(255, 255, 255, 0.842);
+       /* background-color: rgba(255, 255, 255, 0.842);*/ 
+        background: url(../img/background-header.jpg);
         color: rgba(0, 0, 0, 0.733);
         font-size: 1rem;
+        border-bottom: 1.2rem solid rgba(0, 0, 0, 0.425);
+        border-top: 2px solid rgba(255, 255, 255, 0.692);
     }
+  
 }

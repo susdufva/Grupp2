@@ -1,0 +1,76 @@
+.products-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 100px;
+}
+.products-container{
+    max-width: 1000px;
+    justify-content: space-around;
+    margin: 0 auto;
+    margin-top: 6vh;
+}
+.product ion-icon{
+    font-size: 16px;
+    color: rgb(182, 130, 130);
+    cursor: pointer;
+    margin: 10px;
+}
+.product-header{
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 5px solid rgb(182, 130, 130);
+    margin: 0 auto;
+}
+.product-title{
+    width: 45%;
+    border-bottom: 1px solid rgb(182, 130, 130);
+}
+.price{
+    width: 15%;
+    border-bottom: 1px solid rgb(182, 130, 130);
+    display: flex;
+    align-items: center;
+}
+.quantity{
+    width: 30%;
+    border-bottom: 1px solid rgb(182, 130, 130);
+    display: flex;
+    align-items: center;
+}
+.total{
+    width: 10%;
+    border-bottom: 1px solid rgb(182, 130, 130);
+    display: flex;
+    align-items: center;  
+}
+.product{
+    width: 45%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgb(182, 130, 130);
+}
+.products{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.product img{
+    width: 30%;
+}
+.TotalContainer{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 10px 0;
+}
+.TotalTitle{
+    width: 30%;
+}
+.AttBetala{
+    width: 10%;
+}

@@ -89,33 +89,62 @@ function displayCart(){
 
     if(cartItems && productContainer) {
         productContainer.innerHTML = '';
-        Object.values(cartItems).map(item => {
+        Object.values(cartItems).map((item, index) => {
             productContainer.innerHTML += `
             <div class="product">
+            <ion-icon name="trash-outline"></ion-icon>
                 <img src="img/${item.tag}.jpg"/>
                 <span>${item.name}</span>
             </div>
             <div class="price">
-            ${item.price} sek
+                ${item.price}sek
             </div>    
             <div class="quantity">
-            <span>${item.inCart}</span>
+                <span>${item.inCart}</span>
             </div>
             <div class="total">
-            ${item.inCart * item.price} sek
+                ${item.inCart * item.price}sek
+            </div>
+            
             `;
         });
 
         productContainer.innerHTML +=`
             <div class="TotalContainer">
                 <h4 class="TotalTitle">
-                    Att betala
+                    Att betala:
                 </h4>
                 <h4 class="AttBetala">
-                ${cartCost} sek
+                    ${cartCost} sek
                 </h4>
-                `;
-                
+            </div>
+        `
+        deleteBtn();
+    }
+}
+//Delete knapp 
+function deleteBtn() {
+    let deleteBtn = document.querySelectorAll('.product ion-icon');
+    let productNumbers = localStorage.getItem('cartNumbers');
+    let cartCost = localStorage.getItem("totalCost");
+    let cartItems = localStorage.getItem('productsInCart');
+    cartItems = JSON.parse(cartItems);
+    let productName;
+    console.log(cartItems);
+
+    for(let i=0; i < deleteBtn.length; i++) {
+        deleteBtn[i].addEventListener('click', () => {
+            productName = deleteBtn[i].parentElement.textContent.toLocaleLowerCase().replace(/ /g, '').trim();
+
+            localStorage.setItem('cartNumbers', productNumbers - cartItems[productName].inCart);
+            localStorage.setItem('totalCost', cartCost - (cartItems[productName].price * cartItems[productName].inCart));
+            
+            delete cartItems[productName];
+            localStorage.setItem('productsInCart', JSON.stringify(cartItems));
+
+            displayCart();  
+            LoadCartNumbers();
+        })
     }
 }
 

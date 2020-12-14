@@ -7,18 +7,18 @@
     }
 
     .logo {
-        font-size: 5rem;
-        margin-top: 20%;
+        font-size: 2rem;
+        // margin-top: 20%;
     }
 
-    .nav-links {
-        margin-top: 10rem;
-        width: 30%;
-    }
-
-    // nav {
-    //     width: 100%;
+    // .nav-links {
+    //     margin-top: 10rem;
+    //     width: 30%;
     // }
+
+    .nav-bar {
+        width: 100%;
+    }
 
     .admin-login {
         background-color: rgb(202, 198, 193);
@@ -38,15 +38,13 @@
 
     .product-pic, .product-name, .product-description, .product-price {
         flex-direction: row;
-        
     }
 
 
     .footer {
         font-size: 1.3rem;
         justify-content: space-evenly;
-        border-top: 2rem solid rgba(0, 0, 0, 0.425);
-        border-bottom: 2rem solid rgba(0, 0, 0, 0.425);
+        border-top: 1.2rem solid rgba(0, 0, 0, 0.425);
     }
 }
 
@@ -54,12 +52,10 @@
 @media (min-width: 1200px) {
 
     .logo {
-        font-size: 6rem;
-        margin-top: 9rem;
+        font-size: 2    rem;
     }
     
     .nav-links {
-    margin-top: 5rem;
     width: 15%;
     }
 
@@ -75,16 +71,20 @@
         display: inline-flex;
         width:100%;
         flex-direction: row;
-        height: 20rem;
+        height: auto;
     }
 
     .opening, .location-1, .loctation-2, .contact {
-    padding: 1rem;
+    padding: 2rem 1rem;
     }
 
     .copyright {
-        background-color: rgba(255, 255, 255, 0.842);
+       /* background-color: rgba(255, 255, 255, 0.842);*/ 
+        background: url(../img/background-header.jpg);
         color: rgba(0, 0, 0, 0.733);
         font-size: 1rem;
+        border-bottom: 1.2rem solid rgba(0, 0, 0, 0.425);
+        border-top: 2px solid rgba(255, 255, 255, 0.692);
     }
+  
 }

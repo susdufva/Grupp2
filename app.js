@@ -22,20 +22,23 @@ dropbtn.addEventListener("click", function(){
     }
 });
 
+let wrong = document.createElement("p");
+wrong.classList.add('wrong');
 
 function logIn(){
     let username = document.querySelector("#username").value;
     let password = document.querySelector("#password").value;
 
     if(username == "admin" && password == "admin"){
-        console.log("testa login")
         
         document.querySelector(".dropbtn").innerText = "Logga ut";
         adminRights();
 
-        adminLoggedIn = true;
+        adminLoggedIn = true;   //Sets admin logged in status to true
+
+        document.querySelector(".dropdown").classList.toggle("dropdown-login"); //Toggles .dropdown-login for CSS, to display dropdown menu when logged out
+        
     } else {
-        let wrong = document.createElement("p");
         wrong.innerText = "Fel användarnamn eller lösenord"
         var div = document.querySelector(".login-box");
         div.appendChild(wrong);
@@ -45,14 +48,19 @@ function logIn(){
 
 //Psuedo-logout
 let logOut = function(){
-    //Removes the form that creates new products
-    document.querySelector(".new-product").remove();
-    
-    //Removes .image-wrapper
-    document.querySelector(".img-wrapper").remove();
 
-    //Removes .new-img form
-    document.querySelector(".new-img").remove();
+    //Removes admin-related elemnts on logout, if such element exists
+    if (document.querySelectorAll(".new-product").length>0){
+        document.querySelector(".new-product").remove();
+    }
+    
+    if (document.querySelectorAll(".img-wrapper").length>0){
+        document.querySelector(".img-wrapper").remove();
+    }
+
+    if (document.querySelectorAll(".new-img").length>0){
+        document.querySelector(".new-img").remove();
+    }
 
     //Changes button text to "Logga in"
     document.querySelector(".dropbtn").innerHTML = "Logga in";          
@@ -62,42 +70,10 @@ let logOut = function(){
         document.querySelectorAll(".button-wrapper")[i].remove();
     }
 
+    document.querySelector(".dropdown").classList.toggle("dropdown-login");     //Toggles .dropdown-login for CSS, to not display dropdown menu when logged out
+
     adminLoggedIn = false;  //Sets admin logged in status to false
 };
-
-
-//Variable declarations
-//let productList = document.querySelector(".product-list");
-
-//let adminLoggedIn = false; //Status of admin logged in or logged out. Default is false, logged out.
-
-
-//Pseudo-login-button click-event
-//document.querySelector(".admin-login").addEventListener("click", function(){
-//document.querySelector("#login").addEventListener("click", function(){
-    //if (adminLoggedIn == false){        //If logged out,
-    //    logIn();                        //log in
-    //} else if (adminLoggedIn == true){  //If logged in,
-    //    logOut();                       //log out
-    //}
-//});
-
-
-//Psuedo-login
-// let username = document.querySelector("#username").value; //prompt("Enter username: ");
-    //let password = ocument.querySelector("#password").value; //prompt("Enter password: ");
-
-    //Checks if login is valid, if both username & password is "admin"
-    //if (username=="admin" && password=="admin"){
-       // document.querySelector(".admin-login").innerText = "Logga ut";      //Change login-button text to 'Logga ut'
-       // adminRights();                                                      //Calls adminRights to add admin elements to DOM
-       // adminLoggedIn = true;                                               //Sets admin logged in status to true
-    //} else {
-      //  alert("Wrong username/password");                                   //If login is invalid, alert user
-    //}
-//}
-
-
 
 
 //Creates form that admin uses to add new products

@@ -20,27 +20,33 @@
 </head>
 
 <body>
+    
     <header>
-        <nav>
+        <nav class="nav-bar">
             <a class="logo" href="index.html">Foodie Express</a>
             <ul class="nav-links">
-                <li class="cart">
-                    <a href="shopping-cart.html">
-                        Cart<span>0</span>
-                    </a>
-                </li>
-            </ul>
-            <div class="dropdown">
-                <button class="dropbtn">LOGGA IN</button>
-                <div class="dropdown-content">
-                    <form class="login-box" id="login"> 
-                        <p id="drop-p">Här kan du logga in med administratörs rättigheter för att redigera produkter:</p>
-                        <input class="admin" type="text" name="" placeholder="Användarnamn" id="username">
-                        <input class="admin" type="password" name="" placeholder="Lösenord" id="password">
-                        <button class="admin-login" id="login-btn">Logga in</button>
-                    </form>
+                <div class="dropdown dropdown-login">
+                    <button class="dropbtn">Logga in</button>
+                    <div class="dropdown-content">
+                        <form class="login-box" id="login"> 
+                            <p id="drop-p">Här kan du logga in med administratörs rättigheter för att redigera produkter:</p>
+                            <input class="admin" type="text" name="" placeholder="Användarnamn" id="username">
+                            <input class="admin" type="password" name="" placeholder="Lösenord" id="password">
+                            <button class="admin-login" id="login-btn">Logga in</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
+                <li class="contact-link">
+                    <a href="#footer">Kontakt</a>
+                </li>
+                <li class="cart">
+                    <a href="shopping-cart.html" class="cart-text">
+                        🛒<span class="cart-nr">0</span>
+                    </a>  
+                </li>
+                
+            </ul>
+           
         </nav>
     </header>
     <main>
@@ -159,7 +165,7 @@
     </main>
 
     <footer>
-        <div class="footer">
+        <div class="footer" id="footer">
             <p class="opening">
                 <strong>OPENING HOURS:</strong><br> MON......10:00-22:00 <br> TUE......10:00-22:00 <br>
                 WED......10:00-22:00 <br>
@@ -171,8 +177,10 @@
                 foodieExpress@medieinstitutet.se <br> ON SOCIAL MEDIA <br> <i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i> <i class="fab fa-fedex" id="fedex"></i></p> 
         </div>
         <p class="copyright"> <strong> &copy; 2020 MADE BY: </strong> Andrés Santana, Malin Sjöblom, Susanna Dufva,
-            Thomas Olsson </p>
-
+            Thomas Olsson 
+        </p>
+       
+        
 
     </footer>
     <script src="shopping-cart.js"></script>

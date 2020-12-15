@@ -1,6 +1,9 @@
 const loginForm = document.querySelector("#login");
 const dropbtn = document.querySelector(".dropbtn");
 let productList = document.querySelector(".product-list");
+const body = document.body;
+const main = document.querySelector("main");
+
 
 
 let adminLoggedIn = false; 
@@ -26,6 +29,7 @@ let wrong = document.createElement("p");
 wrong.classList.add('wrong');
 
 function logIn(){
+
     let username = document.querySelector("#username").value;
     let password = document.querySelector("#password").value;
 
@@ -47,27 +51,35 @@ function logIn(){
 }
 
 //Psuedo-logout
-let logOut = function(){
+let logOut = function(){   
 
-    //Removes admin-related elemnts on logout, if such element exists
-    if (document.querySelectorAll(".new-product").length>0){
-        document.querySelector(".new-product").remove();
+    //Removes form that creates new products
+    let newProductForm = document.querySelector(".new-product");
+    if (body.contains(newProductForm)){
+        newProductForm.remove();
     }
     
-    if (document.querySelectorAll(".img-wrapper").length>0){
-        document.querySelector(".img-wrapper").remove();
+    //Removes form that searches for Unsplash images
+    let searchImg = document.querySelector(".search-img");
+
+    if (body.contains(searchImg)){
+        searchImg.remove();
     }
 
-    if (document.querySelectorAll(".new-img").length>0){
-        document.querySelector(".new-img").remove();
+    //Removes container of Unsplash suggestion images
+    let imgWrapper = document.querySelector(".img-wrapper");
+    if (body.contains(imgWrapper)){
+        imgWrapper.remove();
     }
 
     //Changes button text to "Logga in"
     document.querySelector(".dropbtn").innerHTML = "Logga in";          
 
     //Removes admin buttons from all products
-    for (let i=document.querySelectorAll(".button-wrapper").length - 1; i>=0; i--){
-        document.querySelectorAll(".button-wrapper")[i].remove();
+    let buttonWrappers = document.querySelectorAll(".button-wrapper");
+
+    for (let i=buttonWrappers.length-1; i>=0; i--){
+        buttonWrappers[i].remove();
     }
 
     document.querySelector(".dropdown").classList.toggle("dropdown-login");     //Toggles .dropdown-login for CSS, to not display dropdown menu when logged out
@@ -79,13 +91,11 @@ let logOut = function(){
 //Creates form that admin uses to add new products
 let addForm = function() {
 
-    //Creating new element nodes:
-
     //<form class="new-product"></form>
     let form = document.createElement("form");
     form.classList.add("new-product");
      
-    //Creates label and input elements and appends them into form
+    //Creates new label and input elements for the form with parameters for specified attribute values and element content
     let inputMaker = function(elementContent, attributeValue){
 
         //<label for="attributeValue">elementContent</label>
@@ -102,7 +112,7 @@ let addForm = function() {
         attType.value = "text";                           //Sets attribute value
         attId.value = attributeValue;                     //Sets attribute value
         textInput.setAttributeNode(attType);              //Adds 'type' attribute to input element
-        textInput.setAttributeNode(attId);                //Adds 'type' attribute to input element
+        textInput.setAttributeNode(attId);                //Adds 'id' attribute to input element
 
         //Appends new label and input into form
         form.appendChild(label);
@@ -143,7 +153,7 @@ let addForm = function() {
         let newProductPrice = document.querySelector("#new-product__price");                //New product price
         
         //Creates new products using form input values as arguments for function newProduct(name, price, description)
-        newProduct(newProductName.value, newProductDescription.value, Number(newProductPrice.value));
+        newProductMaker(newProductName.value, newProductDescription.value, Number(newProductPrice.value));
 
         //Adds admin buttons to the products created by newProduct
         addAdminButtons();  
@@ -156,7 +166,7 @@ let addForm = function() {
 
 
 //Function creating new product cards from form inputs
-let newProduct = function(name, description, price) {
+let newProductMaker = function(name, description, price) {
    
     //Creates product card div to wrap product content
     //<div class ="product-card"></div>
@@ -243,12 +253,15 @@ let adminRights = function() {
 
 //Adds admin 'remove' and 'edit' buttons for existing products
 let addAdminButtons = function(){
+    
     //Adds admin buttons for current product cards when admin logs in
-    for (let i=0; i<document.querySelectorAll(".product-card").length; i++){
-
+    let productCards = document.querySelectorAll(".product-card");
+    let buttonWrappers = document.querySelectorAll(".button-wrapper");
+    for (let i=0; i<productCards.length; i++){
+        
         //Inserts button wrapper for admin buttons to product card only if product card doesn't contain such button wrapper already
-        if (!document.querySelectorAll(".product-card")[i].contains(document.querySelectorAll(".button-wrapper")[i])){
-            document.querySelectorAll(".product-card")[i].appendChild(adminButtonsMaker());
+        if (!productCards[i].contains(buttonWrappers[i])){
+            productCards[i].appendChild(adminButtonsMaker());
         }
     }
 }
@@ -345,11 +358,11 @@ function imgSearchMaker(){
 
     //<form class="add-img"></form>
     let form = document.createElement("form"); //New form
-    form.classList.add("new-img");             //Add class .new-img
+    form.classList.add("search-img");          //Add class .search-img
 
     //<input class="search-input"></input> (default type is 'text')
     let input = document.createElement("input"); //New input
-    input.classList.add("search-input");          //Add class .search-input
+    input.classList.add("search-input");         //Add class .search-input
     form.appendChild(input);                     //Appends input into form
 
     //<button></button>
@@ -383,15 +396,12 @@ function imgSearchMaker(){
 
 function removeImages(){
 
-    if(document.querySelector("main").contains(document.querySelector(".img-wrapper"))){
-        document.querySelector(".img-wrapper").remove();
-    }
-    // for(i=document.querySelectorAll(".img-suggestion").length; i>=document.querySelectorAll(".img-suggestion").length; i--){
+    let imgWrapper = document.querySelector(".img-wrapper");
 
-    //     if(document.querySelectorAll(".img-suggestion").length>0){                //Check first if there are at least one element with class .img-suggestion
-    //         document.querySelectorAll(".img-suggestion")[i-1].remove();           //Remove element with class .img-suggestion
-    //     }
-    // }
+    if(main.contains(imgWrapper)){
+        imgWrapper.remove();
+    }
+
 }
 
 

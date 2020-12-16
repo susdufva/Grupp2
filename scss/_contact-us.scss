@@ -3,3 +3,57 @@
     justify-content: center;
 }
 
+.logo {
+    font-family: 'Bebas Neue';
+    text-transform: uppercase;
+}
+
+
+
+label, input {
+    display: block;
+    align-content: center;
+}
+
+#text {
+    margin: 2rem;
+    padding: 2rem;
+    height: 5rem;
+    border: 2px black solid;
+}
+
+#name {
+    margin: 1rem;
+    padding: 0.5rem;
+    width: 50%;
+}
+
+#mail {
+    margin: 1rem;
+    padding: 0.5rem;
+    width: 50%;
+}
+
+#message {
+    margin: 1rem;
+    padding: 0.5rem;
+    height: 10rem;
+    width: 50%;
+}
+
+.send-button {
+    margin: 1rem;
+    width: 50%;
+    height: auto;
+    display: block;
+
+}
+
+
+
+
+
+
+
+
+

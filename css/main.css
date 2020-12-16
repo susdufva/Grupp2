@@ -1,8 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* first design for phone 280px*/
@@ -40,10 +39,7 @@
 }
 
 .product-img, .product-name, .product-description, .product-price {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   padding: 0.1rem;
   border-radius: 0.2rem;
 }
@@ -59,11 +55,8 @@
   width: 220px;
   top: 0;
   right: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .img-wrapper > img {
@@ -73,8 +66,6 @@
 
 /* first design for mobile phones 280px*/
 .footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   text-align: center;
   /*background-color:rgb(99, 87, 76);*/
@@ -83,10 +74,7 @@
   font-size: 1.2rem;
   height: auto;
   width: auto;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 .opening, .location-1, .location-2, .contact {
@@ -105,8 +93,7 @@
 
 .contact-us:hover {
   color: black;
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+  text-decoration-line: underline;
 }
 
 #fedex {
@@ -118,15 +105,9 @@ header {
   height: 50vh;
   font-family: 'Bebas Neue';
   background: url(../img/background-header.jpg);
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 /* media queries for larger devices, Ipads & Tablets etc */
@@ -149,24 +130,17 @@ header {
   .product-card {
     display: inline-block;
     width: 35%;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     margin-top: 3rem;
     margin-left: 1rem;
     margin-right: 1rem;
   }
   .product-pic, .product-name, .product-description, .product-price {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
   }
   .footer {
     font-size: 1.3rem;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    justify-content: space-evenly;
     border-top: 1.2rem solid rgba(0, 0, 0, 0.425);
   }
 }
@@ -185,14 +159,9 @@ header {
   }
   .footer {
     font-size: 1.2rem;
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
     display: inline-flex;
     width: 100%;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
     height: auto;
   }
   .opening, .location-1, .loctation-2, .contact {
@@ -209,22 +178,56 @@ header {
 }
 
 .contact-us-1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
+}
+
+.logo {
+  font-family: 'Bebas Neue';
+  text-transform: uppercase;
+}
+
+label, input {
+  display: block;
+  align-content: center;
+}
+
+#text {
+  margin: 2rem;
+  padding: 2rem;
+  height: 5rem;
+  border: 2px black solid;
+}
+
+#name {
+  margin: 1rem;
+  padding: 0.5rem;
+  width: 50%;
+}
+
+#mail {
+  margin: 1rem;
+  padding: 0.5rem;
+  width: 50%;
+}
+
+#message {
+  margin: 1rem;
+  padding: 0.5rem;
+  height: 10rem;
+  width: 50%;
+}
+
+.send-button {
+  margin: 1rem;
+  width: 50%;
+  height: auto;
+  display: block;
 }
 
 .nav-bar {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
+  flex-direction: column-reverse;
   margin: auto;
   width: 100%;
   background: rgba(255, 255, 255, 0.63);
@@ -232,11 +235,8 @@ header {
 }
 
 .nav-links {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  align-self: flex-end;
 }
 
 .logo {
@@ -253,15 +253,9 @@ header {
 }
 
 .nav-links {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   width: 40%;
   list-style: none;
 }
@@ -279,15 +273,9 @@ header {
 }
 
 .cart {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   margin-left: 20px;
 }
 
@@ -313,8 +301,7 @@ header {
   position: absolute;
   background-color: #fcf9f9;
   /*font-size: 1.5rem;*/
-  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   padding: 15px;
   width: auto;
@@ -366,21 +353,15 @@ header {
 }
 
 .products-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  justify-content: center;
+  flex-wrap: wrap;
   padding-bottom: 100px;
 }
 
 .products-container {
   max-width: 1000px;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   margin: 0 auto;
   margin-top: 6vh;
 }
@@ -395,12 +376,8 @@ header {
 .product-header {
   width: 100%;
   max-width: 1000px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  justify-content: flex-start;
   border-bottom: 5px solid #b68282;
   margin: 0 auto;
 }
@@ -413,57 +390,37 @@ header {
 .price {
   width: 15%;
   border-bottom: 1px solid #b68282;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .quantity {
   width: 30%;
   border-bottom: 1px solid #b68282;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .total {
   width: 10%;
   border-bottom: 1px solid #b68282;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .product {
   width: 45%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-around;
+  align-items: center;
   padding: 10px 0;
   border-bottom: 1px solid #b68282;
 }
 
 .products {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .product img {
@@ -471,12 +428,8 @@ header {
 }
 
 .TotalContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  justify-content: flex-end;
   width: 100%;
   padding: 10px 0;
 }
@@ -488,3 +441,4 @@ header {
 .AttBetala {
   width: 10%;
 }
+/*# sourceMappingURL=main.css.map */

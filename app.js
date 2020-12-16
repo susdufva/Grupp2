@@ -473,6 +473,12 @@ async function createImages(search, prependNode) {
             console.log(image);
             image.setAttribute("src", src.value);
             image.setAttribute("alt", alt.value);
+
+            //After changing image, close wrapper for suggested images
+            prependNode.querySelector(".img-wrapper").remove();
+
+            //Clear value from img search input
+            prependNode.querySelector(".search-input").value = "";
         })
 
         //Appends image into .img-wrapper

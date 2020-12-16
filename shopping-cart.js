@@ -122,7 +122,7 @@ function displayCart(){
         deleteBtn();
     }
 }
-//Delete knapp 
+/*Delete knapp kolla med Rakib
 function deleteBtn() {
     let deleteBtn = document.querySelectorAll('.product ion-icon');
     let productNumbers = localStorage.getItem('cartNumbers');
@@ -147,7 +147,7 @@ function deleteBtn() {
         })
     }
 }
-
+*/
 //LoadCartNumbers funktion kommer aldrig att funka om man inta kallar på det så där av 
 LoadCartNumbers();
 displayCart();

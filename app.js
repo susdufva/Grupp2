@@ -94,6 +94,15 @@ let addForm = function() {
     //<form class="new-product"></form>
     let form = document.createElement("form");
     form.classList.add("new-product");
+
+    //Input for searching Unsplash img
+    let imgUrl = document.createElement("input");   
+    imgUrl.classList.add("img-url");
+    let placeholder = document.createAttribute("placeholder");
+    placeholder.value = "Ange URL";
+    imgUrl.setAttributeNode(placeholder);
+    
+    form.appendChild(imgUrl);
      
     //Creates new label and input elements for the form with parameters for specified attribute values and element content
     let inputMaker = function(elementContent, attributeValue){
@@ -248,6 +257,11 @@ let adminRights = function() {
     addForm();              //Adds form to create products
     addAdminButtons();      //Adds admin buttons to products
     document.querySelector("main").prepend(imgSearchMaker());   //Add image search in main
+    let productCards = document.querySelectorAll(".product-card");
+
+    for (i=0; i<productCards.length; i++){
+        productCards[i].appendChild(imgSearchMaker());
+    }
 }
 
 
@@ -380,13 +394,31 @@ function imgSearchMaker(){
 
     //Adds submit-event to form
     form.addEventListener("submit", function(e){
-        e.preventDefault();             //Prevents default submit behaviour
+        //Prevents default submit behaviour
+        e.preventDefault();
         
         let searchInput = form.querySelector(".search-input").value;
 
-        removeImages(); //Removes images from last search
+        //Removes images from last search
+        (function removeImages(){
+            
+            let imgWrapper = document.querySelector(".img-wrapper");
 
-        createImages(searchInput); //Uses query input value as argument in imgSearchMaker-function
+            if(main.contains(imgWrapper)){
+                imgWrapper.remove();
+            }
+        })();
+
+        createImages(searchInput, form.parentNode); //Uses query input value as argument in imgSearchMaker-function
+
+        //test alternative below
+
+        // //Creates div to contain queried Unsplash images
+        // let image_wrapper = document.createElement("div");
+        // image_wrapper.classList.add("image-wrapper");
+        
+        // //Prepend img wrapper in product card
+        // form.parentNode.prepend(image_wrapper); //Parent of form is product card
         
     });
 
@@ -394,28 +426,18 @@ function imgSearchMaker(){
 
 }
 
-function removeImages(){
-
-    let imgWrapper = document.querySelector(".img-wrapper");
-
-    if(main.contains(imgWrapper)){
-        imgWrapper.remove();
-    }
-
-}
-
-
 
 const apiKey = "6-3PNroGSJbutp9OVfXlkcHpuVysAesfEXAK4R-9vvc"    //50 requests allowed per hour for this API-key. If 0/50 requests remaining, try to another Unsplash API-key.
 
 //Gets data from Unsplash API and creates 10 (default amount) images into .image-wrapper
-async function createImages(search) {
+async function createImages(search, prependNode) {
     let url = `https://api.unsplash.com/search/photos?query=${search}&client_id=${apiKey}`;
     const response = await fetch(url);
     const data = await response.json();
 
     //Creates div to wrap images
     let imgWrapper = document.createElement("div");
+
     imgWrapper.classList.add("img-wrapper");
     // document.body.appendChild(imgWrapper);
 
@@ -444,6 +466,13 @@ async function createImages(search) {
         //Clicking on an image makes it the new product image
         img.addEventListener("click", function(e){
             // imgSuggest();
+            console.log("Clicking this image should make it the image of this product card");
+
+            //Change product picture to this clicked picture
+            let image = prependNode.querySelector(".product-img")
+            console.log(image);
+            image.setAttribute("src", src.value);
+            image.setAttribute("alt", alt.value);
         })
 
         //Appends image into .img-wrapper
@@ -451,6 +480,6 @@ async function createImages(search) {
 
     }
 
-    document.querySelector("main").prepend(imgWrapper);
+    prependNode.prepend(imgWrapper);
 
 }

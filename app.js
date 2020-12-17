@@ -5,7 +5,6 @@ const body = document.body;
 const main = document.querySelector("main");
 
 
-
 let adminLoggedIn = false; 
 
 //Adds login function to login form
@@ -40,12 +39,13 @@ function logIn(){
 
         adminLoggedIn = true;   //Sets admin logged in status to true
 
-        document.querySelector(".dropdown").classList.toggle("dropdown-login"); //Toggles .dropdown-login for CSS, to display dropdown menu when logged out
+        //Toggles .dropdown-login for CSS, to display dropdown menu when logged out 
+        document.querySelector(".dropdown").classList.toggle("dropdown-login"); 
         
     } else {
         wrong.innerText = "Fel användarnamn eller lösenord"
         var div = document.querySelector(".login-box");
-        div.appendChild(wrong);
+            div.appendChild(wrong);
     }
 
 }
@@ -53,126 +53,29 @@ function logIn(){
 //Psuedo-logout
 let logOut = function(){   
 
-    //Removes form that creates new products
+    //Removes button that creates new products
     let newProductForm = document.querySelector(".new-product");
-    if (body.contains(newProductForm)){
-        newProductForm.remove();
-    }
-    
-    //Removes form that searches for Unsplash images
-    let searchImg = document.querySelector(".search-img");
-
-    if (body.contains(searchImg)){
-        searchImg.remove();
-    }
-
-    //Removes container of Unsplash suggestion images
-    let imgWrapper = document.querySelector(".img-wrapper");
-    if (body.contains(imgWrapper)){
-        imgWrapper.remove();
-    }
+    newProductForm.remove();
 
     //Changes button text to "Logga in"
-    document.querySelector(".dropbtn").innerHTML = "Logga in";          
+    document.querySelector(".dropbtn").innerHTML = "Logga in";
 
     //Removes admin buttons from all products
     let buttonWrappers = document.querySelectorAll(".button-wrapper");
-
     for (let i=buttonWrappers.length-1; i>=0; i--){
         buttonWrappers[i].remove();
+    }
+
+    //Removes image search from all products
+    let imgSearchAll = document.querySelectorAll(".search-img");
+    for (let i=imgSearchAll.length-1; i>=0; i--){
+        imgSearchAll[i].remove();
     }
 
     document.querySelector(".dropdown").classList.toggle("dropdown-login");     //Toggles .dropdown-login for CSS, to not display dropdown menu when logged out
 
     adminLoggedIn = false;  //Sets admin logged in status to false
 };
-
-
-//Creates form that admin uses to add new products
-let addForm = function() {
-
-    //<form class="new-product"></form>
-    let form = document.createElement("form");
-    form.classList.add("new-product");
-
-    //Input for searching Unsplash img
-    let imgUrl = document.createElement("input");   
-    imgUrl.classList.add("img-url");
-    let placeholder = document.createAttribute("placeholder");
-    placeholder.value = "Ange URL";
-    imgUrl.setAttributeNode(placeholder);
-    
-    form.appendChild(imgUrl);
-     
-    //Creates new label and input elements for the form with parameters for specified attribute values and element content
-    let inputMaker = function(elementContent, attributeValue){
-
-        //<label for="attributeValue">elementContent</label>
-        let label = document.createElement("label");      //New label element
-        label.innerText = elementContent;                 //Sets innertext
-        let attFor = document.createAttribute("for");     //New attribute
-        attFor.value = attributeValue;                    //Sets attribute value
-        label.setAttributeNode(attFor);                   //Adds 'for' attribute to label element
-
-        //<input type="text" id="attributeValue">
-        let textInput = document.createElement("input");  //New input element
-        let attType = document.createAttribute("type");   //New attribute
-        let attId = document.createAttribute("id");       //New attribute
-        attType.value = "text";                           //Sets attribute value
-        attId.value = attributeValue;                     //Sets attribute value
-        textInput.setAttributeNode(attType);              //Adds 'type' attribute to input element
-        textInput.setAttributeNode(attId);                //Adds 'id' attribute to input element
-
-        //Appends new label and input into form
-        form.appendChild(label);
-        form.appendChild(textInput);
-
-    }
-
-    //Makes labels & inputs and appends into form with inputMaker 
-    inputMaker("Namn", "new-product__name");
-    inputMaker("Beskrivning", "new-product__description");
-    inputMaker("Pris", "new-product__price");
-
-    //Creates button
-    //<button>Lägg till</button>
-    let addBtn = document.createElement("button");         //New button element
-    addBtn.innerText = "Lägg till";                        //Sets innertext
-    
-    //Appends new button into form
-    form.appendChild(addBtn);
-
-    /*New form:
-    <form class="new-product">
-        <label for="new-product__name">Namn</label>
-        <input id="new-product__name">
-        <label for="new-product__description">Beskrivning</label>
-        <input id="new-product__description">
-        <label for="new-product__price">Pris</label>
-        <input id="new-product__price">
-        <button>Lägg till</button>
-    </form>*/
-
-    //Adds event listener to the form
-    form.addEventListener("submit", function(e){
-        e.preventDefault(); //Prevents default submit behavior
-
-        let newProductName = document.querySelector("#new-product__name");                  //New product name
-        let newProductDescription = document.querySelector("#new-product__description");    //New product description
-        let newProductPrice = document.querySelector("#new-product__price");                //New product price
-        
-        //Creates new products using form input values as arguments for function newProduct(name, price, description)
-        newProductMaker(newProductName.value, newProductDescription.value, Number(newProductPrice.value));
-
-        //Adds admin buttons to the products created by newProduct
-        addAdminButtons();  
-
-    });
-
-    //Prepends new form in main
-    document.querySelector("main").prepend(form); 
-}
-
 
 //Function creating new product cards from form inputs
 let newProductMaker = function(name, description, price) {
@@ -247,6 +150,12 @@ let newProductMaker = function(name, description, price) {
         <button>Lägg till i kundvagn</button>
     </div>*/
 
+    //Appends 'remove' and 'edit' button to new product
+    productCard.appendChild(adminButtonsMaker());
+
+    //Appends Unsplash img search to new product
+    productCard.appendChild(imgSearchMaker());
+
     //Appends product card into product list
     productList.appendChild(productCard);
 }
@@ -254,34 +163,35 @@ let newProductMaker = function(name, description, price) {
 
 //Function to run admin rights
 let adminRights = function() {
-    addForm();              //Adds form to create products
-    addAdminButtons();      //Adds admin buttons to products
-    document.querySelector("main").prepend(imgSearchMaker());   //Add image search in main
+
+    createNewProductBtn();  //Adds button to add new product
+
     let productCards = document.querySelectorAll(".product-card");
 
+    for (let i=0; i<productCards.length; i++){
+        //Adds 'remove' and 'edit' buttons to all products
+        productCards[i].appendChild(adminButtonsMaker());
+    }
+
+    //Adds img search to all products
     for (i=0; i<productCards.length; i++){
         productCards[i].appendChild(imgSearchMaker());
     }
 }
 
-
-//Adds admin 'remove' and 'edit' buttons for existing products
-let addAdminButtons = function(){
+//Create button that adds new products and prepend it into main
+function createNewProductBtn(){
     
-    //Adds admin buttons for current product cards when admin logs in
-    let productCards = document.querySelectorAll(".product-card");
-    let buttonWrappers = document.querySelectorAll(".button-wrapper");
-    for (let i=0; i<productCards.length; i++){
-        
-        //Inserts button wrapper for admin buttons to product card only if product card doesn't contain such button wrapper already
-        if (!productCards[i].contains(buttonWrappers[i])){
-            productCards[i].appendChild(adminButtonsMaker());
-        }
-    }
+    let newProductBtn = document.createElement("button");
+    newProductBtn.classList.add("new-product");
+    newProductBtn.innerText = "Lägg till ny produkt";
+
+    newProductBtn.addEventListener("click", newProductMaker);
+
+    main.prepend(newProductBtn);
 }
 
-
-//Creates admin buttons
+//Creates admin 'delete' and 'edit' button. Returns div containing new buttons.
 let adminButtonsMaker = function(){
 
     //Creates a div to wrap both buttons
@@ -306,43 +216,6 @@ let adminButtonsMaker = function(){
     editBtn.classList.add("edit-btn");                          //Adds class .edit-btn
     editBtn.innerText = "Redigera";                             //Sets innertext
 
-    //Form to add/change image of current product card
-    let imgForm = document.createElement("form");
-    imgForm.classList.add(".img-form");
-
-    //Input to img form
-    let imgUrl = document.createElement("input");
-    imgUrl.classList.add("img-url");
-    let placeholder = document.createAttribute("placeholder");
-    placeholder.value = "Ange URL";
-    imgUrl.setAttributeNode(placeholder);
-    
-    imgForm.appendChild(imgUrl);
-
-    // Button to add or change image of current product card
-    // <button class="img-btn">Ändra bild</button>
-    let imgBtn = document.createElement("button");
-    imgBtn.classList.add("img-btn");
-    imgBtn.innerText ="Ändra bild";
-    
-
-    imgForm.appendChild(imgBtn)
-
-    imgForm.addEventListener("submit", function(e){
-
-        e.preventDefault();
-
-        let currentImg = imgBtn.parentNode.parentNode.parentNode.firstElementChild; //Img of current card
-        console.log(currentImg);
-
-        currentImg.setAttribute("src", imgUrl.value);
-        // currentImg.setAttribute("src", imgSuggest());
-
-        imgUrl.value = "";
-
-        console.log("Clicking this button should change img of current product card to img of url input");
-    });
-
     //Adds event to button to set new innerText to product info elements: name, description, price
     //1st parent is button wrapper, 1st previous sibling is 'add to cart'-button, 2nd previous sibling is 'product info'-wrapper
     editBtn.addEventListener("click", function(){
@@ -354,7 +227,6 @@ let adminButtonsMaker = function(){
     //Appends buttons to button wrapper
     btnWrapper.appendChild(delBtn);
     btnWrapper.appendChild(editBtn);
-    btnWrapper.appendChild(imgForm);
 
     /*New button wrapper
     <div class="button-wrapper">
@@ -365,23 +237,18 @@ let adminButtonsMaker = function(){
     return btnWrapper;
 }
 
-//-------------------------
-//Add image feature
-
+//Add image feature. Returns form that searches for Unsplash image
 function imgSearchMaker(){
 
-    //<form class="add-img"></form>
     let form = document.createElement("form"); //New form
     form.classList.add("search-img");          //Add class .search-img
 
-    //<input class="search-input"></input> (default type is 'text')
     let input = document.createElement("input"); //New input
     input.classList.add("search-input");         //Add class .search-input
     form.appendChild(input);                     //Appends input into form
 
-    //<button></button>
     let btn = document.createElement("button"); //New button
-    btn.innerText = "Sök bild";
+    btn.innerText = "Sök bild";                 //Add innertext
     form.appendChild(btn);                      //Appends button into form
 
     /*New form structure
@@ -391,15 +258,12 @@ function imgSearchMaker(){
     </form>
     */
 
-
     //Adds submit-event to form
     form.addEventListener("submit", function(e){
         //Prevents default submit behaviour
         e.preventDefault();
-        
-        let searchInput = form.querySelector(".search-input").value;
 
-        //Removes images from last search
+        //Removes images from previous search
         (function removeImages(){
             
             let imgWrapper = document.querySelector(".img-wrapper");
@@ -409,21 +273,13 @@ function imgSearchMaker(){
             }
         })();
 
-        createImages(searchInput, form.parentNode); //Uses query input value as argument in imgSearchMaker-function
+        let searchInput = form.querySelector(".search-input");
 
-        //test alternative below
-
-        // //Creates div to contain queried Unsplash images
-        // let image_wrapper = document.createElement("div");
-        // image_wrapper.classList.add("image-wrapper");
-        
-        // //Prepend img wrapper in product card
-        // form.parentNode.prepend(image_wrapper); //Parent of form is product card
+        createImages(searchInput.value, form.parentNode); //Passes img search input value into imgSearchMaker-function
         
     });
 
     return form;
-
 }
 
 

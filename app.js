@@ -72,6 +72,12 @@ let logOut = function(){
         imgSearchAll[i].remove();
     }
 
+    //Remove edit form from products
+    let editForms = document.querySelectorAll(".edit-form");
+    for (let i=editForms.length-1; i>=0; i--){
+        editForms[i].remove();
+    }
+
     document.querySelector(".dropdown").classList.toggle("dropdown-login");     //Toggles .dropdown-login for CSS, to not display dropdown menu when logged out
 
     adminLoggedIn = false;  //Sets admin logged in status to false

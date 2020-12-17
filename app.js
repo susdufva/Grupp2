@@ -219,9 +219,65 @@ let adminButtonsMaker = function(){
     //Adds event to button to set new innerText to product info elements: name, description, price
     //1st parent is button wrapper, 1st previous sibling is 'add to cart'-button, 2nd previous sibling is 'product info'-wrapper
     editBtn.addEventListener("click", function(){
-        editBtn.parentNode.previousElementSibling.previousElementSibling.querySelector(".product-name").innerText = prompt("Produktnamn: ");
-        editBtn.parentNode.previousElementSibling.previousElementSibling.querySelector(".product-description").innerText = prompt("Produktbeskrivning: ");
-        editBtn.parentNode.previousElementSibling.previousElementSibling.querySelector(".product-price").innerText = prompt("Pris: ");
+        
+        //Create form for editing product info
+        let form = document.createElement("form");
+        form.classList.add("edit-form");
+
+        
+        //Create labels and inputs to form
+        function labelsAndInputsMaker(elementContent, attributeValue){
+            //New label with 'for' attribute
+            // let label = document.createElement("label");
+            // let forAtt = document.createAttribute("for");
+            //Function inputs decide for attribute 
+            // forAtt.value = attributeValue;
+            // label.innerText = elementContent;
+            
+
+            // label.setAttributeNode(forAtt);
+            // form.appendChild(label);
+            
+            //New input with 'id' attribute
+            let input = document.createElement("input");
+            let idAtt = document.createAttribute("id");
+            let phAtt = document.createAttribute("placeholder");
+            phAtt.value = elementContent;
+            input.setAttributeNode(phAtt);
+            idAtt.value = attributeValue;
+            input.setAttributeNode(idAtt);
+
+            form.appendChild(input);
+        }
+
+        //Creating new inputs with labels to form
+        labelsAndInputsMaker("Ange nytt produktnamn", "new-name");
+        labelsAndInputsMaker("Ange ny produktbeskrivning", "new-description");
+        labelsAndInputsMaker("Ange nytt pris", "new-price");
+
+        //Create submit button for form
+        let submit = document.createElement("button");
+        submit.innerText = "Spara";
+        form.appendChild(submit);
+
+
+        //Save edited product info
+        form.addEventListener("submit", (e)=>{
+            e.preventDefault();
+
+            //Change values of product info innertexts to submitted input values
+            productInfoDiv.querySelector(".product-name").innerText = productInfoDiv.querySelector("#new-name").value;
+            productInfoDiv.querySelector(".product-description").innerText = productInfoDiv.querySelector("#new-description").value;
+            productInfoDiv.querySelector(".product-price").innerText = productInfoDiv.querySelector("#new-price").value;
+
+            //Remove form after submit
+            form.remove();
+        })
+
+        let productInfoDiv = editBtn.parentNode.previousElementSibling.previousElementSibling;
+        productInfoDiv.appendChild(form);
+
+        // editBtn.parentNode.previousElementSibling.previousElementSibling.querySelector(".product-price").innerText = prompt("Pris: ");
     });
 
     //Appends buttons to button wrapper
@@ -264,17 +320,12 @@ function imgSearchMaker(){
         e.preventDefault();
 
         //Removes images from previous search
-        (function removeImages(){
-            
-            let imgWrapper = document.querySelector(".img-wrapper");
-
-            if(main.contains(imgWrapper)){
-                imgWrapper.remove();
-            }
-        })();
+        let imgWrapper = document.querySelector(".img-wrapper");
+        if(main.contains(imgWrapper)){
+            imgWrapper.remove();
+        }
 
         let searchInput = form.querySelector(".search-input");
-
         createImages(searchInput.value, form.parentNode); //Passes img search input value into imgSearchMaker-function
         
     });
@@ -286,7 +337,7 @@ function imgSearchMaker(){
 const apiKey = "6-3PNroGSJbutp9OVfXlkcHpuVysAesfEXAK4R-9vvc"    //50 requests allowed per hour for this API-key. If 0/50 requests remaining, try to another Unsplash API-key.
 
 //Gets data from Unsplash API and creates 10 (default amount) images into .image-wrapper
-async function createImages(search, prependNode) {
+async function createImages(search, ancestorNode) {
     let url = `https://api.unsplash.com/search/photos?query=${search}&client_id=${apiKey}`;
     const response = await fetch(url);
     const data = await response.json();
@@ -295,7 +346,6 @@ async function createImages(search, prependNode) {
     let imgWrapper = document.createElement("div");
 
     imgWrapper.classList.add("img-wrapper");
-    // document.body.appendChild(imgWrapper);
 
     for (i=0; i<data.results.length; i++){
         console.log(data.results[i].urls.small);
@@ -321,27 +371,23 @@ async function createImages(search, prependNode) {
 
         //Clicking on an image makes it the new product image
         img.addEventListener("click", function(e){
-            // imgSuggest();
-            console.log("Clicking this image should make it the image of this product card");
 
             //Change product picture to this clicked picture
-            let image = prependNode.querySelector(".product-img")
+            let image = ancestorNode.querySelector(".product-img")
             console.log(image);
             image.setAttribute("src", src.value);
             image.setAttribute("alt", alt.value);
 
             //After changing image, close wrapper for suggested images
-            prependNode.querySelector(".img-wrapper").remove();
+            ancestorNode.querySelector(".img-wrapper").remove();
 
             //Clear value from img search input
-            prependNode.querySelector(".search-input").value = "";
+            ancestorNode.querySelector(".search-input").value = "";
         })
 
         //Appends image into .img-wrapper
         imgWrapper.appendChild(img);
-
     }
 
-    prependNode.prepend(imgWrapper);
-
+    ancestorNode.prepend(imgWrapper);
 }

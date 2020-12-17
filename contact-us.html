@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foodie Express</title>
     <link href="https://pbs.twimg.com/profile_images/425275803132121088/bUBlwHSf.png" rel="shortcut icon">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&family=Yantramanav&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css"> 
 </head>
 <body>
@@ -22,10 +23,19 @@
     </header>
 
     <div class="contact-us-1">
-        <p id="contact-text">Här kan du kontakta oss via mail om du har några frågor eller vill göra en större bokning
-        </p>
-        <input class="mail" type="mail" placeholder="Din mailadress">
-        <input class="message" type="text" placeholder="Ditt meddelande">
-        <button class="send-button">Skicka</button>
+        <form>
+        <div id="text">Här kan du kontakta oss via mail om du har några frågor eller vill göra en större bokning
+    </div>
+    <label for="name">Name</label>
+    <input type=text id=name name=name class="name" placeholder="First- and lastname">
+
+    <label for="email">E-mail</label>
+        <input type="email" id="mail" name=email class="mail"placeholder="Enter Email">
+
+        <label for="message">Your message</label>
+        <textarea id="message" name="message" class="message" placeholder="Your message"></textarea>
+
+        <button class="send-button">Send</button>
+    </form>
     </div>
 </body>

@@ -72,6 +72,12 @@ let logOut = function(){
         imgSearchAll[i].remove();
     }
 
+    //Remove edit form from products
+    let editForms = document.querySelectorAll(".edit-form");
+    for (let i=editForms.length-1; i>=0; i--){
+        editForms[i].remove();
+    }
+
     document.querySelector(".dropdown").classList.toggle("dropdown-login");     //Toggles .dropdown-login for CSS, to not display dropdown menu when logged out
 
     adminLoggedIn = false;  //Sets admin logged in status to false
@@ -225,35 +231,25 @@ let adminButtonsMaker = function(){
         form.classList.add("edit-form");
 
         
-        //Create labels and inputs to form
-        function labelsAndInputsMaker(elementContent, attributeValue){
-            //New label with 'for' attribute
-            // let label = document.createElement("label");
-            // let forAtt = document.createAttribute("for");
-            //Function inputs decide for attribute 
-            // forAtt.value = attributeValue;
-            // label.innerText = elementContent;
-            
-
-            // label.setAttributeNode(forAtt);
-            // form.appendChild(label);
+        //Create inputs to form
+        function inputMaker(placeholder, id){
             
             //New input with 'id' attribute
             let input = document.createElement("input");
             let idAtt = document.createAttribute("id");
             let phAtt = document.createAttribute("placeholder");
-            phAtt.value = elementContent;
+            phAtt.value = placeholder;
             input.setAttributeNode(phAtt);
-            idAtt.value = attributeValue;
+            idAtt.value = id;
             input.setAttributeNode(idAtt);
 
             form.appendChild(input);
         }
 
         //Creating new inputs with labels to form
-        labelsAndInputsMaker("Ange nytt produktnamn", "new-name");
-        labelsAndInputsMaker("Ange ny produktbeskrivning", "new-description");
-        labelsAndInputsMaker("Ange nytt pris", "new-price");
+        inputMaker("Ange nytt produktnamn", "new-name");
+        inputMaker("Ange ny produktbeskrivning", "new-description");
+        inputMaker("Ange nytt pris", "new-price");
 
         //Create submit button for form
         let submit = document.createElement("button");

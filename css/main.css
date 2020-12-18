@@ -69,7 +69,7 @@
 .footer {
   display: flex;
   text-align: center;
-  background: url(../img/background-header.jpg);
+  background: url(/img/background-header.jpg);
   color: whitesmoke;
   font-size: 1.2rem;
   height: auto;
@@ -386,13 +386,7 @@ label, input {
 }
 
 /* media queries for larger devices, Ipads & Tablets etc */
-@media (min-width: 767px) {
-  .nav-links {
-    margin-top: 1rem;
-    width: 30%;
-    display: flex;
-    align-self: flex-end;
-  }
+@media (min-width: 768px) {
   .admin-login {
     background-color: #cac6c1;
     margin-top: -0.10%;

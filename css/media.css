@@ -1,19 +1,13 @@
 /* media queries for larger devices, Ipads & Tablets etc */
 @media (min-width: 768px) {
-  nav-links {
-    width: 100%;
+  .nav-bar {
+    display: flex;
+    justify-content: flex-end;
   }
-  /*  .nav-bar {
-        height: 1rem;
-    }
-
-
-    .nav-links {
-        margin-top: 1rem;
-        display: flex;
-        align-self: flex-end;
-     }
- */
+  .nav-links {
+    display: flex;
+    justify-content: flex-end;
+  }
   .admin-login {
     background-color: #cac6c1;
     margin-top: -0.10%;
@@ -74,4 +68,4 @@
     border-bottom: 0.7rem solid rgba(0, 0, 0, 0.877);
   }
 }
-/*# sourceMappingURL=mediaqueries.css.map */
+/*# sourceMappingURL=media.css.map */

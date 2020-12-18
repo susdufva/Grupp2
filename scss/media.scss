@@ -3,19 +3,16 @@
 @media (min-width: 768px) {
 
 
-
     .nav-bar {
-        height: 1rem;
+        display: flex;
+        justify-content: flex-end;
     }
 
-
     .nav-links {
-        margin-top: 1rem;
         display: flex;
-        align-self: flex-end;
-     }
+        justify-content: flex-end;
+    }
 
-     
 
     .admin-login {
         background-color: rgb(202, 198, 193);

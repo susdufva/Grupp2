@@ -7,12 +7,9 @@
 
 /* first design for phone 280px*/
 .add-cart {
-  /* position: absolute; */
-  width: auto;
-  background-color: #cac6c1;
-  text-decoration: none;
-  text-align: center;
-  padding: 0.2rem;
+  background-color: #f5ebdc;
+  border: 1px solid;
+  padding: 0.3rem;
   border-radius: 0.3rem;
 }
 
@@ -83,7 +80,7 @@
 }
 
 .copyright {
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .contact-us {

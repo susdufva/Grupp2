@@ -167,13 +167,12 @@ label, input {
 }
 
 .nav-bar {
-  display: flex;
   flex-direction: column-reverse;
   margin: auto;
   width: 100%;
   background: rgba(255, 255, 255, 0.63);
   position: fixed;
-  height: 4rem;
+  height: 2.7rem;
 }
 
 .nav-links {
@@ -199,11 +198,13 @@ label, input {
 .contact-link {
   margin-left: 20px;
   font-size: 1.3rem;
+  font-family: 'Yantramanav', sans-serif;
+  font-weight: bold;
 }
 
 .nav-links a {
   text-decoration: none;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   color: rgba(0, 0, 0, 0.808);
   text-shadow: 1px 1px rgba(255, 255, 255, 0.699);
 }
@@ -225,12 +226,14 @@ label, input {
 /*Dropdown Button */
 .dropbtn {
   color: black;
-  font-size: 1.1rem;
-  letter-spacing: 1px;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
   border: none;
   font-weight: bold;
   background-color: initial;
   width: 6rem;
+  font-family: 'Yantramanav', sans-serif;
+  text-shadow: 1px 1px rgba(255, 255, 255, 0.699);
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -252,28 +255,34 @@ label, input {
 
 /*text paragraf in dropdown*/
 #drop-p {
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 5px;
+  font-family: 'Yantramanav', sans-serif;
+  padding: 2px;
+  margin-bottom: 10px;
 }
 
 .wrong {
-  font-size: 1.2rem;
-  padding-top: 13px;
+  font-size: 1rem;
+  margin-top: 20px;
   padding-bottom: 7px;
+  font-family: 'Yantramanav', sans-serif;
+  text-align: center;
 }
 
 /* input field */
 .admin {
   padding: 3px;
+  margin-right: 10px;
 }
 
 #login-btn {
   margin: 8px 2px 0 0px;
   position: relative;
-  left: 20%;
+  left: 60%;
   padding: 2px 7px;
-  border: 2px inset rgba(208, 129, 129, 0.116) solid;
+  border: 1px inset rgba(208, 129, 129, 0.116) solid;
   border-radius: 2px;
   background-color: white;
   font-family: 'Yantramanav', sans-serif;

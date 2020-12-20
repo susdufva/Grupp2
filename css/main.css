@@ -101,7 +101,7 @@ i {
 
 /*header*/
 header {
-  height: 40vh;
+  height: 50vh;
   font-family: 'Bebas Neue';
   background: url(../img/background-header.jpg);
   display: flex;

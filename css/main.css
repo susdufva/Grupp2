@@ -7,12 +7,9 @@
 
 /* first design for phone 280px*/
 .add-cart {
-  /* position: absolute; */
-  width: auto;
-  background-color: #cac6c1;
-  text-decoration: none;
-  text-align: center;
-  padding: 0.2rem;
+  background-color: #f5ebdc;
+  border: 1px solid;
+  padding: 0.3rem;
   border-radius: 0.3rem;
 }
 
@@ -47,6 +44,8 @@
 
 .product-img {
   width: 100%;
+  max-height: 300px;
+  min-height: 150px;
 }
 
 .img-wrapper {
@@ -83,7 +82,8 @@
 }
 
 .copyright {
-  padding: 1rem;
+  padding: 0.5rem;
+  background-color: #63574c;
 }
 
 .contact-us {
@@ -103,7 +103,7 @@ i {
 
 /*header*/
 header {
-  height: 40vh;
+  height: 50vh;
   font-family: 'Bebas Neue';
   background: url(../img/background-header.jpg);
   display: flex;
@@ -167,13 +167,12 @@ label, input {
 }
 
 .nav-bar {
-  display: flex;
   flex-direction: column-reverse;
   margin: auto;
   width: 100%;
   background: rgba(255, 255, 255, 0.63);
   position: fixed;
-  height: 4rem;
+  height: 2.7rem;
 }
 
 .nav-links {
@@ -199,11 +198,13 @@ label, input {
 .contact-link {
   margin-left: 20px;
   font-size: 1.3rem;
+  font-family: 'Yantramanav', sans-serif;
+  font-weight: bold;
 }
 
 .nav-links a {
   text-decoration: none;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   color: rgba(0, 0, 0, 0.808);
   text-shadow: 1px 1px rgba(255, 255, 255, 0.699);
 }
@@ -225,12 +226,14 @@ label, input {
 /*Dropdown Button */
 .dropbtn {
   color: black;
-  font-size: 1.1rem;
-  letter-spacing: 1px;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
   border: none;
   font-weight: bold;
   background-color: initial;
   width: 6rem;
+  font-family: 'Yantramanav', sans-serif;
+  text-shadow: 1px 1px rgba(255, 255, 255, 0.699);
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -252,28 +255,34 @@ label, input {
 
 /*text paragraf in dropdown*/
 #drop-p {
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 5px;
+  font-family: 'Yantramanav', sans-serif;
+  padding: 2px;
+  margin-bottom: 10px;
 }
 
 .wrong {
-  font-size: 1.2rem;
-  padding-top: 13px;
+  font-size: 1rem;
+  margin-top: 20px;
   padding-bottom: 7px;
+  font-family: 'Yantramanav', sans-serif;
+  text-align: center;
 }
 
 /* input field */
 .admin {
   padding: 3px;
+  margin-right: 10px;
 }
 
 #login-btn {
   margin: 8px 2px 0 0px;
   position: relative;
-  left: 20%;
+  left: 60%;
   padding: 2px 7px;
-  border: 2px inset rgba(208, 129, 129, 0.116) solid;
+  border: 1px inset rgba(208, 129, 129, 0.116) solid;
   border-radius: 2px;
   background-color: white;
   font-family: 'Yantramanav', sans-serif;
@@ -385,8 +394,26 @@ label, input {
   width: 10%;
 }
 
+.checkout {
+  background: none;
+  border: solid 1px;
+  padding: 3px 5px;
+  margin-top: 70px;
+  position: relative;
+  left: 450px;
+  border-radius: 2px;
+}
+
 /* media queries for larger devices, Ipads & Tablets etc */
 @media (min-width: 768px) {
+  .nav-bar {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .nav-links {
+    display: flex;
+    justify-content: flex-end;
+  }
   .admin-login {
     background-color: #cac6c1;
     margin-top: -0.10%;
@@ -407,15 +434,16 @@ label, input {
   .footer {
     font-size: 1.3rem;
     justify-content: space-evenly;
-    border-top: 0.7rem solid rgba(0, 0, 0, 0.877);
     background-color: #63574c;
+    background-image: none;
   }
   .copyright {
-    border-bottom: 0.7rem solid rgba(0, 0, 0, 0.877);
+    background-color: #63574c;
+    border-bottom: 0.7rem solid rgba(49, 35, 35, 0.534);
   }
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1200px) {
   .logo {
     font-size: 5rem;
   }
@@ -430,7 +458,8 @@ label, input {
     margin-top: 4rem;
   }
   .footer {
-    background-color: #63574c;
+    background-color: blue;
+    background-image: none;
     font-size: 1.2rem;
     display: inline-flex;
     width: 100%;
@@ -441,10 +470,10 @@ label, input {
     padding: 2rem 1rem;
   }
   .copyright {
-    background-color: rgba(255, 255, 255, 0.842);
-    color: rgba(0, 0, 0, 0.733);
+    background-color: #63574c;
+    color: white;
     font-size: 1rem;
-    border-bottom: 0.7rem solid rgba(0, 0, 0, 0.877);
+    border-bottom: 0.7rem solid rgba(49, 35, 35, 0.534);
   }
 }
 /*# sourceMappingURL=main.css.map */

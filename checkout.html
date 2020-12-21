@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://pbs.twimg.com/profile_images/425275803132121088/bUBlwHSf.png" rel="shortcut icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&family=Yantramanav&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="bodyCO">
+    <nav class="nav-bar">
+        <ul class="nav-links">
+            <div class="dropdown dropdown-login">
+                <button class="dropbtn">Logga in</button>
+                <div class="dropdown-content">
+                    <form class="login-box" id="login"> 
+                        <p id="drop-p">Här kan du logga in med administratörs rättigheter för att redigera produkter:</p>
+                        <input class="admin" type="text" name="" placeholder="Användarnamn" id="username">
+                        <input class="admin" type="password" name="" placeholder="Lösenord" id="password">
+                        <button class="admin-login" id="login-btn">Logga in</button>
+                    </form>
+                </div>
+            </div>
+            <li class="contact-link">
+                <a href="#footer">Kontakt</a>
+            </li>
+            <li class="cart">
+                <a href="shopping-cart.html" class="cart-text">
+                    🛒<span class="cart-nr">0</span>
+                </a>  
+            </li>
+        </ul>
+    </nav>
+    <header>
+        <a class="logo" href="index.html">Foodie Express</a>
+    </header>
+    <div>
+        <h3>SLUTFÖR BESTÄLLNING</h3>
+        <div id="error"></div>
+            <div class="row">
+                <div class="col-1">
+                <!-- CO = Checkout -->
+                    <div class="containerCO">
+                        <form id="form">
+                            <div class="row"></div>
+                                <div class="col-2">
+                                
+                                <label for="fname">Förnamn:</label>
+                                <input type="text" id="fnamn" name="förnamn" placeholder=""/>
+                                
+                                <label for="lname">Efternamn:</label>
+                                <input type="text" id="lnamn" name="efternamn" placeholder=""/>
+                                
+                                <label for="email"><i class=""></i>Email:</label>
+                                <input type="text" id="email" name="email" placeholder="exemple11@exemple.com"/>
+
+                                <label for="adress">Adress:</label>
+                                <input type="text" id="adress" name="adress" placeholder="Jungfrusundsvägen 6"/>
+
+                                <label for="stad">Stad:</label>
+                                <input type="text" id="stad" name="stad" placeholder="Stockholm"/>
+                                
+                        <div class="row">
+                            <div class="col-3">
+                                <label for="Ort">Ort:</label>
+                                <input type="text" id="ort" name="ort" placeholder="Stockholm">
+                            </div>
+                            <div class="col-3">
+                                <label for="Postnummer">Postnummer:</label> 
+                                <input type="text" id="Postnummer" name="Postnummer" placeholder="103 16">
+                            </div>      
+                            </div>
+                            </div>
+                            <div class="col-4">
+                                <h3>Betalning</h3>
+                                <label>Vi accepterar</label>
+                                <div class="icons">
+                                    <i class="visa" ></i>
+                                    <i class="mastercard"></i>
+                                </div>
+                                <label>Kort nummer</label>
+                                <input type="text" id="cnumber" placeholder="1111-2222-3333-4444">
+
+                                <label>MM/ÅÅ</label>
+                                <input type="text" id="MMÅÅ" placeholder="12/21">
+                            </div>
+                            </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-5">
+    <div class="containerCO">
+        <h4>Cart</h4>
+    </div>
+</div>
+<button type="submit">Köp</button>
+    <footer>
+        <div class="footer">
+            <p class="opening">
+            <strong>OPENING HOURS:</strong><br> MON......10:00-22:00 <br> TUE......10:00-22:00 <br> WED......10:00-22:00 <br>
+            THU......10:00-22:00 <br> FRI......10:00-00:00 <br> SAT......11:00-00:00 <br> SUN......11:00-18:00
+            </p>
+            <p class="location-1"><strong>LOCATION 1:</strong> <br> Jungfrusundsvägen 6, <br> 178 38 Ekerö</p>
+            <p class="location-2"><strong>LOCATION 2: </strong><br> Vendevägen 16, <br> 182 05 Djursholm</p>
+            <p class="contact"> <strong>CONTACT </strong> <br> PHONE: 08-111 11 11 <br> EMAIL: festcatering@medieinstitutet.se <br> ON SOCIAL MEDIA </p>
+        </div>
+        <p class="copyright"> <strong> &copy; 2020 MADE BY: </strong> Andrés Santana, Malin Sjöblom, Susanna Dufva, Thomas Olsson </p>
+
+
+    </footer>
+    <script src="checkout.js"></script>
+</body>
+</html>

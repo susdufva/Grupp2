@@ -29,7 +29,7 @@
     font-size: 1.3rem;
     justify-content: space-evenly;
     border-top: 0.7rem solid rgba(49, 35, 35, 0.534);
-    background-color: #998674;
+    background-color: #867667;
   }
   .copyright {
     border-bottom: 0.7rem solid rgba(49, 35, 35, 0.534);
@@ -51,7 +51,7 @@
     margin-top: 4rem;
   }
   .footer {
-    background-color: #998674;
+    background-color: #867667;
     font-size: 1.2rem;
     display: inline-flex;
     width: 100%;

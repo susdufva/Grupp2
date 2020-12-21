@@ -6,11 +6,11 @@
 h3{
     text-align: center;
 }
+
 .row{
     display: flex;
     flex-wrap: wrap;
     margin: 0 -10px;
-    width: 90%;
     
 }
 .col-1{
@@ -32,7 +32,7 @@ h3{
     border-radius: 5px;
 }
 .row input[type=text] {
-    width: 100%;
+    width: 90%;
     margin-bottom: 20px;
     padding: 10px;
     border: 1px solid black;

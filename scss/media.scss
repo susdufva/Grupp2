@@ -2,6 +2,10 @@
 
 @media (min-width: 768px) {
 
+    .logo {
+        font-size: 6.5rem;
+    }
+
 
     .nav-bar {
         display: flex;
@@ -52,11 +56,12 @@
 
 
 @media (min-width: 1200px) {
-
+    
     .logo {
-        font-size: 5rem;
+        font-size: 8rem;
     }
     
+
     .nav-links {
         height: 3rem;
         display: flex;

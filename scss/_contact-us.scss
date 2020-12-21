@@ -1,3 +1,7 @@
+body {
+    background-color: rgba(185, 169, 151, 0.856);
+}
+
 .contact-us-1 {
     display: flex;
     justify-content: center;
@@ -21,8 +25,8 @@ li {
 }
 
 label, input {
-margin-left: 10%;
-margin-bottom: 1rem;
+    margin-left: 10%;
+    margin-bottom: 1rem;
     padding: 1rem;
 }
 

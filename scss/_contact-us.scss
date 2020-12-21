@@ -8,45 +8,49 @@
     text-transform: uppercase;
 }
 
+.contact-us-1 {
+    width: 100%;
+}
 
+li {
+    padding-top: 0.5rem;
+}
+
+.form-contact {
+    list-style-type: none;
+}
 
 label, input {
-    display: block;
-    align-content: center;
+margin-left: 10%;
+margin-bottom: 1rem;
+    padding: 1rem;
 }
 
 #text {
+    text-align: center;
     margin: 2rem;
-    padding: 2rem;
-    height: 5rem;
-    border: 2px black solid;
+    padding: 1rem;
+    height: 6rem;
+    border: 7px black solid;
 }
 
-#name {
-    margin: 1rem;
-    padding: 0.5rem;
-    width: 50%;
-}
-
-#mail {
-    margin: 1rem;
-    padding: 0.5rem;
-    width: 50%;
+#name, #mail, #message {
+    margin-left: 15%;
+    margin-right: auto;
+    padding-left: 0.5rem;
+    width: 70%;
 }
 
 #message {
-    margin: 1rem;
-    padding: 0.5rem;
-    height: 10rem;
-    width: 50%;
+    height: 8rem;
 }
 
 .send-button {
-    margin: 1rem;
+    margin-left: 25%;
     width: 50%;
     height: auto;
-    display: block;
-
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 

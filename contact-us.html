@@ -6,36 +6,74 @@
     <title>Foodie Express</title>
     <link href="https://pbs.twimg.com/profile_images/425275803132121088/bUBlwHSf.png" rel="shortcut icon">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&family=Yantramanav&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css"> 
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://kit.fontawesome.com/6481911f47.js" crossorigin="anonymous"></script> 
 </head>
 <body>
+    <nav class="nav-bar">
+        <ul class="nav-links">
+            <div class="dropdown dropdown-login">
+                <button class="dropbtn">Logga in</button>
+                <div class="dropdown-content">
+                    <form class="login-box" id="login"> 
+                        <p id="drop-p">Här kan du logga in med administratörs rättigheter för att redigera produkter:</p>
+                        <input class="admin" type="text" name="" placeholder="Användarnamn" id="username">
+                        <input class="admin" type="password" name="" placeholder="Lösenord" id="password">
+                        <button class="admin-login" id="login-btn">Logga in</button>
+                    </form>
+                </div>
+            </div>
+            <li class="contact-link">
+                <a href="#footer">Kontakt</a>
+            </li>
+            <li class="cart">
+                <a href="shopping-cart.html" class="cart-text">
+                    🛒<span class="cart-nr">0</span>
+                </a>  
+            </li>
+        </ul>
+    </nav>
     <header>
-        <nav>
-            <a class="logo" href="index.html" >Foodie Express</a> 
-            <ul class="nav-links">
-                <li class="cart">
-                    <a href="shopping-cart.html">
-                       Cart<span>0</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+        <a class="logo" href="index.html">Foodie Express</a>
     </header>
+
 
     <div class="contact-us-1">
         <form>
         <div id="text">Här kan du kontakta oss via mail om du har några frågor eller vill göra en större bokning
     </div>
+    <ul class="form-contact">
+        <li>
     <label for="name">Name</label>
     <input type=text id=name name=name class="name" placeholder="First- and lastname">
-
+</li>
+<li>
     <label for="email">E-mail</label>
         <input type="email" id="mail" name=email class="mail"placeholder="Enter Email">
-
+    </li>
+    <li>
         <label for="message">Your message</label>
         <textarea id="message" name="message" class="message" placeholder="Your message"></textarea>
-
+    </li>
+    <li>
         <button class="send-button">Send</button>
+    </li>
+    </ul>
     </form>
     </div>
 </body>
+
+<footer>
+    <div class="footer">
+        <p class="opening">
+        <strong>OPENING HOURS:</strong><br> MON......10:00-22:00 <br> TUE......10:00-22:00 <br> WED......10:00-22:00 <br>
+        THU......10:00-22:00 <br> FRI......10:00-00:00 <br> SAT......11:00-00:00 <br> SUN......11:00-18:00
+        </p>
+        <p class="location-1"><strong>LOCATION 1:</strong> <br> Jungfrusundsvägen 6, <br> 178 38 Ekerö</p>
+        <p class="location-2"><strong>LOCATION 2: </strong><br> Vendevägen 16, <br> 182 05 Djursholm</p>
+        <p class="contact"> <strong>CONTACT </strong> <br> PHONE: 08-111 11 11 <br> EMAIL: festcatering@medieinstitutet.se <br> ON SOCIAL MEDIA </p>
+    </div>
+    <p class="copyright"> <strong> &copy; 2020 MADE BY: </strong> Andrés Santana, Malin Sjöblom, Susanna Dufva, Thomas Olsson </p>
+
+
+</footer>

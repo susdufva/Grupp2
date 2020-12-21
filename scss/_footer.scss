@@ -4,8 +4,8 @@
 .footer {
     display: flex;
     text-align: center;
-    /*background-color:rgb(99, 87, 76);*/
-    background: url(../img/background-header.jpg);
+    //background-color:rgb(99, 87, 76);
+    background: url(/img/background-header.jpg);
     color: whitesmoke;
     font-size: 1.2rem;
     height: auto;
@@ -19,23 +19,23 @@
 }
 
 .copyright {
-    padding: 1rem; 
+    padding: 0.5rem; 
 }
 
 .contact-us {
     text-decoration: none;
-    color: rgb(182, 130, 130);
+    color: rgba(0, 0, 0, 0.616);
 }
 
 .contact-us:hover {
     color: black;
-    text-decoration-line: underline;
+    font-size: 1.5rem;
 }
 
-#fedex {
-    font-size: 1.9rem;
+i{
+    font-size: 2.5rem;
+    color: rgba(0, 0, 0, 0.616);
 }
-
 
     
 

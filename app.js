@@ -387,3 +387,13 @@ async function createImages(search, ancestorNode) {
 
     ancestorNode.prepend(imgWrapper);
 }
+
+//Restore number on cart after checkout
+
+let remove = document.querySelector(".cart-nr")
+const checkOut = document.querySelector(".checkout")
+checkOut.addEventListener("click", delete)
+
+function delete(){
+    localStorage.removeItem("remove");
+}

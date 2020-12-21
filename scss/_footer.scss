@@ -8,7 +8,7 @@
     text-align: center;
     //background-color:rgb(99, 87, 76);
     background: url(/img/background-header.jpg);
-    color: rgba(245, 245, 245, 0.767);
+    color: rgba(245, 245, 245, 0.863);
    // color:  rgba(0, 0, 0, 0.616);
     font-weight: lighter;
     font-size: 1.2rem;
@@ -24,19 +24,20 @@
 }
 
 .copyright {
+    color:rgba(245, 245, 245, 0.863);
     text-align: center;
-    padding: 2rem;
+    padding: 1.5rem;
     background-color: rgb(99, 87, 76); 
 }
 
 .contact-us {
     text-decoration: none;
-    color: rgba(0, 0, 0, 0.616);
+    color: rgba(245, 245, 245, 0.863);
 }
 
 .contact-us:hover {
     color: black;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
 }
 
 i{

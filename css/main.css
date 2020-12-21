@@ -69,12 +69,17 @@ main {
   background-color: rgba(185, 169, 151, 0.856);
 }
 
+.product-img {
+  border: 0.3rem solid rgba(0, 0, 0, 0.26);
+  padding: 0;
+}
+
 /* first design for mobile phones 280px*/
 .footer {
   display: flex;
   text-align: center;
   background: url(/img/background-header.jpg);
-  color: rgba(245, 245, 245, 0.767);
+  color: rgba(245, 245, 245, 0.863);
   font-weight: lighter;
   font-size: 1.2rem;
   height: auto;
@@ -89,19 +94,20 @@ main {
 }
 
 .copyright {
+  color: rgba(245, 245, 245, 0.863);
   text-align: center;
-  padding: 2rem;
+  padding: 1.5rem;
   background-color: #63574c;
 }
 
 .contact-us {
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.616);
+  color: rgba(245, 245, 245, 0.863);
 }
 
 .contact-us:hover {
   color: black;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
 
 i {
@@ -261,7 +267,7 @@ label, input {
   background-color: #fcf9f9;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  padding: 20px;
+  padding: 3rem;
   width: auto;
 }
 
@@ -283,10 +289,11 @@ label, input {
   text-align: center;
 }
 
-/* input field */
+/* input fields */
 .admin {
-  padding: 3px;
-  margin-right: 10px;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 2px;
 }
 
 #login-btn {

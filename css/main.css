@@ -44,7 +44,8 @@
 
 .product-img {
   width: 100%;
-  max-height: 270px;
+  max-height: 300px;
+  min-height: 150px;
 }
 
 .img-wrapper {
@@ -61,6 +62,10 @@
 .img-wrapper > img {
   height: 100px;
   width: 50%;
+}
+
+main {
+  background-color: rgba(185, 169, 151, 0.856);
 }
 
 /* first design for mobile phones 280px*/
@@ -433,7 +438,7 @@ label, input {
     font-size: 1.3rem;
     justify-content: space-evenly;
     border-top: 0.7rem solid rgba(49, 35, 35, 0.534);
-    background-color: #63574c;
+    background-color: #998674;
   }
   .copyright {
     border-bottom: 0.7rem solid rgba(49, 35, 35, 0.534);
@@ -455,7 +460,7 @@ label, input {
     margin-top: 4rem;
   }
   .footer {
-    background-color: #63574c;
+    background-color: #998674;
     font-size: 1.2rem;
     display: inline-flex;
     width: 100%;
@@ -469,7 +474,7 @@ label, input {
     background-color: rgba(255, 255, 255, 0.842);
     color: rgba(0, 0, 0, 0.733);
     font-size: 1rem;
-    border-bottom: 0.7rem solid rgba(0, 0, 0, 0.877);
+    border-bottom: 0.7rem solid rgba(49, 35, 35, 0.534);
   }
 }
 /*# sourceMappingURL=main.css.map */

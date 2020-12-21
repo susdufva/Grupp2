@@ -1,20 +1,15 @@
 /* media queries for larger devices, Ipads & Tablets etc */
 @media (min-width: 768px) {
+  .logo {
+    font-size: 6.5rem;
+  }
   .nav-bar {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+    justify-content: flex-end;
   }
   .nav-links {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+    justify-content: flex-end;
   }
   .admin-login {
     background-color: #cac6c1;
@@ -25,43 +20,34 @@
   .product-card {
     display: inline-block;
     width: 35%;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     margin-top: 3rem;
     margin-left: 1rem;
     margin-right: 1rem;
   }
   .product-pic, .product-name, .product-description, .product-price {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
   }
   .footer {
     font-size: 1.3rem;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    border-top: 0.7rem solid rgba(49, 35, 35, 0.534);
-    background-color: #867667;
+    justify-content: space-evenly;
+    background-color: #63574c;
+    background-image: none;
   }
   .copyright {
+    background-color: #63574c;
     border-bottom: 0.7rem solid rgba(49, 35, 35, 0.534);
   }
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1200px) {
   .logo {
-    font-size: 5rem;
+    font-size: 8rem;
   }
   .nav-links {
     height: 3rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-item-align: end;
-        align-self: flex-end;
+    align-self: flex-end;
   }
   .product-card {
     display: inline-block;
@@ -69,25 +55,22 @@
     margin-top: 4rem;
   }
   .footer {
-    background-color: #867667;
+    background-color: rgba(185, 169, 151, 0.856);
+    background-image: none;
     font-size: 1.2rem;
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
     display: inline-flex;
     width: 100%;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
     height: auto;
   }
   .opening, .location-1, .loctation-2, .contact {
     padding: 2rem 1rem;
   }
   .copyright {
-    background-color: rgba(255, 255, 255, 0.842);
-    color: rgba(0, 0, 0, 0.733);
+    background-color: #63574c;
+    color: white;
     font-size: 1rem;
     border-bottom: 0.7rem solid rgba(49, 35, 35, 0.534);
   }
 }
+/*# sourceMappingURL=media.css.map */

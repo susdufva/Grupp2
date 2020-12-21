@@ -2,6 +2,10 @@
 
 @media (min-width: 768px) {
 
+    .logo {
+        font-size: 6.5rem;
+    }
+
 
     .nav-bar {
         display: flex;
@@ -38,11 +42,12 @@
     .footer {
         font-size: 1.3rem;
         justify-content: space-evenly;
-        border-top: 0.7rem solid rgba(49, 35, 35, 0.534);
-        background-color: rgb(134, 118, 103);
+        background-color: rgb(99, 87, 76);
+        background-image: none;
     }
 
     .copyright {
+        background-color: rgb(99, 87, 76);
         border-bottom: 0.7rem solid rgba(49, 35, 35, 0.534);
     }
 
@@ -50,12 +55,13 @@
 }
 
 
-@media (min-width: 1100px) {
-
+@media (min-width: 1200px) {
+    
     .logo {
-        font-size: 5rem;
+        font-size: 8rem;
     }
     
+
     .nav-links {
         height: 3rem;
         display: flex;
@@ -70,7 +76,8 @@
 
 
     .footer {
-        background-color: rgb(134, 118, 103);
+        background-color: rgba(185, 169, 151, 0.856);
+        background-image: none;
         font-size: 1.2rem;
         display: inline-flex;
         width:100%;
@@ -83,8 +90,8 @@
     }
 
     .copyright {
-       background-color: rgba(255, 255, 255, 0.842);
-        color: rgba(0, 0, 0, 0.733);
+        background-color: rgb(99, 87, 76);
+        color: white;
         font-size: 1rem;
         border-bottom: 0.7rem solid rgba(49, 35, 35, 0.534);
     }

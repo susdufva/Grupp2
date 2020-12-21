@@ -107,7 +107,11 @@ main {
 
 .contact-us:hover {
   color: black;
+<<<<<<< HEAD
   font-size: 1.6rem;
+=======
+  font-size: 1.5rem;
+>>>>>>> f9e4d4f76f37260ceaab1284c0b4f50bae298f76
 }
 
 i {
@@ -124,9 +128,18 @@ header {
   font-family: 'Bebas Neue';
   background: url(../img/background-header.jpg);
   display: flex;
+<<<<<<< HEAD
   justify-content: center;
   align-items: center;
   border-bottom: 1rem solid #63574c;
+=======
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+>>>>>>> f9e4d4f76f37260ceaab1284c0b4f50bae298f76
 }
 
 .contact-us-1 {
@@ -185,7 +198,14 @@ label, input {
 }
 
 .nav-bar {
+<<<<<<< HEAD
   flex-direction: column-reverse;
+=======
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+>>>>>>> f9e4d4f76f37260ceaab1284c0b4f50bae298f76
   margin: auto;
   width: 100%;
   background: rgba(255, 255, 255, 0.63);
@@ -195,8 +215,17 @@ label, input {
 
 .nav-links {
   display: flex;
+<<<<<<< HEAD
   justify-content: center;
   align-items: baseline;
+=======
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+>>>>>>> f9e4d4f76f37260ceaab1284c0b4f50bae298f76
   width: 100%;
   list-style: none;
   padding-bottom: 1rem;
@@ -265,7 +294,12 @@ label, input {
   display: none;
   position: absolute;
   background-color: #fcf9f9;
+<<<<<<< HEAD
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+=======
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+>>>>>>> f9e4d4f76f37260ceaab1284c0b4f50bae298f76
   z-index: 1;
   padding: 3rem;
   width: auto;
@@ -462,7 +496,7 @@ h3 {
   border-radius: 5px;
 }
 
-input[type=text] {
+.row input[type=text] {
   width: 100%;
   margin-bottom: 20px;
   padding: 10px;
@@ -487,12 +521,20 @@ label {
 /* media queries for larger devices, Ipads & Tablets etc */
 @media (min-width: 768px) {
   .nav-bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: flex-end;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
   .nav-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: flex-end;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
   .admin-login {
     background-color: #cac6c1;
@@ -503,19 +545,32 @@ label {
   .product-card {
     display: inline-block;
     width: 35%;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin-top: 3rem;
     margin-left: 1rem;
     margin-right: 1rem;
   }
   .product-pic, .product-name, .product-description, .product-price {
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
   .footer {
     font-size: 1.3rem;
+<<<<<<< HEAD
     justify-content: space-evenly;
     background-color: #63574c;
     background-image: none;
+=======
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    border-top: 0.7rem solid rgba(49, 35, 35, 0.534);
+    background-color: #867667;
+>>>>>>> f9e4d4f76f37260ceaab1284c0b4f50bae298f76
   }
   .copyright {
     background-color: #63574c;
@@ -529,8 +584,11 @@ label {
   }
   .nav-links {
     height: 3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-self: flex-end;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
   }
   .product-card {
     display: inline-block;
@@ -538,12 +596,21 @@ label {
     margin-top: 4rem;
   }
   .footer {
+<<<<<<< HEAD
     background-color: rgba(185, 169, 151, 0.856);
     background-image: none;
+=======
+    background-color: #867667;
+>>>>>>> f9e4d4f76f37260ceaab1284c0b4f50bae298f76
     font-size: 1.2rem;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
     width: 100%;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     height: auto;
   }
   .opening, .location-1, .loctation-2, .contact {
@@ -556,4 +623,7 @@ label {
     border-bottom: 0.7rem solid rgba(49, 35, 35, 0.534);
   }
 }
+<<<<<<< HEAD
 /*# sourceMappingURL=main.css.map */
+=======
+>>>>>>> f9e4d4f76f37260ceaab1284c0b4f50bae298f76

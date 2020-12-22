@@ -447,6 +447,11 @@ label, input {
   margin: 0 -16px;
 }
 
+h3 {
+  margin: 30px;
+  text-align: center;
+}
+
 .col-1 {
   flex: 25%;
 }
@@ -466,14 +471,14 @@ label, input {
 }
 
 .containerCO {
-  background-color: #63574c;
+  background-color: #a08f7f;
   padding: 5px 20px 15px 20px;
   border: 1px solid black;
   border-radius: 3px;
 }
 
 .row input[type=text] {
-  width: 100%;
+  width: 90%;
   margin-bottom: 20px;
   padding: 12px;
   border: 1px solid #ccc;

@@ -11,7 +11,8 @@
   border: 1px solid;
   padding: 0.3rem;
   border-radius: 0.3rem;
-  width: 100%;
+  width: 55%;
+  margin-top: 20px;
 }
 
 .product-list {

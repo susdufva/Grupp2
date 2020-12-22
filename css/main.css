@@ -491,6 +491,13 @@ label {
   display: block;
 }
 
+.buy {
+  margin: 20px;
+  padding: 3px 30px;
+  position: relative;
+  left: 50%;
+}
+
 /*.icon-container {
 
   }*/

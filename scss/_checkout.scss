@@ -1,59 +1,57 @@
-.bodyCO{
-    font-size: 20px;
-    padding: 8px;
-    box-sizing: border-box;
-}
-h3{
-    text-align: center;
-    margin: 30px;
-}
-.buy{
-   padding: 3px 37px; 
-   margin: 1.2rem;
-   position: relative;
-   left: 50%;
-}
-.row{
+.row {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -10px;
-    
-}
-.col-1{
+    margin: 0 -16px;
+  }
+  
+.col-1 {
     flex: 25%;
 }
-.col-2{
+  
+.col-2 {
     flex: 50%;
 }
-.col-3{
+  
+  .col-3 {
     flex: 75%;
-}
-.col-1, .col-2, .col-3{
-    padding: 0px 16px;
-}
-.containerCO{
-    background-color: beige;
-    padding: 3px 18px 13px 18px;
+  }
+  
+  .col-1,
+  .col-2,
+  .col-3 {
+    padding: 0 16px;
+  }
+  
+  .containerCO {
+    background-color: rgb(99, 87, 76);
+    padding: 5px 20px 15px 20px;
     border: 1px solid black;
-    border-radius: 5px;
-}
-.row input[type=text] {
-    width: 90%;
+    border-radius: 3px;
+  }
+  
+  .row input[type=text] {
+    width: 100%;
     margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 5px;
-}
-label{
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  label {
     margin-bottom: 10px;
     display: block;
-}
+  }
+  
+  /*.icon-container {
 
-@media(max-width:800px){
-    .row{
-        flex-direction: column-reverse;
+  }*/
+  
+
+  @media (max-width: 800px) {
+    .row {
+      flex-direction: column-reverse;
     }
-    .col-1{
-        margin-bottom: 20px;
+    .col-25 {
+      margin-bottom: 20px;
     }
-}
+  }

@@ -44,17 +44,21 @@ h3{
     margin-bottom: 10px;
     display: block;
   }
+  img{
+    max-width: 300px;
+    max-height: 180px; 
+  }
 
   .buy{
-      margin: 20px;
+      margin: 30px;
       padding: 3px 30px;
       position: relative;
-      left: 50%;
+      left: 180%;
+      font-size: medium
   }
   .imgCO{
     width: 40%;
   }
-  
   @media (max-width: 800px) {
     .row {
       flex-direction: column-reverse;

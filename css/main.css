@@ -491,11 +491,17 @@ label {
   display: block;
 }
 
+img {
+  max-width: 300px;
+  max-height: 180px;
+}
+
 .buy {
-  margin: 20px;
+  margin: 30px;
   padding: 3px 30px;
   position: relative;
-  left: 50%;
+  left: 180%;
+  font-size: medium;
 }
 
 /*.icon-container {

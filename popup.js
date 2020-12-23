@@ -1,19 +1,24 @@
 const buy = document.querySelector(".buy")
-buy.addEventListener("click", pop)
+buy.addEventListener("click", pop);
 
 function pop () {
-    var cover = document.createElement("div");
+    const cover = document.createElement("div");
     cover.classList.add('cover');
-    var alert = document.createElement("div");
+    const alert = document.createElement("div");
     alert.classList.add('alert');
-    var text = document.createElement("span");
-    text.textContent = "Varning, du ligger minus!";
+    let text = document.createElement("h1");
+    text.classList.add('buy-text');
+    text.textContent = "Tack för ditt köp!"; 
+    let secondText = document.createElement("span");
+    secondText.classList.add('text');
+    secondText.textContent = "En orderbekräftelse skickas snart till din mail";
 
-    var btn = document.createElement("button");
-    btn.textContent="stäng";
+    const btn = document.createElement("button");
+    btn.textContent="X";
     btn.onclick = () => cover.remove();
 
     alert.appendChild(text);
+    alert.appendChild(secondText);
     alert.appendChild(btn);
     cover.appendChild(alert);
     document.body.appendChild(cover);

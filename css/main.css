@@ -11,7 +11,8 @@
   border: 1px solid;
   padding: 0.3rem;
   border-radius: 0.3rem;
-  width: 100%;
+  width: 55%;
+  margin-top: 20px;
 }
 
 .product-list {
@@ -305,6 +306,14 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   border-radius: 2px;
 }
 
+#a, #b {
+  padding: 3px;
+  margin-right: 10px;
+  border-radius: 0px;
+  width: auto;
+  border: 1px solid black;
+}
+
 #login-btn {
   margin: 8px 2px 0 0px;
   position: relative;
@@ -426,26 +435,27 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   background: none;
   border: solid 1px;
   padding: 3px 5px;
-  margin-top: 70px;
   position: relative;
   left: 450px;
+  top: 50px;
   border-radius: 2px;
+  text-decoration: none;
+  color: black;
 }
 
-.bodyCO {
-  font-size: 20px;
-  padding: 8px;
-  box-sizing: border-box;
-}
-
-h3 {
-  text-align: center;
+.checkout:hover {
+  box-shadow: inset 0px 0px 1px 1px #7c674c;
 }
 
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -10px;
+  margin: 0 -16px;
+}
+
+h3 {
+  margin: 30px;
+  text-align: center;
 }
 
 .col-1 {
@@ -460,23 +470,25 @@ h3 {
   flex: 75%;
 }
 
-.col-1, .col-2, .col-3 {
-  padding: 0px 16px;
+.col-1,
+.col-2,
+.col-3 {
+  padding: 0 16px;
 }
 
 .containerCO {
-  background-color: beige;
-  padding: 3px 18px 13px 18px;
+  background-color: #a08f7f;
+  padding: 5px 20px 15px 20px;
   border: 1px solid black;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 .row input[type=text] {
-  width: 100%;
+  width: 90%;
   margin-bottom: 20px;
-  padding: 10px;
-  border: 1px solid black;
-  border-radius: 5px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
 }
 
 label {
@@ -484,11 +496,21 @@ label {
   display: block;
 }
 
+.buy {
+  margin: 20px;
+  padding: 3px 30px;
+  position: relative;
+  left: 50%;
+}
+
+/*.icon-container {
+
+  }*/
 @media (max-width: 800px) {
   .row {
     flex-direction: column-reverse;
   }
-  .col-1 {
+  .col-25 {
     margin-bottom: 20px;
   }
 }

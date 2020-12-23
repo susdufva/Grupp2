@@ -188,6 +188,11 @@ label, input {
   margin-bottom: 2rem;
 }
 
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .nav-bar {
   flex-direction: column-reverse;
   margin: auto;
@@ -491,7 +496,7 @@ label {
 /* media queries for larger devices, Ipads & Tablets etc */
 @media (min-width: 768px) {
   .logo {
-    font-size: 4rem;
+    font-size: 6.5rem;
   }
   .nav-bar {
     display: flex;
@@ -532,7 +537,7 @@ label {
 
 @media (min-width: 1200px) {
   .logo {
-    font-size: 5rem;
+    font-size: 6.5rem;
   }
   .nav-links {
     height: 3rem;

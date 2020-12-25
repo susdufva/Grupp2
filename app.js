@@ -1,6 +1,5 @@
 const loginForm = document.querySelector("#login");
 const dropbtn = document.querySelector(".dropbtn");
-let productList = document.querySelector(".product-list");
 const body = document.body;
 const main = document.querySelector("main");
 
@@ -83,7 +82,7 @@ let logOut = function(){
     adminLoggedIn = false;  //Sets admin logged in status to false
 };
 
-//Function creating new product cards from form inputs
+//Function creating new product card from button click
 let newProductMaker = function(name, description, price) {
    
     //Creates product card div to wrap product content
@@ -163,6 +162,7 @@ let newProductMaker = function(name, description, price) {
     productCard.appendChild(imgSearchMaker());
 
     //Appends product card into product list
+    let productList = document.querySelector(".product-list");
     productList.appendChild(productCard);
 }
 

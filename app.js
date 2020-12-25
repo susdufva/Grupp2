@@ -391,9 +391,9 @@ async function createImages(search, ancestorNode) {
 //Restore number on cart after checkout
 
 
-const checkOut = document.querySelector(".checkout")
-checkOut.addEventListener("click", delete)
+// const checkOut = document.querySelector(".checkout")
+// checkOut.addEventListener("click", delete)
 
-function delete(){
-    localStorage.removeItem('cartNumbers', productNumbers);
-}
+// function delete(){
+//     localStorage.removeItem('cartNumbers', productNumbers);
+// }

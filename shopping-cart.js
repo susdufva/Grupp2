@@ -4,61 +4,61 @@ let products =[
 {
 
     name: "Frukosttallrik",
-    tag: "table-2600954_640",
+    src: "/img/table-2600954_640.jpg",
     price: 100,
     inCart: 0, 
 },
 {
     name: "Pannkakor",
-    tag: "berries-1869421_640",
+    src: "/img/berries-1869421_640.jpg",
     price: 50,
     inCart: 0,
 },
 {
     name: "Äppelpaj",
-    tag: "/apple-pie-5479993_640",
+    src: "/img/apple-pie-5479993_640.jpg",
     price: 120,
     inCart: 0,
 },
 {
     name: "Pasta",
-    tag: "noodle-1303003_640",
+    src: "/img/noodle-1303003_640.jpg",
     price: 160,
     inCart: 0,
 },
 {
     name: "Hamburgare",
-    tag: "hamburger-494706_640",
+    src: "/img/hamburger-494706_640.jpg",
     price: 200,
     inCart: 0,
 },
 {
     name: "Croissant",
-    tag: "bread-4077812_640",
+    src: "/img/bread-4077812_640.jpg",
     price: 30,
     inCart: 0,
 },
 {
     name: "Pizza",
-    tag: "pizza-3007395_640",
+    src: "/img/pizza-3007395_640.jpg",
     price: 180,
     inCart: 0,
 },
 {
     name: "Chokladpraliner",
-    tag: "chocolates-1737503_640",
+    src: "/img/chocolates-1737503_640.jpg",
     price: 45,
     inCart: 0,
 },
 {
     name: "Churros",
-    tag: "churros-2188871_640",
+    src: "/img/churros-2188871_640.jpg",
     price: 75,
     inCart: 0,
 },
 {
     name: "Chiligryta",
-    tag: "food-1209007_640",
+    src: "/img/food-1209007_640.jpg",
     price: 175,
     inCart: 0,
 },]
@@ -148,7 +148,7 @@ function displayCart(){
             productContainer.innerHTML += `
             <div class="product">
             <ion-icon name="trash-outline"></ion-icon>
-                <img src="img/${item.tag}.jpg"/>
+                <img src="${item.src}"/>
                 <span>${item.name}</span>
             </div>
             <div class="price">

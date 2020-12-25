@@ -140,6 +140,7 @@ function displayCart(){
     
     let productContainer = document.querySelector(".products");
     let cartCost = localStorage.getItem('totalCost');
+    
 
     if(cartItems && productContainer) {
         productContainer.innerHTML = '';
@@ -172,7 +173,7 @@ function displayCart(){
                     ${cartCost} sek
                 </h4>
             </div>
-        `
+        `;
         deleteBtn();
     }
 }

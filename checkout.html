@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&family=Yantramanav&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    <script src="popup.js" defer></script>
 </head>
 <body class="bodyCO">
     <nav class="nav-bar">
@@ -36,8 +37,7 @@
     <header>
         <a class="logo" href="index.html">Foodie Express</a>
     </header>
-    <div>  
-        <div id="error"></div>
+    <div>   
             <div class="row">
                 <div class="col-3">
                     <!--CO = checkout-->
@@ -94,8 +94,13 @@
                 </div>
                 <div class="col-1">
                     <div class="containerCO">
-                        <h4>Cart</h4>
+                        <div class="checkout-cart">
+
+                        </div>
                     </div>
+                </div>
+                <div>
+                    <button class="buy">Avsluta köp</button>
                 </div>
             </div>
     <footer>
@@ -113,5 +118,6 @@
 
     </footer>
     <script src="checkout.js"></script>
+    <script src="shopping-cart.js"></script>
 </body>
 </html>

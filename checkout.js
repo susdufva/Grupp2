@@ -1,11 +1,23 @@
-const name = document.getElementById('fnamn');
-const lastname = document.getElementById('lnamn');
-const form = document.getElementById('form');
+function displayCartCO(){
+    let COItems = localStorage.getItem("productsInCart");
+    COItems = JSON.parse(COItems);
 
-form.addEventListener('submit', (e) => {
-    let messages = []
-    if(fnamn.value === '' || fnamn.value == null) {
-        messages.push('Fyll i namn')
+    let productContainerCO = document.querySelector(".checkout-cart");
+    let cartCost = localStorage.getItem('totalCost');
+
+    if(COItems && productContainerCO) {
+        productContainerCO.innerHTML = '';
+        Object.values(COItems).map((item, checkout) =>{
+            productContainerCO.innerHTML += `
+            <div class="cartCO"> 
+                <h4>Cart</h4>
+                <img class="imgCO" src="img/${item.tag}.jpg"/>
+                <span class="nameCO">${item.name}</span>
+                <h4 class="costCO"> 
+                    ${cartCost} sek
+                </h4>
+            </div>    `;
+        });
     }
-    e.preventDefault()
-})
+}
+displayCartCO();        

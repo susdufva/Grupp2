@@ -5,66 +5,75 @@ let products =[
 
     name: "Frukosttallrik",
     src: "/img/table-2600954_640.jpg",
+    description: "",
     price: 100,
     inCart: 0, 
 },
 {
     name: "Pannkakor",
     src: "/img/berries-1869421_640.jpg",
+    description: "",
     price: 50,
     inCart: 0,
 },
 {
     name: "Äppelpaj",
     src: "/img/apple-pie-5479993_640.jpg",
+    description: "",
     price: 120,
     inCart: 0,
 },
 {
     name: "Pasta",
     src: "/img/noodle-1303003_640.jpg",
+    description: "",
     price: 160,
     inCart: 0,
 },
 {
     name: "Hamburgare",
     src: "/img/hamburger-494706_640.jpg",
+    description: "",
     price: 200,
     inCart: 0,
 },
 {
     name: "Croissant",
     src: "/img/bread-4077812_640.jpg",
+    description: "",
     price: 30,
     inCart: 0,
 },
 {
     name: "Pizza",
     src: "/img/pizza-3007395_640.jpg",
+    description: "",
     price: 180,
     inCart: 0,
 },
 {
     name: "Chokladpraliner",
     src: "/img/chocolates-1737503_640.jpg",
+    description: "",
     price: 45,
     inCart: 0,
 },
 {
     name: "Churros",
     src: "/img/churros-2188871_640.jpg",
+    description: "",
     price: 75,
     inCart: 0,
 },
 {
     name: "Chiligryta",
     src: "/img/food-1209007_640.jpg",
+    description: "",
     price: 175,
     inCart: 0,
 },]
 
 let localProductList = localStorage.setItem("productList", JSON.stringify(products));
-
 
 for (let i=0; i < cart.length; i++){
     cart[i].addEventListener('click', () =>{

@@ -54,8 +54,8 @@ function logIn(){
 let logOut = function(){   
 
     //Removes button that creates new products
-    let newProductForm = document.querySelector(".new-product");
-    newProductForm.remove();
+    let newProductBtn = document.querySelector(".new-product");
+    newProductBtn.remove();
 
     //Changes button text to "Logga in"
     document.querySelector(".dropbtn").innerHTML = "Logga in";

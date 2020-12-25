@@ -63,6 +63,9 @@ let products =[
     inCart: 0,
 },]
 
+let localProductList = localStorage.setItem("productList", JSON.stringify(products));
+
+
 for (let i=0; i < cart.length; i++){
     cart[i].addEventListener('click', () =>{
         cartNumbers(products[i]);

@@ -11,7 +11,7 @@ function displayCartCO(){
             productContainerCO.innerHTML += `
             <div class="cartCO"> 
                 <h4>Cart</h4>
-                <img class="imgCO" src="img/${item.tag}.jpg"/>
+                <img class="imgCO" src="${item.src}"/>
                 <span class="nameCO">${item.name}</span>
                 <h4 class="costCO"> 
                     ${cartCost} sek

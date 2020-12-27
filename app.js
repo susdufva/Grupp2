@@ -3,8 +3,9 @@ const dropbtn = document.querySelector(".dropbtn");
 const body = document.body;
 const main = document.querySelector("main");
 
-
 let adminLoggedIn = false; 
+
+console.log(products);
 
 //Adds login function to login form
 loginForm.addEventListener("submit", function(e){
@@ -82,6 +83,41 @@ let logOut = function(){
     adminLoggedIn = false;  //Sets admin logged in status to false
 };
 
+//Takes data from local storage to update DOM product list
+function updateDOMProductList(){
+    
+    //First, remove previous product list from DOM
+    document.querySelector(".product-list").remove();
+
+    //Create new product list in DOM
+    let newDOMProductList = document.createElement("section");      //New element
+    newDOMProductList.classList.add("product-list");                //Add class .product-list
+    document.querySelector("main").appendChild(newDOMProductList);  //Append to main
+
+    //Get product data from localStorage and add products to DOM product list
+    let productList = localStorage.getItem("productList");
+    productList = JSON.parse(productList);
+    for (i=0; i<productList.length; i++){
+        let newProductCard = document.createElement("div");
+        newProductCard.classList.add("product-card");
+        newProductCard.innerHTML = `
+            <img class="product-img" src="${productList[i].src}" alt="productpic">
+            <div class="product-info">
+                <div class="product-name">${productList[i].name}</div>
+                <div class="product-description">${productList[i].description}</div>
+                <div class="product-price">${productList[i].price} SEK</div>
+            </div>
+            <button class="add-cart">Lägg till i kundvagn</button>
+        `;
+
+
+        newDOMProductList.appendChild(newProductCard);
+    }
+
+    console.log(productList[0]);
+
+}
+
 //Function creating new product card from button click
 let newProductMaker = function(name, description, price) {
    
@@ -103,21 +139,21 @@ let newProductMaker = function(name, description, price) {
     let productInfo = document.createElement("div");  //New div element
     productInfo.classList.add("product-info");        //Adds class .product-info
 
-    //Creates span for product name
-    //<span class="product-name">name<span>
-    let productName = document.createElement("span"); //New span
+    //Creates div for product name
+    //<div class="product-name">name<div>
+    let productName = document.createElement("div"); //New div
     productName.classList.add("product-name");        //Adds class .product-name
     productName.innerText = name;                     //Sets innertext from input value
     
-    //Creates span for product description
-    //<span class="product-description">description<span>
-    let productDescription = document.createElement("span"); //New span
+    //Creates div for product description
+    //<div class="product-description">description<div>
+    let productDescription = document.createElement("div"); //New div
     productDescription.classList.add("product-description"); //Adds class .product-description
     productDescription.innerText = description;              //Sets innertext from input value
 
-    //Creates span for product price
-    //<span class="product-price">price<span>
-    let productPrice = document.createElement("span");  //New span
+    //Creates div for product price
+    //<div class="product-price">price<div>
+    let productPrice = document.createElement("div");  //New div
     productPrice.classList.add("product-price");        //Adds class .product-price 
     productPrice.innerText = price;                     //Sets innertext from input value
 
@@ -133,7 +169,7 @@ let newProductMaker = function(name, description, price) {
     //Appends image into product card
     productCard.appendChild(productImg);
 
-    //Appends spans to the product info wrapper
+    //Appends divs to the product info wrapper
     productInfo.appendChild(productName);
     productInfo.appendChild(productDescription);
     productInfo.appendChild(productPrice);
@@ -148,9 +184,9 @@ let newProductMaker = function(name, description, price) {
     <div class="product-card">
         <img class ="product-img" alt="Produktbild">
         <div class="product-info">
-            <span class="product-name">name<span>
-            <span class="product-description">description<span>
-            <span class="product-price">price<span>
+            <div class="product-name">name<div>
+            <div class="product-description">description<div>
+            <div class="product-price">price<div>
         </div>
         <button>Lägg till i kundvagn</button>
     </div>*/
@@ -387,3 +423,20 @@ async function createImages(search, ancestorNode) {
 
     ancestorNode.prepend(imgWrapper);
 }
+
+
+
+function idGenerator(){
+
+    //Random int between 1-1000
+    let random = Math.floor(Math.random() * 1000 + 1);
+    console.log(random);
+
+    idArray.push(random);
+    console.log(idArray);
+
+
+}
+
+//Stores ID's created by idGenerator
+idArray = [];

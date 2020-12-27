@@ -439,6 +439,10 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   border-bottom: 1px solid #b68282;
 }
 
+.item-name {
+  font-size: 1vw;
+}
+
 .price {
   width: 15%;
   border-bottom: 1px solid #b68282;
@@ -448,6 +452,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 1vw;
 }
 
 .quantity {
@@ -459,6 +464,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 1vw;
 }
 
 .total {
@@ -470,6 +476,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 1vw;
 }
 
 .product {
@@ -511,11 +518,13 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 }
 
 .TotalTitle {
-  width: 30%;
+  width: 10%;
+  font-size: 1vw;
 }
 
 .AttBetala {
   width: 10%;
+  font-size: 1vw;
 }
 
 .checkout {
@@ -523,9 +532,8 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   border: solid 1px;
   padding: 3px 5px;
   position: relative;
-  left: 450px;
+  left: 100%;
   top: 50px;
-  border-radius: 2px;
   text-decoration: none;
   color: black;
 }
@@ -578,6 +586,25 @@ h3 {
   padding: 5px 20px 15px 20px;
   border: 1px solid black;
   border-radius: 3px;
+}
+
+.TotalContainerCO {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 100%;
+  padding: 10px 0px;
+}
+
+.TotalTitleCO {
+  font-size: 1vw;
+}
+
+.AttBetalaCO {
+  font-size: 1vw;
 }
 
 .row input[type=text] {

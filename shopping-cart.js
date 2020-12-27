@@ -149,7 +149,7 @@ function displayCart(){
             <div class="product">
             <ion-icon name="trash-outline"></ion-icon>
                 <img src="img/${item.tag}.jpg"/>
-                <span>${item.name}</span>
+                <span class="item-name">${item.name}</span>
             </div>
             <div class="price">
                 ${item.price}sek

@@ -3,9 +3,82 @@ const dropbtn = document.querySelector(".dropbtn");
 const body = document.body;
 const main = document.querySelector("main");
 
-let adminLoggedIn = false; 
+let adminLoggedIn = false;
 
-console.log(products);
+//Product constructor
+function Product (name, src, description, price, inCart){
+    this.name = name;
+    this.src = src;
+    this.description = description; 
+    this.price = price;
+    this.inCart = inCart;
+}
+
+//Array storing product objects
+let products =[
+    new Product ("Frukosttallrik", "/img/table-2600954_640.jpg", "Kallskuret", 100, 0),
+    new Product ("Pannkakor", "/img/berries-1869421_640.jpg", "Amerikanska pannkakor", 50, 0),
+    new Product ("Äppelpaj", "/img/apple-pie-5479993_640.jpg", "Knäckbakad paj", 120, 0),
+    new Product ("Pasta", "/img/noodle-1303003_640.jpg", "Olika pastarätter", 160, 0),
+    new Product ("Hamburgare", "/img/hamburger-494706_640.jpg", "Höggrevsburgare", 200, 0),
+    new Product ("Croissant", "/img/bread-4077812_640.jpg", "Franskt bakverk", 30, 0),
+    new Product ("Pizza", "/img/pizza-3007395_640.jpg", "Surdegspizza", 180, 0),
+    new Product ("Chokladpraliner", "/img/chocolates-1737503_640.jpg", "Hemmagjorda praliner", 45, 0),
+    new Product ("Churros", "/img/churros-2188871_640.jpg", "Friterad sockrig deg", 75, 0),
+    new Product ("Chiligryta","/img/food-1209007_640.jpg", "Het indonesisk gryta", 175, 0)
+];
+
+if (localStorage.getItem("savedProducts") !== null){
+    updateDOMProductList()
+}
+
+
+//Takes data from local storage to update DOM product list
+function updateDOMProductList(){
+    
+    //First, remove previous product list from DOM
+    document.querySelector(".product-list").remove();
+
+    //Create new product list in DOM
+    let newDOMProductList = document.createElement("section");      //New element
+    newDOMProductList.classList.add("product-list");                //Add class .product-list
+    main.appendChild(newDOMProductList);                            //Append to main
+
+    if (localStorage.getItem("savedProducts") === null){
+    localStorage.setItem("savedProducts", JSON.stringify(products));
+    }
+
+    //Get product data from localStorage and add products to DOM product list
+    let productList = localStorage.getItem("savedProducts");
+    productList = JSON.parse(productList);
+    for (i=0; i<productList.length; i++){
+        let newProductCard = document.createElement("div");
+        newProductCard.classList.add("product-card");
+        newProductCard.innerHTML = `
+            <img class="product-img" src="${productList[i].img}" alt="productpic">
+            <div class="product-info">
+                <div class="product-name">${productList[i].name}</div>
+                <div class="product-description">${productList[i].description}</div>
+                <div class="product-price">${productList[i].price} SEK</div>
+            </div>
+        `;
+
+        //Creates 'add to cart'-button to product card
+        let cartBtn = document.createElement("button");   //New button
+        cartBtn.classList.add("add-cart");                //Adds class .add-cart
+        cartBtn.innerText = "Lägg till i kundvagn";       //Sets innertext
+        cartBtn.addEventListener('click', () =>{          //Adds click event
+
+            //Add product to cart
+            let cartItems = localStorage.getItem('productsInCart');
+            cartItems = JSON.parse(cartItems);
+            
+        }); 
+        newProductCard.appendChild(cartBtn);              //Appends button to new product card
+
+        newDOMProductList.appendChild(newProductCard);
+    }
+}
 
 //Adds login function to login form
 loginForm.addEventListener("submit", function(e){
@@ -14,7 +87,6 @@ loginForm.addEventListener("submit", function(e){
     if (adminLoggedIn == false){        //If logged out,
         logIn();                        //log in
     }
-
 });
 
 //Adds logout function to logout button
@@ -78,118 +150,42 @@ let logOut = function(){
         editForms[i].remove();
     }
 
+    let saveChangesBtn = document.querySelector(".save-changes");
+    saveChangesBtn.remove();
+
     document.querySelector(".dropdown").classList.toggle("dropdown-login");     //Toggles .dropdown-login for CSS, to not display dropdown menu when logged out
 
     adminLoggedIn = false;  //Sets admin logged in status to false
 };
 
-//Takes data from local storage to update DOM product list
-function updateDOMProductList(){
-    
-    //First, remove previous product list from DOM
-    document.querySelector(".product-list").remove();
-
-    //Create new product list in DOM
-    let newDOMProductList = document.createElement("section");      //New element
-    newDOMProductList.classList.add("product-list");                //Add class .product-list
-    document.querySelector("main").appendChild(newDOMProductList);  //Append to main
-
-    //Get product data from localStorage and add products to DOM product list
-    let productList = localStorage.getItem("productList");
-    productList = JSON.parse(productList);
-    for (i=0; i<productList.length; i++){
-        let newProductCard = document.createElement("div");
-        newProductCard.classList.add("product-card");
-        newProductCard.innerHTML = `
-            <img class="product-img" src="${productList[i].src}" alt="productpic">
-            <div class="product-info">
-                <div class="product-name">${productList[i].name}</div>
-                <div class="product-description">${productList[i].description}</div>
-                <div class="product-price">${productList[i].price} SEK</div>
-            </div>
-            <button class="add-cart">Lägg till i kundvagn</button>
-        `;
-
-
-        newDOMProductList.appendChild(newProductCard);
-    }
-
-    console.log(productList[0]);
-
-}
-
 //Function creating new product card from button click
-let newProductMaker = function(name, description, price) {
+let newProductMaker = function() {
    
-    //Creates product card div to wrap product content
-    //<div class ="product-card"></div>
-    let productCard = document.createElement("div");  //New div element
-    productCard.classList.add("product-card");        //Adds class .product-card
 
-    //Creates image
-    //<img class ="product-img" alt="Produktbild">
-    let productImg = document.createElement("img");   //New image element
-    productImg.classList.add("product-img");          //Adds class .product-img
-    let att = document.createAttribute("alt");        //New attribute
-    att.value = "Produktbild";                        //Sets attribute value
-    productImg.setAttributeNode(att);                 //Adds 'alt' attribute to image
-
-    //Creates product info div to wrap product info
-    //<div class="product-info"></div>
-    let productInfo = document.createElement("div");  //New div element
-    productInfo.classList.add("product-info");        //Adds class .product-info
-
-    //Creates div for product name
-    //<div class="product-name">name<div>
-    let productName = document.createElement("div"); //New div
-    productName.classList.add("product-name");        //Adds class .product-name
-    productName.innerText = name;                     //Sets innertext from input value
-    
-    //Creates div for product description
-    //<div class="product-description">description<div>
-    let productDescription = document.createElement("div"); //New div
-    productDescription.classList.add("product-description"); //Adds class .product-description
-    productDescription.innerText = description;              //Sets innertext from input value
-
-    //Creates div for product price
-    //<div class="product-price">price<div>
-    let productPrice = document.createElement("div");  //New div
-    productPrice.classList.add("product-price");        //Adds class .product-price 
-    productPrice.innerText = price;                     //Sets innertext from input value
-
-    //Creates 'add to cart'-button
-    //<button class="add-cart">Lägg till i kundvagn></button>
-    let addToCart = document.createElement("button");   //New button
-    addToCart.classList.add("add-cart");                //Adds class .add-cart
-    addToCart.innerText = "Lägg till i kundvagn";       //Sets innertext
-    addToCart.addEventListener('click', () =>{          //Adds eventlistener
-            cartNumbers();
-    });
-
-    //Appends image into product card
-    productCard.appendChild(productImg);
-
-    //Appends divs to the product info wrapper
-    productInfo.appendChild(productName);
-    productInfo.appendChild(productDescription);
-    productInfo.appendChild(productPrice);
-
-    //Appends product info wrapper into the product card
-    productCard.appendChild(productInfo);
-
-    //Appends 'add to cart'-button to the product card
-    productCard.appendChild(addToCart);
-
-    /*New product card:
-    <div class="product-card">
-        <img class ="product-img" alt="Produktbild">
+    let productCard = document.createElement("div");
+    productCard.classList.add("product-card");
+    productCard.innerHTML = `
+        <img class="product-img" src="" alt="productpic">
         <div class="product-info">
-            <div class="product-name">name<div>
-            <div class="product-description">description<div>
-            <div class="product-price">price<div>
+            <div class="product-name">Namn</div>
+            <div class="product-description">Beskrivning</div>
+            <div class="product-price">Pris SEK</div>
         </div>
-        <button>Lägg till i kundvagn</button>
-    </div>*/
+    `;
+
+    //Creates 'add to cart'-button to product card
+    let cartBtn = document.createElement("button");   //New button
+    cartBtn.classList.add("add-cart");                //Adds class .add-cart
+    cartBtn.innerText = "Lägg till i kundvagn";       //Sets innertext
+    cartBtn.addEventListener('click', () =>{          //Adds click event
+
+        //Add product to cart
+        let cartItems = localStorage.getItem('productsInCart');
+        cartItems = JSON.parse(cartItems);
+        
+    }); 
+    productCard.appendChild(cartBtn);              //Appends button to new product card
+
 
     //Appends 'remove' and 'edit' button to new product
     productCard.appendChild(adminButtonsMaker());
@@ -201,7 +197,6 @@ let newProductMaker = function(name, description, price) {
     let productList = document.querySelector(".product-list");
     productList.appendChild(productCard);
 }
-
 
 //Function to run admin rights
 let adminRights = function() {
@@ -219,6 +214,53 @@ let adminRights = function() {
     for (i=0; i<productCards.length; i++){
         productCards[i].appendChild(imgSearchMaker());
     }
+
+    createSaveChangesBtn(); //Adds button to save product changes
+}
+
+function createSaveChangesBtn(){
+    let saveBtn = document.createElement("button");
+    saveBtn.classList.add("save-changes");
+    saveBtn.innerText = "Spara ändringar";
+
+    saveBtn.addEventListener("click", saveChanges);
+
+    main.append(saveBtn);
+}
+
+function saveChanges(){
+    console.log("Saves product page data, making it ready for a DOM blueprint")
+    
+    //Array to store products
+    let savedProducts = [];
+
+    //Constructor for products
+    function SavedProduct(img, name, description, price){
+        this.img = img;
+        this.name = name;
+        this.description = description;
+        this.price = price;
+    }
+
+    //Get data from products in DOM
+    let products = document.querySelectorAll(".product-card");
+
+    for (i=0; i<products.length; i++){        
+        let img = products[i].querySelector(".product-img").getAttribute("src");
+        let name = products[i].querySelector(".product-name").innerText;
+        let description = products[i].querySelector(".product-description").innerText;
+        let price = products[i].querySelector(".product-price").innerText;
+
+        let savedProduct = new SavedProduct(img, name, description, price);
+        console.log(savedProduct);
+        savedProducts.push(savedProduct);
+    }
+
+    console.log(savedProducts);
+
+    localStorage.setItem("savedProducts", JSON.stringify(savedProducts));
+    
+    //updateDOMProductList();
 }
 
 //Create button that adds new products and prepend it into main

@@ -1,18 +1,12 @@
 .row {
     display: flex;
     flex-wrap: wrap;
-<<<<<<< HEAD
     //margin: 0 -16px;
     width: 100%;
   }
    
 
-  .cart1 {
-    font-size: 2rem;
-    padding: 1rem;
-=======
->>>>>>> 3b118cfb1647b30e2dacbec1289a1cbbca90362b
-  }
+ 
 
   .cartCO {
     padding: 5vw;
@@ -69,13 +63,9 @@ h3{
     width: 100%;
     padding: 1rem;
   }
-<<<<<<< HEAD
   .TotalTitleCO, .AttBetalaCO{
     font-size: 1rem;
   }
-=======
-  
->>>>>>> 3b118cfb1647b30e2dacbec1289a1cbbca90362b
   .row input[type=text] {
     width: 80%;
     height: auto; 
@@ -92,6 +82,9 @@ h3{
   }
   .cart-border{
     border-bottom: 5px solid rgb(182, 130, 130);
+    font-size: 2rem;
+    padding: 1rem;
+    
   }
   .checkout-cart{
     width: 100%;
@@ -138,13 +131,6 @@ h3{
   .buy:hover{
     box-shadow: inset 0px 0px 1px 1px rgb(124, 103, 76);
   }
-<<<<<<< HEAD
-  
-
-
-
-=======
->>>>>>> 3b118cfb1647b30e2dacbec1289a1cbbca90362b
 
   /*popup */
   .cover {

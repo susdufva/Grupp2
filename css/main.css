@@ -399,36 +399,24 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   width: 15%;
   border-bottom: 1px solid #b68282;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 0.5rem;
   align-items: center;
-  font-size: 1vw;
+  font-size: 0.5rem;
 }
 
 .quantity {
   width: 30%;
   border-bottom: 1px solid #b68282;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 0.5rem;
   align-items: center;
-  font-size: 1vw;
+  font-size: 0.5rem;
 }
 
 .total {
   width: 10%;
   border-bottom: 1px solid #b68282;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 0.5rem;
   align-items: center;
-  font-size: 1vw;
+  font-size: 0.5rem;
 }
 
 .product {
@@ -484,15 +472,8 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 
 .row {
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   flex-wrap: wrap;
   width: 100%;
-}
-
-.cart1 {
-  font-size: 2rem;
-  padding: 1rem;
 }
 
 .cartCO {
@@ -549,15 +530,11 @@ h3 {
   display: flex;
   justify-content: flex-end;
   width: 100%;
-<<<<<<< HEAD
   padding: 1rem;
 }
 
 .TotalTitleCO, .AttBetalaCO {
   font-size: 1rem;
-=======
-  padding: 10px 0px;
->>>>>>> 3b118cfb1647b30e2dacbec1289a1cbbca90362b
 }
 
 .row input[type=text] {
@@ -577,40 +554,29 @@ label {
 
 .cart-border {
   border-bottom: 5px solid #b68282;
+  font-size: 2rem;
+  padding: 1rem;
 }
 
 .checkout-cart {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .imgCO {
   width: 40%;
   border-bottom: 2px solid #b68282;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .nameCO {
   border-bottom: 2px solid #b68282;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-around;
+  align-items: center;
 }
 
 img {
@@ -637,13 +603,10 @@ img {
   margin-bottom: 1rem;
 }
 
-<<<<<<< HEAD
 .buy:hover {
   box-shadow: inset 0px 0px 1px 1px #7c674c;
 }
 
-=======
->>>>>>> 3b118cfb1647b30e2dacbec1289a1cbbca90362b
 /*popup */
 .cover {
   position: absolute;
@@ -760,7 +723,7 @@ img {
     width: 30%;
   }
   .cart1 {
-    font-size: 2rem;
+    font-size: 1rem;
   }
   .TotalContainerCO {
     font-size: 2rem;

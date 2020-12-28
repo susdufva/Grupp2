@@ -4,6 +4,7 @@ buy.addEventListener("click", pop);
 function pop () {
     localStorage.removeItem("cartNumbers")
     localStorage.removeItem("productsInCart")
+    localStorage.removeItem("totalCost")
 
     const cover = document.createElement("div");
     cover.classList.add('cover');

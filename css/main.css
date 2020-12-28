@@ -526,7 +526,7 @@ img {
 /*popup */
 .cover {
   position: absolute;
-  bottom: 30%;
+  top: 30%;
   height: 100%;
   width: 100%;
   top: 0;

@@ -215,3 +215,6 @@ function deleteBtn() {
 //LoadCartNumbers funktion kommer aldrig att funka om man inta kallar på det så där av 
 LoadCartNumbers();
 displayCart();
+
+
+

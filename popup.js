@@ -2,6 +2,7 @@ const buy = document.querySelector(".buy")
 buy.addEventListener("click", pop);
 
 function pop () {
+    //Nollställ varukorg efter avslutat köp
     localStorage.removeItem("cartNumbers")
     localStorage.removeItem("productsInCart")
     localStorage.removeItem("totalCost")
@@ -20,7 +21,8 @@ function pop () {
     const btn = document.createElement("button");
     btn.classList.add('btn');
     btn.textContent="X";
-    btn.onclick = () => cover.remove();
+    //btn.onclick = () => cover.remove();
+    btn.onclick = () => window.location = 'index.html';
 
     alert.appendChild(text);
     alert.appendChild(secondText);
@@ -28,3 +30,5 @@ function pop () {
     cover.appendChild(alert);
     document.body.appendChild(cover);
 }
+
+

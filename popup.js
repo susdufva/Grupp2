@@ -2,6 +2,10 @@ const buy = document.querySelector(".buy")
 buy.addEventListener("click", pop);
 
 function pop () {
+    localStorage.removeItem("cartNumbers")
+    localStorage.removeItem("productsInCart")
+    localStorage.removeItem("totalCost")
+
     const cover = document.createElement("div");
     cover.classList.add('cover');
     const alert = document.createElement("div");
@@ -14,6 +18,7 @@ function pop () {
     secondText.textContent = "En orderbekräftelse skickas snart till din mail";
 
     const btn = document.createElement("button");
+    btn.classList.add('btn');
     btn.textContent="X";
     btn.onclick = () => cover.remove();
 

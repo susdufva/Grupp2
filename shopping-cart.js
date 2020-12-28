@@ -1,6 +1,7 @@
 let cart = document.querySelectorAll('.add-cart');
 
-let products =[{
+let products =[
+{
 
     name: "Frukosttallrik",
     tag: "table-2600954_640",
@@ -93,16 +94,19 @@ function setItems(product){
    
     if(cartItems != null){
 
+        //Om produkten inte finns i cartItems
         if(cartItems[product.name] == undefined) {
             cartItems = {
                 ...cartItems,
                 [product.name]: product
             }
         }
+        //Om den finns, lägg till +1 i dess inCart
         cartItems[product.name].inCart +=1;
     } else {
     product.inCart = 1;
 
+    //Skapa objekt cartItems
     cartItems = {
         [product.name]: product
         }
@@ -145,7 +149,7 @@ function displayCart(){
             <div class="product">
             <ion-icon name="trash-outline"></ion-icon>
                 <img src="img/${item.tag}.jpg"/>
-                <span>${item.name}</span>
+                <span class="item-name">${item.name}</span>
             </div>
             <div class="price">
                 ${item.price}sek
@@ -185,29 +189,30 @@ function deleteBtn() {
 
     for(let i=0; i < deleteBtn.length; i++) {
         deleteBtn[i].addEventListener('click', () => {
-           productsName = deleteBtn[i].parentElement.textContent.toLocaleLowerCase().replace(/ /g, '').trim();
-
-           const capitalize = (s) => {
+            productsName = deleteBtn[i].parentElement.textContent.toLocaleLowerCase().replace(/ /g, '').trim();
+            
+            const capitalize = (s) => {
             if (typeof s !== 'string') return ''
             return s.charAt(0).toUpperCase() + s.slice(1)
-          }
-         productsName = capitalize(productsName)
-         console.log(productsName)
+        }
+        productsName = capitalize(productsName)
+        console.log(productsName)
+        
+        console.log( cartItems[productsName].inCart )
 
-   console.log( cartItems[productsName].inCart )
-            localStorage.setItem('cartNumbers', productNumbers - cartItems[productsName].inCart);
-            localStorage.setItem('totalCost', cartCost - (cartItems[productsName].price * cartItems[productsName].inCart));
+        localStorage.setItem('cartNumbers', productNumbers - cartItems[productsName].inCart);
+        localStorage.setItem('totalCost', cartCost - (cartItems[productsName].price * cartItems[productsName].inCart));
             
-            delete cartItems[productsName];
+        delete cartItems[productsName];
     
-           localStorage.setItem('productsInCart', JSON.stringify(cartItems));
-            //Rakibs kommentar 
-      // för att kunna använda den här splice lösningen måste ProduktInCart items sparas i en lista istället för object.   
-       //  cartItems.splice(i, 1);
+        localStorage.setItem('productsInCart', JSON.stringify(cartItems));
+        //Rakibs kommentar 
+        //för att kunna använda den här splice lösningen måste ProduktInCart items sparas i en lista istället för object.   
+        // cartItems.splice(i, 1);
 
-
-            displayCart();  
-            LoadCartNumbers();
+        //Update DOM
+        displayCart();  
+        LoadCartNumbers();
         })
     }
 }

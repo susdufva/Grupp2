@@ -387,7 +387,3 @@ async function createImages(search, ancestorNode) {
 
     ancestorNode.prepend(imgWrapper);
 }
-
-//Restore number on cart after checkout
-
-

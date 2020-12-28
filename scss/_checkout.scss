@@ -31,7 +31,18 @@ h3{
     border: 1px solid black;
     border-radius: 3px;
   }
-  
+  .TotalContainerCO{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 10px 0px;
+  }
+  .TotalTitleCO{
+    font-size: 1vw;
+  }
+  .AttBetalaCO{
+    font-size: 1vw;
+  }
   .row input[type=text] {
     width: 90%;
     margin-bottom: 20px;
@@ -54,7 +65,7 @@ h3{
       padding: 3px 30px;
       position: relative;
       left: 180%;
-      font-size: medium
+      font-size: medium;    
   }
   .imgCO{
     width: 40%;

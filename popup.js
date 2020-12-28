@@ -18,6 +18,7 @@ function pop () {
     secondText.textContent = "En orderbekräftelse skickas snart till din mail";
 
     const btn = document.createElement("button");
+    btn.classList.add('btn');
     btn.textContent="X";
     btn.onclick = () => cover.remove();
 

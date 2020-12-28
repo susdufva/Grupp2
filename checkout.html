@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&family=Yantramanav&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <script src="popup.js" defer></script>
 </head>
 <body class="bodyCO">
@@ -53,14 +54,14 @@
                                     <input type="text" id="lname" placeholder="">
 
                                     <label for="email">Email:</label>
-                                    <input type="text" id="fname" placeholder="exempel11@exempel.com">
+                                    <input type="text" id="fname1" placeholder="exempel11@exempel.com">
 
                                     <label for="adr">Adress:</label>
                                     <input type="text" id="adr" placeholder="">
 
                                     <label for="stad">Stad:</label>
-                                    <input type="text" id="fname" placeholder="">
-                                    
+                                    <input type="text" id="fname2" placeholder="">
+                                
                                     <div class="row">
                                         <div class="col-2">
                                             <label for="ort">Ort:</label>
@@ -74,11 +75,12 @@
                                 </div>
                                 <div class="col-2">
                                     <h3 class="h3CO">Betalning</h3>
-                                    <label>Vi accepterar</label>
+                                    <label id="cards">Vi accepterar</label>
                                     <div class="CO-icon">
-                                        <!--kort iconer typ visa mastercard-->
-                                        <i></i>
-                                        <i></i>
+                                        <i class="fab fa-cc-mastercard"></i>
+                                        <i class="fab fa-cc-visa"></i>
+                                        <i class="fab fa-cc-paypal"></i>
+                                        <i class="fab fa-cc-apple-pay"></i>
                                     </div>
                                     <label>Namn på kortet:</label>
                                     <input type="text" id="cardname" placeholder="">
@@ -99,15 +101,15 @@
                 </div>
                 <div class="col-1">
                     <div class="containerCO">
-                        <h4>Cart</h4>
+                        <h4 class="cart1">Cart</h4>
                         <div class="checkout-cart">
                         </div>
                     </div>
                 </div>
-                <div>
-                    <button class="buy">Avsluta köp</button>
-                </div>
             </div>
+            <div>
+                <button class="buy">Avsluta köp</button>
+            </div>  
             <footer>
                 <div class="footer">
                     <p class="opening">

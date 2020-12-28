@@ -65,7 +65,13 @@ h3{
       padding: 3px 30px;
       position: relative;
       left: 180%;
-      font-size: medium;    
+      font-size: medium; 
+      background: rgba(214, 206, 189, 0.863);
+      border: solid 1.3px;  
+      border-radius: 1px; 
+  }
+  .buy:hover{
+    box-shadow: inset 0px 0px 1px 1px rgb(124, 103, 76);
   }
   .imgCO{
     width: 40%;

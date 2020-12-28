@@ -54,6 +54,10 @@
   .TotalContainerCO {
     font-size: 2rem;
   }
+  .buy {
+    margin: 2rem;
+    width: 40%;
+  }
 }
 
 @media (min-width: 1200px) {

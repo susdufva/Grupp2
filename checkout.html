@@ -43,19 +43,24 @@
                     <!--CO = checkout-->
                     <div class="containerCO">
                       <h3 class="h3CO">SLUTFÖR BESTÄLLNING</h3>  
-                        <form >
+                        <form name="checkoutForm" id="checkoutForm" action="checkout.js" onsubmit="return validateForm()" method="POST">
                             <div class="row">
                                 <div>
                                     <label for="fname">Förnamn:</label>
                                     <input type="text" id="fname" placeholder="">
+
                                     <label for="lname">Efternamn:</label>
                                     <input type="text" id="lname" placeholder="">
+
                                     <label for="email">Email:</label>
                                     <input type="text" id="fname" placeholder="exempel11@exempel.com">
+
                                     <label for="adr">Adress:</label>
                                     <input type="text" id="adr" placeholder="">
+
                                     <label for="stad">Stad:</label>
                                     <input type="text" id="fname" placeholder="">
+                                    
                                     <div class="row">
                                         <div class="col-2">
                                             <label for="ort">Ort:</label>
@@ -103,20 +108,21 @@
                     <button class="buy">Avsluta köp</button>
                 </div>
             </div>
-    <footer>
-        <div class="footer">
-            <p class="opening">
-            <strong>OPENING HOURS:</strong><br> MON......10:00-22:00 <br> TUE......10:00-22:00 <br> WED......10:00-22:00 <br>
-            THU......10:00-22:00 <br> FRI......10:00-00:00 <br> SAT......11:00-00:00 <br> SUN......11:00-18:00
-            </p>
-            <p class="location-1"><strong>LOCATION 1:</strong> <br> Jungfrusundsvägen 6, <br> 178 38 Ekerö</p>
-            <p class="location-2"><strong>LOCATION 2: </strong><br> Vendevägen 16, <br> 182 05 Djursholm</p>
-            <p class="contact"> <strong>CONTACT </strong> <br> PHONE: 08-111 11 11 <br> EMAIL: festcatering@medieinstitutet.se <br> ON SOCIAL MEDIA </p>
-        </div>
-        <p class="copyright"> <strong> &copy; 2020 MADE BY: </strong> Andrés Santana, Malin Sjöblom, Susanna Dufva, Thomas Olsson </p>
-
-
-    </footer>
+            <footer>
+                <div class="footer">
+                    <p class="opening">
+                        <strong>ÖPPETTIDER:</strong><br> MON......10:00-22:00 <br> TUE......10:00-22:00 <br>
+                        WED......10:00-22:00 <br>
+                        THU......10:00-22:00 <br> FRI......10:00-00:00 <br> SAT......11:00-00:00 <br> SUN......11:00-18:00
+                    </p>
+                    <p class="location-1"><strong>LOCATION 1:</strong> <br> Jungfrusundsvägen 6, <br> 178 38 Ekerö</p>
+                    <p class="location-2"><strong>LOCATION 2: </strong><br> Vendevägen 16, <br> 182 05 Djursholm</p>
+                    <p class="contact"> <strong> <a href="contact-us.html" class="contact-us">KONTAKTA OSS</a> </strong> <br> PHONE: 08-111 11 11 <br> EMAIL:
+                        foodieExpress@medieinstitutet.se <br> PÅ SOCIALA MEDIER <br> <i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i></p> 
+                </div>
+                <p class="copyright"> <strong> &copy; 2020 BY: </strong> Andrés Santana, Malin Sjöblom, Susanna Dufva, Thomas Olsson </p>
+            
+            </footer>
     <script src="checkout.js"></script>
     <script src="shopping-cart.js"></script>
 </body>

@@ -1,6 +1,7 @@
 .row {
     display: flex;
     flex-wrap: wrap;
+<<<<<<< HEAD
     //margin: 0 -16px;
     width: 100%;
   }
@@ -9,6 +10,8 @@
   .cart1 {
     font-size: 2rem;
     padding: 1rem;
+=======
+>>>>>>> 3b118cfb1647b30e2dacbec1289a1cbbca90362b
   }
 
   .cartCO {
@@ -66,9 +69,13 @@ h3{
     width: 100%;
     padding: 1rem;
   }
+<<<<<<< HEAD
   .TotalTitleCO, .AttBetalaCO{
     font-size: 1rem;
   }
+=======
+  
+>>>>>>> 3b118cfb1647b30e2dacbec1289a1cbbca90362b
   .row input[type=text] {
     width: 80%;
     height: auto; 
@@ -83,6 +90,28 @@ h3{
     margin-bottom: 5px;
     display: block;
   }
+  .cart-border{
+    border-bottom: 5px solid rgb(182, 130, 130);
+  }
+  .checkout-cart{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .imgCO{
+    width: 40%;
+    border-bottom: 2px solid rgb(182, 130, 130);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .nameCO{
+    border-bottom: 2px solid rgb(182, 130, 130);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
   img{
     max-width: 350px;
     max-height: 200px; 
@@ -109,10 +138,13 @@ h3{
   .buy:hover{
     box-shadow: inset 0px 0px 1px 1px rgb(124, 103, 76);
   }
+<<<<<<< HEAD
   
 
 
 
+=======
+>>>>>>> 3b118cfb1647b30e2dacbec1289a1cbbca90362b
 
   /*popup */
   .cover {

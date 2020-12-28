@@ -437,10 +437,11 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 .product-title {
   width: 45%;
   border-bottom: 1px solid #b68282;
+  font-size: 0.5rem;
 }
 
 .item-name {
-  font-size: 1vw;
+  font-size: 0.5rem;
 }
 
 .price {
@@ -452,7 +453,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 1vw;
+  font-size: 0.5rem;
 }
 
 .quantity {
@@ -464,7 +465,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 1vw;
+  font-size: 0.5rem;
 }
 
 .total {
@@ -476,7 +477,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 1vw;
+  font-size: 0.5rem;
 }
 
 .product {
@@ -518,13 +519,13 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 }
 
 .TotalTitle {
-  width: 10%;
-  font-size: 1vw;
+  width: 20%;
+  font-size: 0.5rem;
 }
 
 .AttBetala {
   width: 10%;
-  font-size: 1vw;
+  font-size: 0.5rem;
 }
 
 .checkout {
@@ -549,7 +550,6 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin: 0 -16px;
 }
 
 h3 {
@@ -599,14 +599,6 @@ h3 {
   padding: 10px 0px;
 }
 
-.TotalTitleCO {
-  font-size: 1vw;
-}
-
-.AttBetalaCO {
-  font-size: 1vw;
-}
-
 .row input[type=text] {
   width: 90%;
   margin-bottom: 20px;
@@ -618,6 +610,44 @@ h3 {
 label {
   margin-bottom: 10px;
   display: block;
+}
+
+.cart-border {
+  border-bottom: 5px solid #b68282;
+}
+
+.checkout-cart {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.imgCO {
+  width: 40%;
+  border-bottom: 2px solid #b68282;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nameCO {
+  border-bottom: 2px solid #b68282;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 img {
@@ -633,14 +663,9 @@ img {
   font-size: medium;
 }
 
-.imgCO {
-  width: 40%;
-}
-
 /*popup */
 .cover {
   position: absolute;
-  top: 30%;
   height: 100%;
   width: 100%;
   top: 0;

@@ -58,8 +58,14 @@
   .product-header {
     margin: 2rem;
   }
+  .product-title {
+    font-size: 2rem;
+  }
   .item-name {
     display: revert;
+    font-size: 1.5rem;
+  }
+  .price, .quantity1, .total, .quantity {
     font-size: 1.5rem;
   }
   .products {
@@ -67,6 +73,15 @@
   }
   .product ion-icon {
     font-size: 25px;
+  }
+  .TotalTitle, .AttBetala {
+    font-size: 2rem;
+  }
+  .checkout {
+    padding: 10px 10px;
+  }
+  .checkout-btn {
+    width: 70%;
   }
 }
 
@@ -118,6 +133,12 @@
   }
   #cvv {
     margin: 2rem;
+  }
+  .checkout {
+    padding: 20px 20px;
+  }
+  .checkout-btn {
+    width: 60%;
   }
 }
 /*# sourceMappingURL=media.css.map */

@@ -4,11 +4,14 @@
     flex-wrap: wrap;
     padding-bottom: 100px;
 }
-.products-container{
+
+.product-container{
+    max-width: 100%;
     justify-content: space-around;
     margin: 0 auto;
     margin-top: 6vh;
 }
+
 .product ion-icon{
     font-size: 16px;
     color: rgb(182, 130, 130);
@@ -17,15 +20,15 @@
 }
 .product-header{
     width: 100%;
+    max-width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     border-bottom: 5px solid rgb(182, 130, 130);
     margin: 0 auto;
-
 }
 
 .product-title{
-    width: 35%;
+    width: 45%;
     border-bottom: 1px solid rgb(182, 130, 130);
     font-size: 1rem;
     margin-left: 0.5rem;
@@ -39,20 +42,27 @@
     border-bottom: 1px solid rgb(182, 130, 130);
     display: flex;
     align-items: center;
-    align-content: center;
     font-size: 1rem;
 }
+
+.quantity1 {
+width: 20%;
+border-bottom: 1px solid rgb(182, 130, 130);
+display: flex;
+align-items: center;
+font-size: 1rem;
+}
+
+
 .quantity{
     width: 20%;
     border-bottom: 1px solid rgb(182, 130, 130);
     display: flex;
     align-items: center;
     font-size: 1rem;
-    padding-left: 2rem;
-    align-content: center;
 }
 .total{
-    width: 15%;
+    width: 10%;
     border-bottom: 1px solid rgb(182, 130, 130);
     display: flex;
     align-items: center;  
@@ -72,16 +82,15 @@
     flex-wrap: wrap;
 }
 .product img{
-    width: 50%;
+    width: 30%;
 }
 .TotalContainer{
     display: flex;
     justify-content: flex-end;
     width: 100%;
-    padding: 10px 0;
 }
 .TotalTitle{
-    width: 25%;
+    width: 20%;
     font-size: 1rem;
 }
 .AttBetala{

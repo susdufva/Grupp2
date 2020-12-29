@@ -362,7 +362,8 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   padding-bottom: 100px;
 }
 
-.products-container {
+.product-container {
+  max-width: 100%;
   justify-content: space-around;
   margin: 0 auto;
   margin-top: 6vh;
@@ -377,14 +378,15 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 
 .product-header {
   width: 100%;
+  max-width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   border-bottom: 5px solid #b68282;
   margin: 0 auto;
 }
 
 .product-title {
-  width: 35%;
+  width: 45%;
   border-bottom: 1px solid #b68282;
   font-size: 1rem;
   margin-left: 0.5rem;
@@ -400,7 +402,14 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   border-bottom: 1px solid #b68282;
   display: flex;
   align-items: center;
-  align-content: center;
+  font-size: 1rem;
+}
+
+.quantity1 {
+  width: 20%;
+  border-bottom: 1px solid #b68282;
+  display: flex;
+  align-items: center;
   font-size: 1rem;
 }
 
@@ -410,12 +419,10 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   display: flex;
   align-items: center;
   font-size: 1rem;
-  padding-left: 2rem;
-  align-content: center;
 }
 
 .total {
-  width: 15%;
+  width: 10%;
   border-bottom: 1px solid #b68282;
   display: flex;
   align-items: center;
@@ -438,18 +445,17 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 }
 
 .product img {
-  width: 50%;
+  width: 30%;
 }
 
 .TotalContainer {
   display: flex;
   justify-content: flex-end;
   width: 100%;
-  padding: 10px 0;
 }
 
 .TotalTitle {
-  width: 25%;
+  width: 20%;
   font-size: 1rem;
 }
 
@@ -738,8 +744,14 @@ img {
   .product-header {
     margin: 2rem;
   }
+  .product-title {
+    font-size: 2rem;
+  }
   .item-name {
     display: revert;
+    font-size: 1.5rem;
+  }
+  .price, .quantity1, .total, .quantity {
     font-size: 1.5rem;
   }
   .products {
@@ -747,6 +759,15 @@ img {
   }
   .product ion-icon {
     font-size: 25px;
+  }
+  .TotalTitle, .AttBetala {
+    font-size: 2rem;
+  }
+  .checkout {
+    padding: 10px 10px;
+  }
+  .checkout-btn {
+    width: 70%;
   }
 }
 
@@ -798,6 +819,12 @@ img {
   }
   #cvv {
     margin: 2rem;
+  }
+  .checkout {
+    padding: 20px 20px;
+  }
+  .checkout-btn {
+    width: 60%;
   }
 }
 /*# sourceMappingURL=main.css.map */

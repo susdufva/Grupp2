@@ -87,12 +87,12 @@
     background: none;
     border: solid 1px;
     padding: 3px 5px;
-    position: relative;
-    left: 100%;
+    position: absolute;
+    left: 1000px;
     top: 50px;
     text-decoration: none;
     color: black;
 }
 .checkout:hover{
     box-shadow: inset 0px 0px 1px 1px rgb(124, 103, 76);
-}
+}   

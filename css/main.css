@@ -611,6 +611,7 @@ h3 {
 
 .containerCO {
   background-color: #a08f7f;
+  padding: 5px 20px 15px 20px;
   margin: 1rem;
   border: 2px solid #333333;
   border-radius: 20px 20px 20px 20px;
@@ -656,37 +657,13 @@ label {
 }
 
 .checkout-cart {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  position: relative;
 }
 
 .imgCO {
   width: 40%;
-  border-bottom: 2px solid #b68282;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.nameCO {
-  border-bottom: 2px solid #b68282;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  position: absolute;
+  left: 0%;
 }
 
 img {
@@ -872,11 +849,12 @@ img {
   .send-button {
     width: 30%;
   }
-  .cart1 {
-    font-size: 1rem;
-  }
   .TotalContainerCO {
     font-size: 2rem;
+  }
+  .buy {
+    margin: 2rem;
+    width: 40%;
   }
 }
 

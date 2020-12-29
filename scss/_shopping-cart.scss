@@ -5,7 +5,6 @@
     padding-bottom: 100px;
 }
 .products-container{
-    max-width: 1000px;
     justify-content: space-around;
     margin: 0 auto;
     margin-top: 6vh;
@@ -18,40 +17,46 @@
 }
 .product-header{
     width: 100%;
-    max-width: 1000px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     border-bottom: 5px solid rgb(182, 130, 130);
     margin: 0 auto;
+
 }
+
 .product-title{
-    width: 45%;
+    width: 35%;
     border-bottom: 1px solid rgb(182, 130, 130);
-    font-size: 0.5rem;
+    font-size: 1rem;
+    margin-left: 0.5rem;
 }
 .item-name{
-    font-size: 0.5rem;
+    font-size: 0.8rem;
+    display: none;
 }
 .price{
     width: 15%;
     border-bottom: 1px solid rgb(182, 130, 130);
     display: flex;
     align-items: center;
-    font-size: 0.5rem;
+    align-content: center;
+    font-size: 1rem;
 }
 .quantity{
-    width: 30%;
+    width: 20%;
     border-bottom: 1px solid rgb(182, 130, 130);
     display: flex;
     align-items: center;
-    font-size: 0.5rem;
+    font-size: 1rem;
+    padding-left: 2rem;
+    align-content: center;
 }
 .total{
-    width: 10%;
+    width: 15%;
     border-bottom: 1px solid rgb(182, 130, 130);
     display: flex;
     align-items: center;  
-    font-size: 0.5rem;
+    font-size: 1rem;
 }
 .product{
     width: 45%;
@@ -67,7 +72,7 @@
     flex-wrap: wrap;
 }
 .product img{
-    width: 30%;
+    width: 50%;
 }
 .TotalContainer{
     display: flex;
@@ -76,12 +81,12 @@
     padding: 10px 0;
 }
 .TotalTitle{
-    width: 20%;
-    font-size: 0.5rem;
+    width: 25%;
+    font-size: 1rem;
 }
 .AttBetala{
-    width: 10%;
-    font-size: 0.5rem;
+    width: 20%;
+    font-size: 1rem;
 }
 .checkout{
     background: none;
@@ -92,6 +97,9 @@
     top: 50px;
     text-decoration: none;
     color: black;
+    border: 2px solid #333333;
+    border-radius: 20px 20px 20px 20px; 
+    box-shadow: 6px 6px 2px 2px rgba(99, 87, 76, 0.295);
 }
 .checkout:hover{
     box-shadow: inset 0px 0px 1px 1px rgb(124, 103, 76);

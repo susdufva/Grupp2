@@ -363,7 +363,6 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 }
 
 .products-container {
-  max-width: 1000px;
   justify-content: space-around;
   margin: 0 auto;
   margin-top: 6vh;
@@ -378,21 +377,22 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 
 .product-header {
   width: 100%;
-  max-width: 1000px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   border-bottom: 5px solid #b68282;
   margin: 0 auto;
 }
 
 .product-title {
-  width: 45%;
+  width: 35%;
   border-bottom: 1px solid #b68282;
-  font-size: 0.5rem;
+  font-size: 1rem;
+  margin-left: 0.5rem;
 }
 
 .item-name {
-  font-size: 0.5rem;
+  font-size: 0.8rem;
+  display: none;
 }
 
 .price {
@@ -400,23 +400,26 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   border-bottom: 1px solid #b68282;
   display: flex;
   align-items: center;
-  font-size: 0.5rem;
+  align-content: center;
+  font-size: 1rem;
 }
 
 .quantity {
-  width: 30%;
+  width: 20%;
   border-bottom: 1px solid #b68282;
   display: flex;
   align-items: center;
-  font-size: 0.5rem;
+  font-size: 1rem;
+  padding-left: 2rem;
+  align-content: center;
 }
 
 .total {
-  width: 10%;
+  width: 15%;
   border-bottom: 1px solid #b68282;
   display: flex;
   align-items: center;
-  font-size: 0.5rem;
+  font-size: 1rem;
 }
 
 .product {
@@ -435,7 +438,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 }
 
 .product img {
-  width: 30%;
+  width: 50%;
 }
 
 .TotalContainer {
@@ -446,13 +449,13 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 }
 
 .TotalTitle {
-  width: 20%;
-  font-size: 0.5rem;
+  width: 25%;
+  font-size: 1rem;
 }
 
 .AttBetala {
-  width: 10%;
-  font-size: 0.5rem;
+  width: 20%;
+  font-size: 1rem;
 }
 
 .checkout {
@@ -464,6 +467,9 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   top: 50px;
   text-decoration: none;
   color: black;
+  border: 2px solid #333333;
+  border-radius: 20px 20px 20px 20px;
+  box-shadow: 6px 6px 2px 2px rgba(99, 87, 76, 0.295);
 }
 
 .checkout:hover {
@@ -722,11 +728,25 @@ img {
   .send-button {
     width: 30%;
   }
-  .cart1 {
-    font-size: 1rem;
-  }
   .TotalContainerCO {
     font-size: 2rem;
+  }
+  .buy {
+    margin: 2rem;
+    width: 10%;
+  }
+  .product-header {
+    margin: 2rem;
+  }
+  .item-name {
+    display: revert;
+    font-size: 1.5rem;
+  }
+  .products {
+    width: 100%;
+  }
+  .product ion-icon {
+    font-size: 25px;
   }
 }
 
@@ -771,6 +791,13 @@ img {
   }
   .send-button {
     width: 15%;
+  }
+  .buy {
+    width: 20%;
+    left: 5.5rem;
+  }
+  #cvv {
+    margin: 2rem;
   }
 }
 /*# sourceMappingURL=main.css.map */

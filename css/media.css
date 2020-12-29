@@ -53,7 +53,20 @@
   }
   .buy {
     margin: 2rem;
-    width: 40%;
+    width: 10%;
+  }
+  .product-header {
+    margin: 2rem;
+  }
+  .item-name {
+    display: revert;
+    font-size: 1.5rem;
+  }
+  .products {
+    width: 100%;
+  }
+  .product ion-icon {
+    font-size: 25px;
   }
 }
 
@@ -98,6 +111,13 @@
   }
   .send-button {
     width: 15%;
+  }
+  .buy {
+    width: 20%;
+    left: 5.5rem;
+  }
+  #cvv {
+    margin: 2rem;
   }
 }
 /*# sourceMappingURL=media.css.map */

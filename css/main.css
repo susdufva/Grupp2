@@ -414,8 +414,8 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   padding-bottom: 100px;
 }
 
-.products-container {
-  max-width: 1000px;
+.product-container {
+  max-width: 100%;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   margin: 0 auto;
@@ -431,7 +431,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 
 .product-header {
   width: 100%;
-  max-width: 1000px;
+  max-width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -445,11 +445,13 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 .product-title {
   width: 45%;
   border-bottom: 1px solid #b68282;
-  font-size: 0.5rem;
+  font-size: 1rem;
+  margin-left: 0.5rem;
 }
 
 .item-name {
-  font-size: 0.5rem;
+  font-size: 0.8rem;
+  display: none;
 }
 
 .price {
@@ -461,11 +463,11 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 0.5rem;
+  font-size: 1rem;
 }
 
-.quantity {
-  width: 30%;
+.quantity1 {
+  width: 20%;
   border-bottom: 1px solid #b68282;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -473,7 +475,19 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 0.5rem;
+  font-size: 1rem;
+}
+
+.quantity {
+  width: 20%;
+  border-bottom: 1px solid #b68282;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1rem;
 }
 
 .total {
@@ -485,7 +499,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 0.5rem;
+  font-size: 1rem;
 }
 
 .product {
@@ -523,28 +537,31 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
       -ms-flex-pack: end;
           justify-content: flex-end;
   width: 100%;
-  padding: 10px 0;
 }
 
 .TotalTitle {
   width: 20%;
-  font-size: 0.5rem;
+  font-size: 1rem;
 }
 
 .AttBetala {
-  width: 10%;
-  font-size: 0.5rem;
+  width: 20%;
+  font-size: 1rem;
 }
 
 .checkout {
   background: none;
   border: solid 1px;
   padding: 3px 5px;
-  position: absolute;
-  left: 1000px;
+  position: relative;
+  left: 100%;
   top: 50px;
   text-decoration: none;
   color: black;
+  border: 2px solid #333333;
+  border-radius: 20px 20px 20px 20px;
+  -webkit-box-shadow: 6px 6px 2px 2px rgba(99, 87, 76, 0.295);
+          box-shadow: 6px 6px 2px 2px rgba(99, 87, 76, 0.295);
 }
 
 .checkout:hover {
@@ -606,7 +623,7 @@ h3 {
 }
 
 .CO-icon {
-  margin-left: 1rem;
+  margin-left: 1.5rem;
 }
 
 .containerCO {
@@ -849,12 +866,65 @@ img {
   .send-button {
     width: 30%;
   }
-  .TotalContainerCO {
+  .TotalTitleCO, .AttBetalaCO {
     font-size: 2rem;
   }
   .buy {
     margin: 2rem;
-    width: 40%;
+    width: 90%;
+  }
+  #cards {
+    margin-left: 40%;
+  }
+  .CO-icon {
+    margin-left: 32%;
+  }
+  .cartCO {
+    font-size: 5vw;
+    padding-left: 15vw;
+  }
+  .product-header {
+    margin: 2rem;
+  }
+  .product-title {
+    font-size: 2rem;
+  }
+  .item-name {
+    display: revert;
+    font-size: 1.5rem;
+  }
+  .price, .quantity1, .total, .quantity {
+    font-size: 1.5rem;
+  }
+  .products {
+    width: 100%;
+  }
+  .product ion-icon {
+    font-size: 25px;
+  }
+  .TotalTitle, .AttBetala {
+    font-size: 2rem;
+  }
+  .checkout {
+    padding: 10px 10px;
+  }
+  .checkout-btn {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nameCO, .cartCO {
+    font-size: 3vw;
+  }
+  .imgCO {
+    width: 50%;
+  }
+  #cards {
+    margin-left: 34%;
+  }
+  .CO-icon {
+    margin-left: 22%;
   }
 }
 
@@ -907,5 +977,27 @@ img {
   }
   .send-button {
     width: 15%;
+  }
+  #cards {
+    margin-left: 37%;
+  }
+  .CO-icon {
+    margin-left: 27%;
+  }
+  .buy {
+    width: 80%;
+    left: 5.5rem;
+  }
+  #cvv {
+    margin: 2rem;
+  }
+  .checkout {
+    padding: 20px 20px;
+  }
+  .checkout-btn {
+    width: 60%;
+  }
+  .nameCO {
+    font-size: 2vw;
   }
 }

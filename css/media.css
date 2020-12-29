@@ -4,20 +4,12 @@
     font-size: 5rem;
   }
   .nav-bar {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+    justify-content: flex-end;
   }
   .nav-links {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+    justify-content: flex-end;
   }
   .admin-login {
     background-color: #cac6c1;
@@ -28,24 +20,17 @@
   .product-card {
     display: inline-block;
     width: 35%;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     margin-top: 3rem;
     margin-left: 1rem;
     margin-right: 1rem;
   }
   .product-pic, .product-name, .product-description, .product-price {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
   }
   .footer {
     font-size: 1.3rem;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    justify-content: space-evenly;
     background-color: #63574c;
     background-image: none;
   }
@@ -54,12 +39,8 @@
     border-bottom: 0.7rem solid rgba(49, 35, 35, 0.534);
   }
   .contact-us-1 {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
   }
   #text {
     height: 5rem;
@@ -67,12 +48,65 @@
   .send-button {
     width: 30%;
   }
-  .TotalContainerCO {
+  .TotalTitleCO, .AttBetalaCO {
     font-size: 2rem;
   }
   .buy {
     margin: 2rem;
-    width: 40%;
+    width: 90%;
+  }
+  #cards {
+    margin-left: 40%;
+  }
+  .CO-icon {
+    margin-left: 32%;
+  }
+  .cartCO {
+    font-size: 5vw;
+    padding-left: 15vw;
+  }
+  .product-header {
+    margin: 2rem;
+  }
+  .product-title {
+    font-size: 2rem;
+  }
+  .item-name {
+    display: revert;
+    font-size: 1.5rem;
+  }
+  .price, .quantity1, .total, .quantity {
+    font-size: 1.5rem;
+  }
+  .products {
+    width: 100%;
+  }
+  .product ion-icon {
+    font-size: 25px;
+  }
+  .TotalTitle, .AttBetala {
+    font-size: 2rem;
+  }
+  .checkout {
+    padding: 10px 10px;
+  }
+  .checkout-btn {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nameCO, .cartCO {
+    font-size: 3vw;
+  }
+  .imgCO {
+    width: 50%;
+  }
+  #cards {
+    margin-left: 34%;
+  }
+  .CO-icon {
+    margin-left: 22%;
   }
 }
 
@@ -82,11 +116,8 @@
   }
   .nav-links {
     height: 3rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-item-align: end;
-        align-self: flex-end;
+    align-self: flex-end;
   }
   .product-card {
     display: inline-block;
@@ -97,14 +128,9 @@
     background-color: rgba(185, 169, 151, 0.856);
     background-image: none;
     font-size: 1.2rem;
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
     display: inline-flex;
     width: 100%;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
     height: auto;
   }
   .opening, .location-1, .loctation-2, .contact {
@@ -126,4 +152,27 @@
   .send-button {
     width: 15%;
   }
+  #cards {
+    margin-left: 37%;
+  }
+  .CO-icon {
+    margin-left: 27%;
+  }
+  .buy {
+    width: 80%;
+    left: 5.5rem;
+  }
+  #cvv {
+    margin: 2rem;
+  }
+  .checkout {
+    padding: 20px 20px;
+  }
+  .checkout-btn {
+    width: 60%;
+  }
+  .nameCO {
+    font-size: 2vw;
+  }
 }
+/*# sourceMappingURL=media.css.map */

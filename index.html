@@ -8,31 +8,27 @@
     <title>Foodie Express - Catering online</title>
     <link href="https://pbs.twimg.com/profile_images/425275803132121088/bUBlwHSf.png" rel="shortcut icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&family=Yantramanav&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/6481911f47.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/main.css">
     <script src="app.js" defer></script>
+    <script src="shopping-cart.js" defer></script>
 </head>
 
 <body>
     <nav class="nav-bar">
         <ul class="nav-links">
-            <div class="dropdown dropdown-login">
+            <li class="dropdown dropdown-login">
                 <button class="dropbtn">Logga in</button>
                 <div class="dropdown-content">
                     <form class="login-box" id="login"> 
                         <p id="drop-p">Här kan du logga in med administratörs rättigheter för att redigera produkter:</p>
-                        <input class="admin" id="username" type="text" name="" placeholder="Användarnamn">
-                        <input class="admin" id="password" type="password" name="" placeholder="Lösenord">
+                        <input class="admin" id="username" type="text" placeholder="Användarnamn">
+                        <input class="admin" id="password" type="password" placeholder="Lösenord">
                         <button class="admin-login" id="login-btn">Logga in</button>
                     </form>
                 </div>
-            </div>
+            </li>
             <li class="contact-link">
                 <a href="#footer">Kontakt</a>
             </li>
@@ -60,7 +56,7 @@
                 <div class="product-info">
                     <div class="product-name">Frukosttallrik</div>
                     <div class="product-description">Kallskuret</div>
-                    <div class="product-price">100 SEK</div>
+                    <div class="product-price"><span class="product-price__value">100</span><span class="product-price__currency"> SEK</span></div>
                 </div>
                 <button class="add-cart">Lägg till i kundvagn</button>
             </div>
@@ -70,7 +66,7 @@
                 <div class="product-info">
                     <div class="product-name">Pannkakor</div>
                     <div class="product-description">Amerikanska pannkakor</div>
-                    <div class="product-price">95 SEK</div>
+                    <div class="product-price"><span class="product-price__value">95</span><span class="product-price__currency"> SEK</span></div>
                 </div>
                 <button class="add-cart">Lägg till i kundvagn</button>
             </div>
@@ -80,7 +76,7 @@
                 <div class="product-info">
                     <div class="product-name">Äppelpaj</div>
                     <div class="product-description">Knäckbakad paj</div>
-                    <div class="product-price">120 SEK</div>
+                    <div class="product-price"><span class="product-price__value">120</span><span class="product-price__currency"> SEK</span></div>
                 </div>
                 <button class="add-cart">Lägg till i kundvagn</button>
             </div>
@@ -90,7 +86,7 @@
                 <div class="product-info">
                     <div class="product-name">Pasta</div>
                     <div class="product-description">Olika pastarätter</div>
-                    <div class="product-price">160 SEK</div>
+                    <div class="product-price"><span class="product-price__value">160</span><span class="product-price__currency"> SEK</span></div>
                 </div>
                 <button class="add-cart">Lägg till i kundvagn</button>
             </div>
@@ -100,7 +96,7 @@
                 <div class="product-info">
                     <div class="product-name">Hamburgare</div>
                     <div class="product-description">Höggrevsburgare</div>
-                    <div class="product-price">200 SEK</div>
+                    <div class="product-price"><span class="product-price__value">200</span><span class="product-price__currency"> SEK</span></div>
                 </div>
                 <button class="add-cart">Lägg till i kundvagn</button>
             </div>
@@ -110,7 +106,7 @@
                 <div class="product-info">
                     <div class="product-name">Croissant</div>
                     <div class="product-description">Franskt bakverk</div>
-                    <div class="product-price">30 SEK</div>
+                    <div class="product-price"><span class="product-price__value">30</span><span class="product-price__currency"> SEK</span></div>
                 </div>
                 <button class="add-cart">Lägg till i kundvagn</button>
             </div>
@@ -120,7 +116,7 @@
                 <div class="product-info">
                     <div class="product-name">Pizza</div>
                     <div class="product-description">Surdegspizza</div>
-                    <div class="product-price">180 SEK</div>
+                    <div class="product-price"><span class="product-price__value">180</span><span class="product-price__currency"> SEK</span></div>
                 </div>
                 <button class="add-cart">Lägg till i kundvagn</button>
             </div>
@@ -130,7 +126,7 @@
                 <div class="product-info">
                     <div class="product-name">Chokladpraliner</div>
                     <div class="product-description">Hemmagjorda praliner</div>
-                    <div class="product-price">45 SEK</div>
+                    <div class="product-price"><span class="product-price__value">45</span><span class="product-price__currency"> SEK</span></div>
                 </div>
                 <button class="add-cart">Lägg till i kundvagn</button>
             </div>
@@ -140,7 +136,7 @@
                 <div class="product-info">
                     <div class="product-name">Churros</div>
                     <div class="product-description">Friterad sockrig deg</div>
-                    <div class="product-price">75 SEK</div>
+                    <div class="product-price"><span class="product-price__value">75</span><span class="product-price__currency"> SEK</span></div>
                 </div>
                 <button class="add-cart">Lägg till i kundvagn</button>
             </div>
@@ -150,7 +146,7 @@
                 <div class="product-info">
                     <div class="product-name">Chiligryta</div>
                     <div class="product-description">Het indonesisk gryta</div>
-                    <div class="product-price">175 SEK</div>
+                    <div class="product-price"><span class="product-price__value">175</span><span class="product-price__currency"> SEK</span></div>
                 </div>
                 <button class="add-cart">Lägg till i kundvagn</button>
             </div>
@@ -172,11 +168,10 @@
                 foodieExpress@medieinstitutet.se <br> PÅ SOCIALA MEDIER <br> <i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i> </p> 
         </div>
         <p class="copyright"> <strong> &copy; 2020 BY: </strong> Andrés Santana, Malin Sjöblom, Susanna Dufva, Thomas Olsson </p>
-       
+    
         
 
     </footer>
-    <script src="shopping-cart.js"></script>
 </body>
 
 </html>

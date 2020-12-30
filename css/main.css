@@ -194,14 +194,14 @@ label, input {
           box-shadow: 12px 12px 2px 1px rgba(99, 87, 76, 0.295);
 }
 
-#name, #mail, #number, #message, #falt {
+#name, #email, #phone-number, #message, #falt {
   margin-left: 10%;
   margin-right: auto;
   width: 70%;
   font-size: 1.5rem;
 }
 
-#name, #mail, #number, #message {
+#name, #email, #phone-number, #message {
   border: 2px solid #333333;
   border-radius: 20px 20px 20px 20px;
   -webkit-box-shadow: 6px 6px 2px 1px rgba(99, 87, 76, 0.295);

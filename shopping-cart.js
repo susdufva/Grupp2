@@ -63,7 +63,7 @@ function LoadCartNumbers() {
         document.querySelector('.cart span').textContent = productNumbers;
     }
 }
-
+//Räknar ut den totala kostnaden 
 function totalCost(product) {
     let cartCost = localStorage.getItem('totalCost');
     if(cartCost != null){
@@ -117,7 +117,7 @@ function displayCart(){
         deleteBtn();
     }
 }
-
+//Delete knapp för att kunna tabort varor från varukorgen
 function deleteBtn() {
     let deleteBtn = document.querySelectorAll('.product ion-icon');
     let productNumbers = localStorage.getItem('cartNumbers');
@@ -146,11 +146,11 @@ function deleteBtn() {
         delete cartItems[productsName];
     
         localStorage.setItem('productsInCart', JSON.stringify(cartItems));
-        //Rakibs kommentar 
+        //Rakibs kommentarer 
         //för att kunna använda den här splice lösningen måste ProduktInCart items sparas i en lista istället för object.   
         // cartItems.splice(i, 1);
-
         //Update DOM
+
         displayCart();  
         LoadCartNumbers();
         })

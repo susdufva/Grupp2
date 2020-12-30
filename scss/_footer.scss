@@ -1,56 +1,39 @@
-    
-    
     /* first design for mobile phones 280px*/
 
-    
-.footer {
-    display: flex;
-    text-align: center;
-    //background-color:rgb(99, 87, 76);
-    background: url(/img/background-header.jpg);
-    color: rgba(245, 245, 245, 0.863);
-   // color:  rgba(0, 0, 0, 0.616);
-    font-weight: lighter;
-    font-size: 1.2rem;
-    height: auto;
-    width: auto;
-    flex-direction: column;
-    border-top: 1rem solid rgb(99, 87, 76);
-}
-
-.opening, .location-1, .location-2, .contact {
-    padding: 1.5rem;
-    margin: auto;
-}
-
-.copyright {
-    color:rgba(245, 245, 245, 0.863);
-    text-align: center;
-    padding: 1.5rem;
-    background-color: rgb(99, 87, 76); 
-}
-
-.contact-us {
-    text-decoration: none;
-    color: rgba(245, 245, 245, 0.863);
-}
-
-.contact-us:hover {
-    color: black;
-    font-size: 1.6rem;
-}
-
-i{
-    margin: 0.2rem;
-    padding: 0.2rem;
-    font-size: 2.5rem;
-    color: rgba(0, 0, 0, 0.616);
-    cursor:pointer;
-}
-
-    
-
-
-
-    
-
+    .footer {
+    	display: flex;
+    	text-align: center; //background-color:rgb(99, 87, 76);
+    	background: url(/img/background-header.jpg);
+    	color: rgba(245, 245, 245, 0.863); // color:  rgba(0, 0, 0, 0.616);
+    	font-weight: lighter;
+    	font-size: 1.2rem;
+    	height: auto;
+    	width: auto;
+    	flex-direction: column;
+    	border-top: 1rem solid rgb(99, 87, 76);
+    }
+    .opening, .location-1, .location-2, .contact {
+    	padding: 1.5rem;
+    	margin: auto;
+    }
+    .copyright {
+    	color: rgba(245, 245, 245, 0.863);
+    	text-align: center;
+    	padding: 1.5rem;
+    	background-color: rgb(99, 87, 76);
+    }
+    .contact-us {
+    	text-decoration: none;
+    	color: rgba(245, 245, 245, 0.863);
+    }
+    .contact-us:hover {
+    	color: black;
+    	font-size: 1.6rem;
+    }
+    i {
+    	margin: 0.2rem;
+    	padding: 0.2rem;
+    	font-size: 2.5rem;
+    	color: rgba(0, 0, 0, 0.616);
+    	cursor: pointer;
+    }

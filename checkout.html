@@ -13,23 +13,25 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
         integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <script src="popup.js" defer></script>
+    <script src="checkout.js" defer></script>
+    <script src="shopping-cart.js" defer></script>
 </head>
 
 <body class="bodyCO">
     <nav class="nav-bar">
         <ul class="nav-links">
-            <div class="dropdown dropdown-login">
+            <li class="dropdown dropdown-login">
                 <button class="dropbtn">Logga in</button>
                 <div class="dropdown-content">
                     <form class="login-box" id="login">
                         <p id="drop-p">Här kan du logga in med administratörs rättigheter för att redigera produkter:
                         </p>
-                        <input class="admin" type="text" name="" placeholder="Användarnamn" id="username">
-                        <input class="admin" type="password" name="" placeholder="Lösenord" id="password">
+                        <input class="admin" type="text" placeholder="Användarnamn" id="username">
+                        <input class="admin" type="password" placeholder="Lösenord" id="password">
                         <button class="admin-login" id="login-btn">Logga in</button>
                     </form>
                 </div>
-            </div>
+            </li>
             <li class="contact-link">
                 <a href="#footer">Kontakt</a>
             </li>
@@ -60,13 +62,13 @@
                                 <input type="text" id="lname" placeholder="">
 
                                 <label for="email">Email:</label>
-                                <input type="text" id="fname1" placeholder="exempel11@exempel.com">
+                                <input type="text" id="email" placeholder="exempel11@exempel.com">
 
                                 <label for="adr">Adress:</label>
                                 <input type="text" id="adr" placeholder="">
 
                                 <label for="stad">Stad:</label>
-                                <input type="text" id="fname2" placeholder="">
+                                <input type="text" id="stad" placeholder="">
 
                                 <div class="row">
                                     <div class="col-2">
@@ -116,7 +118,8 @@
         <div class="buy-btn">
             <button class="buy">Avsluta köp</button>
         </div>
-        <footer>
+    </div>
+    <footer>
             <div class="footer" id="footer">
                 <p class="opening">
                     <strong>ÖPPETTIDER:</strong><br> MON......10:00-22:00 <br> TUE......10:00-22:00 <br>
@@ -134,8 +137,5 @@
                 Thomas Olsson </p>
 
         </footer>
-        <script src="checkout.js"></script>
-        <script src="shopping-cart.js"></script>
 </body>
-
 </html>

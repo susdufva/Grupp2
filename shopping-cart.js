@@ -1,6 +1,6 @@
 let cart = document.querySelectorAll('.add-cart');
 
-let localProductList = localStorage.setItem("productList", JSON.stringify(products));
+// let localProductList = localStorage.setItem("productList", JSON.stringify(products));
 
 for (let i=0; i < cart.length; i++){
     cart[i].addEventListener('click', () =>{

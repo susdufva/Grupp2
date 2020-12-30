@@ -10,7 +10,7 @@ function displayCartCO(){
         Object.values(COItems).map((item, checkout) =>{
             productContainerCO.innerHTML += `
             <div class="cartCO"> 
-                <img class="imgCO" src="img/${item.tag}.jpg"/>
+                <img class="imgCO" src="${item.src}"/>
                 <span class="nameCO">${item.name}</span>
             </div>    
             `;

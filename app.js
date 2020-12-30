@@ -32,7 +32,6 @@ if (localStorage.getItem("savedProducts") !== null){
     updateDOMProductList()
 }
 
-
 //Takes data from local storage to update DOM product list
 function updateDOMProductList(){
     

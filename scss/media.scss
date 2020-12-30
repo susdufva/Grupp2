@@ -51,16 +51,102 @@
         border-bottom: 0.7rem solid rgba(49, 35, 35, 0.534);
     }
 
+    .contact-us-1 {
+        display: flex;
+        align-items: center;
+    } 
+
+    #text {
+        height: 5rem;
+    }
+
+    .send-button {
+        width: 30%;
+    }
+    
+    .TotalTitleCO, .AttBetalaCO {
+        font-size: 2rem;
+    }
+
+    .buy {
+        margin: 2rem;
+        width: 90%;
+    }
+
+    #cards {
+        margin-left: 40%;
+    }
+
+    .CO-icon {
+        margin-left: 32%;
+    }
+
+   .cartCO {
+       font-size: 5vw;
+       padding-left: 15vw;
+   }
+
+    .product-header{
+        margin: 2rem;
+    }
+
+    .product-title {
+        font-size: 2rem;
+    }
+
+    .item-name {
+        display: revert;
+        font-size: 1.5rem;
+    }
+
+    .price, .quantity1, .total, .quantity {
+        font-size:1.5rem;
+    }
+
+    .products{
+        width: 100%;
+    }
+
+    .product ion-icon {
+        font-size: 25px;}
+
+    .TotalTitle, .AttBetala {
+        font-size: 2rem;
+    }
+
+    .checkout {
+        padding: 10px 10px;
+    }
+
+    .checkout-btn {
+        width: 70%;
+    }
 
 }
 
+@media (min-width: 1024px) {
+    .nameCO, .cartCO {
+        font-size: 2vw;
+    }
+
+    .imgCO {
+        width: 50%;
+    }
+
+    #cards {
+        margin-left: 34%;
+    }
+
+    .CO-icon {
+        margin-left: 22%;
+    }
+}
 
 @media (min-width: 1200px) {
     
     .logo {
         font-size: 6rem;
     }
-    
 
     .nav-links {
         height: 3rem;
@@ -95,5 +181,45 @@
         font-size: 1rem;
         border-bottom: 0.7rem solid rgba(49, 35, 35, 0.534);
     }
+
+
+    #text {
+        font-size: 1.5rem;  
+        height: 6rem;
+    }
   
+    #name, #mail, #number, #message, #falt {
+        width: 50%;
+    }
+
+    .send-button {
+        width: 15%;
+    }
+
+    #cards {
+        margin-left: 37%;
+    }
+
+    .CO-icon {
+        margin-left: 27%;
+    }
+
+    .buy {
+        width: 80%;
+        left: 5.5rem;
+    
+    }#cvv {
+        margin: 2rem;
+    }
+
+    .checkout {
+        padding: 20px 20px;
+    }
+
+    .checkout-btn {
+        width: 60%;
+    }
+    .nameCO{
+        font-size: 2vw;
+    }
 }

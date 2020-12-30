@@ -28,4 +28,15 @@ function displayCartCO(){
         `;
     }
 }
-displayCartCO();        
+
+function checkout () {
+    let checkoutForm = document.forms["checkoutForm"] ["fname"].value
+    if (checkoutForm == null || contactForm == "") {
+        alert("Du måste fylla i ditt namn");
+        return false;
+    }
+}
+
+
+displayCartCO();
+

@@ -59,7 +59,7 @@ function updateDOMProductList(){
             <div class="product-info">
                 <div class="product-name">${productList[i].name}</div>
                 <div class="product-description">${productList[i].description}</div>
-                <div class="product-price">${productList[i].price} SEK</div>
+                <div class="product-price"><span class="product-price__value">${productList[i].price}</span> <span class="product-price__currency">SEK</span></div>
             </div>
         `;
 
@@ -169,7 +169,7 @@ let newProductMaker = function() {
         <div class="product-info">
             <div class="product-name">Namn</div>
             <div class="product-description">Beskrivning</div>
-            <div class="product-price">Pris SEK</div>
+            <div class="product-price"><span class="product-price__value">0</span><span class="product-price__currency"> SEK</span></div>
         </div>
     `;
 
@@ -249,7 +249,7 @@ function saveChanges(){
         let img = products[i].querySelector(".product-img").getAttribute("src");
         let name = products[i].querySelector(".product-name").innerText;
         let description = products[i].querySelector(".product-description").innerText;
-        let price = products[i].querySelector(".product-price").innerText;
+        let price = products[i].querySelector(".product-price").firstElementChild.innerText;
 
         let savedProduct = new SavedProduct(img, name, description, price);
         console.log(savedProduct);
@@ -260,7 +260,6 @@ function saveChanges(){
 
     localStorage.setItem("savedProducts", JSON.stringify(savedProducts));
     
-    //updateDOMProductList();
 }
 
 //Create button that adds new products and prepend it into main
@@ -342,7 +341,7 @@ let adminButtonsMaker = function(){
             //Change values of product info innertexts to submitted input values
             productInfoDiv.querySelector(".product-name").innerText = productInfoDiv.querySelector("#new-name").value;
             productInfoDiv.querySelector(".product-description").innerText = productInfoDiv.querySelector("#new-description").value;
-            productInfoDiv.querySelector(".product-price").innerText = productInfoDiv.querySelector("#new-price").value;
+            productInfoDiv.querySelector(".product-price").firstElementChild.innerText = productInfoDiv.querySelector("#new-price").value;
 
             //Remove form after submit
             form.remove();
@@ -465,20 +464,3 @@ async function createImages(search, ancestorNode) {
 
     ancestorNode.prepend(imgWrapper);
 }
-
-
-
-function idGenerator(){
-
-    //Random int between 1-1000
-    let random = Math.floor(Math.random() * 1000 + 1);
-    console.log(random);
-
-    idArray.push(random);
-    console.log(idArray);
-
-
-}
-
-//Stores ID's created by idGenerator
-idArray = [];

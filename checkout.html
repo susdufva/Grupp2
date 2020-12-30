@@ -1,141 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foodie Express - Catering online</title>
-    <link href="https://pbs.twimg.com/profile_images/425275803132121088/bUBlwHSf.png" rel="shortcut icon">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&family=Yantramanav&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
-        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-    <script src="popup.js" defer></script>
-    <script src="checkout.js" defer></script>
-    <script src="shopping-cart.js" defer></script>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<title>Foodie Express - Catering online</title>
+	<link href="https://pbs.twimg.com/profile_images/425275803132121088/bUBlwHSf.png" rel="shortcut icon">
+	<link href="https://fonts.gstatic.com" rel="preconnect">
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&family=Yantramanav&display=swap" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
+	<script defer src="popup.js">
+	</script>
+	<script defer src="checkout.js">
+	</script>
+	<script defer src="shopping-cart.js">
+	</script>
 </head>
-
 <body class="bodyCO">
-    <nav class="nav-bar">
-        <ul class="nav-links">
-            <li class="dropdown dropdown-login">
-                <button class="dropbtn">Logga in</button>
-                <div class="dropdown-content">
-                    <form class="login-box" id="login">
-                        <p id="drop-p">Här kan du logga in med administratörs rättigheter för att redigera produkter:
-                        </p>
-                        <input class="admin" type="text" placeholder="Användarnamn" id="username">
-                        <input class="admin" type="password" placeholder="Lösenord" id="password">
-                        <button class="admin-login" id="login-btn">Logga in</button>
-                    </form>
-                </div>
-            </li>
-            <li class="contact-link">
-                <a href="#footer">Kontakt</a>
-            </li>
-            <li class="cart">
-                <a href="shopping-cart.html" class="cart-text">
-                    🛒<span class="cart-nr">0</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <header>
-        <a class="logo" href="index.html">Foodie Express</a>
-    </header>
-    <div>
-        <div class="row">
-            <div class="col-3">
-                <!--CO = checkout-->
-                <div class="containerCO">
-                    <h3 class="h3CO">SLUTFÖR BESTÄLLNING</h3>
-                    <form name="checkoutForm" id="checkoutForm" action="checkout.js" onsubmit="return validateForm()"
-                        method="POST">
-                        <div class="row">
-                            <div>
-                                <label for="fname">Förnamn:</label>
-                                <input type="text" id="fname" placeholder="">
-
-                                <label for="lname">Efternamn:</label>
-                                <input type="text" id="lname" placeholder="">
-
-                                <label for="email">Email:</label>
-                                <input type="text" id="email" placeholder="exempel11@exempel.com">
-
-                                <label for="adr">Adress:</label>
-                                <input type="text" id="adr" placeholder="">
-
-                                <label for="stad">Stad:</label>
-                                <input type="text" id="stad" placeholder="">
-
-                                <div class="row">
-                                    <div class="col-2">
-                                        <label for="ort">Ort:</label>
-                                        <input type="text" id="ort" placeholder="">
-                                    </div>
-                                    <div class="col-2">
-                                        <label for="postnummer">Postnummer:</label>
-                                        <input type="text" id="postnummer" placeholder="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <h3 class="h3CO">Betalning</h3>
-                                <label id="cards">Vi accepterar</label>
-                                <div class="CO-icon">
-                                    <i class="fab fa-cc-mastercard"></i>
-                                    <i class="fab fa-cc-visa"></i>
-                                    <i class="fab fa-cc-paypal"></i>
-                                    <i class="fab fa-cc-apple-pay"></i>
-                                </div>
-                                <label>Namn på kortet:</label>
-                                <input type="text" id="cardname" placeholder="">
-                                <label>Kort nummer:</label>
-                                <input type="text" id="ccnumber" placeholder="1111-2222-3333-4444">
-                                <div class="col-2">
-                                    <label>MM/ÅÅ</label>
-                                    <input type="text" id="MMÅÅ" placeholder="MM/ÅÅ">
-                                </div>
-                                <div class="col-2">
-                                    <label>CVV</label>
-                                    <input type="text" id="cvv" placeholder="321">
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="col-1">
-                <div class="containerCO">
-                    <h4 class="cart-border">Cart</h4>
-                    <div class="checkout-cart">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="buy-btn">
-            <button class="buy">Avsluta köp</button>
-        </div>
-    </div>
-    <footer>
-            <div class="footer" id="footer">
-                <p class="opening">
-                    <strong>ÖPPETTIDER:</strong><br> MON......10:00-22:00 <br> TUE......10:00-22:00 <br>
-                    WED......10:00-22:00 <br>
-                    THU......10:00-22:00 <br> FRI......10:00-00:00 <br> SAT......11:00-00:00 <br> SUN......11:00-18:00
-                </p>
-                <p class="location-1"><strong>LOCATION 1:</strong> <br> Jungfrusundsvägen 6, <br> 178 38 Ekerö</p>
-                <p class="location-2"><strong>LOCATION 2: </strong><br> Vendevägen 16, <br> 182 05 Djursholm</p>
-                <p class="contact"> <strong> <a href="contact-us.html" class="contact-us">KONTAKTA OSS</a> </strong>
-                    <br> PHONE: 08-111 11 11 <br> EMAIL:
-                    foodieExpress@medieinstitutet.se <br> PÅ SOCIALA MEDIER <br> <i class="fab fa-facebook"></i> <i
-                        class="fab fa-instagram"></i></p>
-            </div>
-            <p class="copyright"> <strong> &copy; 2020 BY: </strong> Andrés Santana, Malin Sjöblom, Susanna Dufva,
-                Thomas Olsson </p>
-
-        </footer>
+	<nav class="nav-bar">
+		<ul class="nav-links">
+			<li class="dropdown dropdown-login">
+				<button class="dropbtn">Logga in</button>
+				<div class="dropdown-content">
+					<form class="login-box" id="login" name="login">
+						<p id="drop-p">Här kan du logga in med administratörs rättigheter för att redigera produkter:</p><input class="admin" id="username" placeholder="Användarnamn" type="text"> <input class="admin" id="password" placeholder="Lösenord" type="password"> <button class="admin-login" id="login-btn">Logga in</button>
+					</form>
+				</div>
+			</li>
+			<li class="contact-link">
+				<a href="#footer">Kontakt</a>
+			</li>
+			<li class="cart">
+				<a class="cart-text" href="shopping-cart.html">🛒<span class="cart-nr">0</span></a>
+			</li>
+		</ul>
+	</nav>
+	<header>
+		<a class="logo" href="index.html">Foodie Express</a>
+	</header>
+	<div>
+		<div class="row">
+			<div class="col-3">
+				<!--CO = checkout-->
+				<div class="containerCO">
+					<h3 class="h3CO">SLUTFÖR BESTÄLLNING</h3>
+					<form action="checkout.js" id="checkoutForm" method="post" name="checkoutForm" onsubmit="return validateForm()">
+						<div class="row">
+							<div>
+								<label for="fname">Förnamn:</label> <input id="fname" placeholder="" type="text"> <label for="lname">Efternamn:</label> <input id="lname" placeholder="" type="text"> <label for="email">Email:</label> <input id="email" placeholder="exempel11@exempel.com" type="text"> <label for="adr">Adress:</label> <input id="adr" placeholder="" type="text"> <label for="stad">Stad:</label> <input id="stad" placeholder="" type="text">
+								<div class="row">
+									<div class="col-2">
+										<label for="ort">Ort:</label> <input id="ort" placeholder="" type="text">
+									</div>
+									<div class="col-2">
+										<label for="postnummer">Postnummer:</label> <input id="postnummer" placeholder="" type="text">
+									</div>
+								</div>
+							</div>
+							<div class="col-2">
+								<h3 class="h3CO">Betalning</h3><label id="cards">Vi accepterar</label>
+								<div class="CO-icon">
+									<i class="fab fa-cc-mastercard"></i> <i class="fab fa-cc-visa"></i> <i class="fab fa-cc-paypal"></i> <i class="fab fa-cc-apple-pay"></i>
+								</div><label>Namn på kortet:</label> <input id="cardname" placeholder="" type="text"> <label>Kort nummer:</label> <input id="ccnumber" placeholder="1111-2222-3333-4444" type="text">
+								<div class="col-2">
+									<label>MM/ÅÅ</label> <input id="MMÅÅ" placeholder="MM/ÅÅ" type="text">
+								</div>
+								<div class="col-2">
+									<label>CVV</label> <input id="cvv" placeholder="321" type="text">
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="col-1">
+				<div class="containerCO">
+					<h4 class="cart-border">Cart</h4>
+					<div class="checkout-cart"></div>
+				</div>
+			</div>
+		</div>
+		<div class="buy-btn">
+			<button class="buy">Avsluta köp</button>
+		</div>
+	</div>
+	<footer>
+		<div class="footer" id="footer">
+			<p class="opening"><strong>ÖPPETTIDER:</strong><br>
+			MON......10:00-22:00<br>
+			TUE......10:00-22:00<br>
+			WED......10:00-22:00<br>
+			THU......10:00-22:00<br>
+			FRI......10:00-00:00<br>
+			SAT......11:00-00:00<br>
+			SUN......11:00-18:00</p>
+			<p class="location-1"><strong>LOCATION 1:</strong><br>
+			Jungfrusundsvägen 6,<br>
+			178 38 Ekerö</p>
+			<p class="location-2"><strong>LOCATION 2:</strong><br>
+			Vendevägen 16,<br>
+			182 05 Djursholm</p>
+			<p class="contact"><strong><a class="contact-us" href="contact-us.html">KONTAKTA OSS</a></strong><br>
+			PHONE: 08-111 11 11<br>
+			EMAIL: foodieExpress@medieinstitutet.se<br>
+			PÅ SOCIALA MEDIER<br>
+			<i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i></p>
+		</div>
+		<p class="copyright"><strong>&copy; 2020 BY:</strong> Andrés Santana, Malin Sjöblom, Susanna Dufva, Thomas Olsson</p>
+	</footer>
 </body>
 </html>

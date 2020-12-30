@@ -1,93 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foodie Express</title>
-    <link href="https://pbs.twimg.com/profile_images/425275803132121088/bUBlwHSf.png" rel="shortcut icon">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&family=Yantramanav&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
-    <script src="https://kit.fontawesome.com/6481911f47.js" crossorigin="anonymous"></script> 
-    <script src="contact-us.js" defer></script>
-    <script src="shopping-cart.js" defer></script>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<title>Foodie Express</title>
+	<link href="https://pbs.twimg.com/profile_images/425275803132121088/bUBlwHSf.png" rel="shortcut icon">
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&family=Yantramanav&display=swap" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/6481911f47.js">
+	</script>
+	<script defer src="contact-us.js">
+	</script>
+	<script defer src="shopping-cart.js">
+	</script>
 </head>
 <body>
-    <nav class="nav-bar">
-        <ul class="nav-links">
-            <li class="dropdown dropdown-login">
-                <button class="dropbtn">Logga in</button>
-                <div class="dropdown-content">
-                    <form class="login-box" id="login"> 
-                        <p id="drop-p">Här kan du logga in med administratörs rättigheter för att redigera produkter:</p>
-                        <input class="admin" type="text" placeholder="Användarnamn" id="username">
-                        <input class="admin" type="password" placeholder="Lösenord" id="password">
-                        <button class="admin-login" id="login-btn">Logga in</button>
-                    </form>
-                </div>
-            </li>
-            <li class="contact-link">
-                <a href="#footer">Kontakt</a>
-            </li>
-            <li class="cart">
-                <a href="shopping-cart.html" class="cart-text">
-                    🛒<span class="cart-nr">0</span>
-                </a>  
-            </li>
-        </ul>
-    </nav>
-    <header>
-        <a class="logo" href="index.html">Foodie Express</a>
-    </header>
-
-
-    <div class="contact-us-1">
-        <form name="myForm" id="myForm" action="contact-us.js" onsubmit="return validateForm()" method="POST" >
-            <div id="text">Här kan du kontakta oss via mail om du har några frågor eller vill göra en större bokning
-
-            </div>
-        <ul class="form-contact">
-            <li>
-        <label for="name">* För- och efternamn:</label>
-        <input type=text id=name name=name class="name">
-    </li>
-    <li>
-        <label for="email">* E-mail:</label>
-            <input type="email" id="email" name=email class="mail">
-        </li>
-        <li>
-        <label for="phone-number">* Telefonnummer:</label>
-        <input type="number" id="phone-number" name="number" class="number">
-        </li>
-        <li>
-            <label for="message">Ditt meddelande:</label>
-            <textarea id="message" name="message" class="message"></textarea>
-            <p id="falt">Fält markerade med * är obligatoriska</p>
-        </li>
-        <li>
-            
-            <!-- <button class="send-button" onclick= "windows.location = '/index.html'">Skicka</button>-->
-            <a href="index.html" class="send-button">Skicka</a>
-        </li>
-        </ul>
-        </form>
-    </div>
-
-
-    <footer>
-        <div class="footer" id="footer">
-            <p class="opening">
-                <strong>ÖPPETTIDER:</strong><br> MON......10:00-22:00 <br> TUE......10:00-22:00 <br>
-                WED......10:00-22:00 <br>
-                THU......10:00-22:00 <br> FRI......10:00-00:00 <br> SAT......11:00-00:00 <br> SUN......11:00-18:00
-            </p>
-            <p class="location-1"><strong>LOCATION 1:</strong> <br> Jungfrusundsvägen 6, <br> 178 38 Ekerö</p>
-            <p class="location-2"><strong>LOCATION 2: </strong><br> Vendevägen 16, <br> 182 05 Djursholm</p>
-            <p class="contact"> <strong> <a href="contact-us.html" class="contact-us">KONTAKTA OSS</a> </strong> <br> PHONE: 08-111 11 11 <br> EMAIL:
-                foodieExpress@medieinstitutet.se <br> PÅ SOCIALA MEDIER <br> <i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i></p> 
-        </div>
-        <p class="copyright"> <strong> &copy; 2020 BY: </strong> Andrés Santana, Malin Sjöblom, Susanna Dufva, Thomas Olsson </p>
-
-    </footer>
-
+	<nav class="nav-bar">
+		<ul class="nav-links">
+			<li class="dropdown dropdown-login">
+				<button class="dropbtn">Logga in</button>
+				<div class="dropdown-content">
+					<form class="login-box" id="login" name="login">
+						<p id="drop-p">Här kan du logga in med administratörs rättigheter för att redigera produkter:</p><input class="admin" id="username" placeholder="Användarnamn" type="text"> <input class="admin" id="password" placeholder="Lösenord" type="password"> <button class="admin-login" id="login-btn">Logga in</button>
+					</form>
+				</div>
+			</li>
+			<li class="contact-link">
+				<a href="#footer">Kontakt</a>
+			</li>
+			<li class="cart">
+				<a class="cart-text" href="shopping-cart.html">🛒<span class="cart-nr">0</span></a>
+			</li>
+		</ul>
+	</nav>
+	<header>
+		<a class="logo" href="index.html">Foodie Express</a>
+	</header>
+	<div class="contact-us-1">
+		<form action="contact-us.js" id="myForm" method="post" name="myForm" onsubmit="return validateForm()">
+			<div id="text">
+				Här kan du kontakta oss via mail om du har några frågor eller vill göra en större bokning
+			</div>
+			<ul class="form-contact">
+				<li><label for="name">* För- och efternamn:</label> <input class="name" id="name" name="name" type="text"></li>
+				<li><label for="email">* E-mail:</label> <input class="mail" id="email" name="email" type="email"></li>
+				<li><label for="phone-number">* Telefonnummer:</label> <input class="number" id="phone-number" name="number" type="number"></li>
+				<li>
+					<label for="message">Ditt meddelande:</label> 
+					<textarea class="message" id="message" name="message"></textarea>
+					<p id="falt">Fält markerade med * är obligatoriska</p>
+				</li>
+				<li>
+					<!-- <button class="send-button" onclick= "windows.location = '/index.html'">Skicka</button>-->
+					<a class="send-button" href="index.html">Skicka</a>
+				</li>
+			</ul>
+		</form>
+	</div>
+	<footer>
+		<div class="footer" id="footer">
+			<p class="opening"><strong>ÖPPETTIDER:</strong><br>
+			MON......10:00-22:00<br>
+			TUE......10:00-22:00<br>
+			WED......10:00-22:00<br>
+			THU......10:00-22:00<br>
+			FRI......10:00-00:00<br>
+			SAT......11:00-00:00<br>
+			SUN......11:00-18:00</p>
+			<p class="location-1"><strong>LOCATION 1:</strong><br>
+			Jungfrusundsvägen 6,<br>
+			178 38 Ekerö</p>
+			<p class="location-2"><strong>LOCATION 2:</strong><br>
+			Vendevägen 16,<br>
+			182 05 Djursholm</p>
+			<p class="contact"><strong><a class="contact-us" href="contact-us.html">KONTAKTA OSS</a></strong><br>
+			PHONE: 08-111 11 11<br>
+			EMAIL: foodieExpress@medieinstitutet.se<br>
+			PÅ SOCIALA MEDIER<br>
+			<i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i></p>
+		</div>
+		<p class="copyright"><strong>&copy; 2020 BY:</strong> Andrés Santana, Malin Sjöblom, Susanna Dufva, Thomas Olsson</p>
+	</footer>
 </body>
 </html>

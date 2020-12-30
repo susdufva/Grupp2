@@ -1,177 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <meta name="author" content="Andrés, Malin, Susanna, Thomas">
-    <title>Foodie Express - Catering online</title>
-    <link href="https://pbs.twimg.com/profile_images/425275803132121088/bUBlwHSf.png" rel="shortcut icon">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&family=Yantramanav&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/6481911f47.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/main.css">
-    <script src="app.js" defer></script>
-    <script src="shopping-cart.js" defer></script>
+	<meta charset="UTF-8">
+	<meta content="width=device-width" name="viewport">
+	<meta content="Andrés, Malin, Susanna, Thomas" name="author">
+	<title>Foodie Express - Catering online</title>
+	<link href="https://pbs.twimg.com/profile_images/425275803132121088/bUBlwHSf.png" rel="shortcut icon">
+	<link href="https://fonts.gstatic.com" rel="preconnect">
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&family=Yantramanav&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/6481911f47.js">
+	</script>
+	<link href="css/main.css" rel="stylesheet">
+	<script defer src="app.js">
+	</script>
+	<script defer src="shopping-cart.js">
+	</script>
 </head>
-
 <body>
-    <nav class="nav-bar">
-        <ul class="nav-links">
-            <li class="dropdown dropdown-login">
-                <button class="dropbtn">Logga in</button>
-                <div class="dropdown-content">
-                    <form class="login-box" id="login"> 
-                        <p id="drop-p">Här kan du logga in med administratörs rättigheter för att redigera produkter:</p>
-                        <input class="admin" id="username" type="text" placeholder="Användarnamn">
-                        <input class="admin" id="password" type="password" placeholder="Lösenord">
-                        <button class="admin-login" id="login-btn">Logga in</button>
-                    </form>
-                </div>
-            </li>
-            <li class="contact-link">
-                <a href="#footer">Kontakt</a>
-            </li>
-            <li class="cart">
-                <a href="shopping-cart.html" class="cart-text">
-                    🛒<span class="cart-nr">0</span>
-                </a>  
-            </li>
-        </ul>
-    </nav>
-    <header>
-        <a class="logo" href="index.html">Foodie Express</a>
-    </header>
-    <main>
-        <!--lägg till arrow på knappen 
+	<nav class="nav-bar">
+		<ul class="nav-links">
+			<li class="dropdown dropdown-login">
+				<button class="dropbtn">Logga in</button>
+				<div class="dropdown-content">
+					<form class="login-box" id="login" name="login">
+						<p id="drop-p">Här kan du logga in med administratörs rättigheter för att redigera produkter:</p><input class="admin" id="username" placeholder="Användarnamn" type="text"> <input class="admin" id="password" placeholder="Lösenord" type="password"> <button class="admin-login" id="login-btn">Logga in</button>
+					</form>
+				</div>
+			</li>
+			<li class="contact-link">
+				<a href="#footer">Kontakt</a>
+			</li>
+			<li class="cart">
+				<a class="cart-text" href="shopping-cart.html">🛒<span class="cart-nr">0</span></a>
+			</li>
+		</ul>
+	</nav>
+	<header>
+		<a class="logo" href="index.html">Foodie Express</a>
+	</header>
+	<main>
+		<!--lägg till arrow på knappen 
         <button class="admin-login">Logga in som admin</button>-->
-
-        <section class="product-list">
-            <!-- Här läggs in nya produkt-cards -->
-
-            <!-- Produktkort -->
-            <div class="product-card">
-                <!--Test bild bara-->
-                <img class="product-img" src="img/table-2600954_640.jpg" alt="productpic">
-                <div class="product-info">
-                    <div class="product-name">Frukosttallrik</div>
-                    <div class="product-description">Kallskuret</div>
-                    <div class="product-price"><span class="product-price__value">100</span><span class="product-price__currency"> SEK</span></div>
-                </div>
-                <button class="add-cart">Lägg till i kundvagn</button>
-            </div>
-
-            <div class="product-card">
-                <img class="product-img" src="img/berries-1869421_640.jpg" alt="productpic">
-                <div class="product-info">
-                    <div class="product-name">Pannkakor</div>
-                    <div class="product-description">Amerikanska pannkakor</div>
-                    <div class="product-price"><span class="product-price__value">95</span><span class="product-price__currency"> SEK</span></div>
-                </div>
-                <button class="add-cart">Lägg till i kundvagn</button>
-            </div>
-
-            <div class="product-card">
-                <img class="product-img" src="img/apple-pie-5479993_640.jpg" alt="productpic">
-                <div class="product-info">
-                    <div class="product-name">Äppelpaj</div>
-                    <div class="product-description">Knäckbakad paj</div>
-                    <div class="product-price"><span class="product-price__value">120</span><span class="product-price__currency"> SEK</span></div>
-                </div>
-                <button class="add-cart">Lägg till i kundvagn</button>
-            </div>
-
-            <div class="product-card">
-                <img class="product-img" src="img/noodle-1303003_640.jpg" alt="productpic">
-                <div class="product-info">
-                    <div class="product-name">Pasta</div>
-                    <div class="product-description">Olika pastarätter</div>
-                    <div class="product-price"><span class="product-price__value">160</span><span class="product-price__currency"> SEK</span></div>
-                </div>
-                <button class="add-cart">Lägg till i kundvagn</button>
-            </div>
-
-            <div class="product-card">
-                <img class="product-img" src="img/hamburger-494706_640.jpg" alt="productpic">
-                <div class="product-info">
-                    <div class="product-name">Hamburgare</div>
-                    <div class="product-description">Höggrevsburgare</div>
-                    <div class="product-price"><span class="product-price__value">200</span><span class="product-price__currency"> SEK</span></div>
-                </div>
-                <button class="add-cart">Lägg till i kundvagn</button>
-            </div>
-
-            <div class="product-card">
-                <img class="product-img" src="img/bread-4077812_640.jpg" alt="productpic">
-                <div class="product-info">
-                    <div class="product-name">Croissant</div>
-                    <div class="product-description">Franskt bakverk</div>
-                    <div class="product-price"><span class="product-price__value">30</span><span class="product-price__currency"> SEK</span></div>
-                </div>
-                <button class="add-cart">Lägg till i kundvagn</button>
-            </div>
-
-            <div class="product-card">
-                <img class="product-img" src="img/pizza-3007395_640.jpg" alt="productpic">
-                <div class="product-info">
-                    <div class="product-name">Pizza</div>
-                    <div class="product-description">Surdegspizza</div>
-                    <div class="product-price"><span class="product-price__value">180</span><span class="product-price__currency"> SEK</span></div>
-                </div>
-                <button class="add-cart">Lägg till i kundvagn</button>
-            </div>
-
-            <div class="product-card">
-                <img class="product-img" src="img/chocolates-1737503_640.jpg" alt="productpic">
-                <div class="product-info">
-                    <div class="product-name">Chokladpraliner</div>
-                    <div class="product-description">Hemmagjorda praliner</div>
-                    <div class="product-price"><span class="product-price__value">45</span><span class="product-price__currency"> SEK</span></div>
-                </div>
-                <button class="add-cart">Lägg till i kundvagn</button>
-            </div>
-
-            <div class="product-card">
-                <img class="product-img" src="img/churros-2188871_640.jpg" alt="productpic">
-                <div class="product-info">
-                    <div class="product-name">Churros</div>
-                    <div class="product-description">Friterad sockrig deg</div>
-                    <div class="product-price"><span class="product-price__value">75</span><span class="product-price__currency"> SEK</span></div>
-                </div>
-                <button class="add-cart">Lägg till i kundvagn</button>
-            </div>
-
-            <div class="product-card">
-                <img class="product-img" src="img/food-1209007_640.jpg" alt="productpic">
-                <div class="product-info">
-                    <div class="product-name">Chiligryta</div>
-                    <div class="product-description">Het indonesisk gryta</div>
-                    <div class="product-price"><span class="product-price__value">175</span><span class="product-price__currency"> SEK</span></div>
-                </div>
-                <button class="add-cart">Lägg till i kundvagn</button>
-            </div>
-        </section>
-
-    </main>
-
-    <footer>
-        <div class="footer" id="footer">
-            
-            <p class="opening">
-                <strong>ÖPPETTIDER:</strong><br> MON......10:00-22:00 <br> TUE......10:00-22:00 <br>
-                WED......10:00-22:00 <br>
-                THU......10:00-22:00 <br> FRI......10:00-00:00 <br> SAT......11:00-00:00 <br> SUN......11:00-18:00
-            </p>
-            <p class="location-1"><strong>LOCATION 1:</strong> <br> Jungfrusundsvägen 6, <br> 178 38 Ekerö</p>
-            <p class="location-2"><strong>LOCATION 2: </strong><br> Vendevägen 16, <br> 182 05 Djursholm</p>
-            <p class="contact"> <strong> <a href="contact-us.html" class="contact-us">KONTAKTA OSS</a> </strong> <br> PHONE: 08-111 11 11 <br> EMAIL:
-                foodieExpress@medieinstitutet.se <br> PÅ SOCIALA MEDIER <br> <i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i> </p> 
-        </div>
-        <p class="copyright"> <strong> &copy; 2020 BY: </strong> Andrés Santana, Malin Sjöblom, Susanna Dufva, Thomas Olsson </p>
-    
-        
-
-    </footer>
+		<section class="product-list">
+			<!-- Här läggs in nya produkt-cards -->
+			<!-- Produktkort -->
+			<div class="product-card">
+				<!--Test bild bara-->
+				<img alt="productpic" class="product-img" src="img/table-2600954_640.jpg">
+				<div class="product-info">
+					<div class="product-name">
+						Frukosttallrik
+					</div>
+					<div class="product-description">
+						Kallskuret
+					</div>
+					<div class="product-price">
+						<span class="product-price__value">100</span> <span class="product-price__currency">SEK</span>
+					</div>
+				</div><button class="add-cart">Lägg till i kundvagn</button>
+			</div>
+			<div class="product-card">
+				<img alt="productpic" class="product-img" src="img/berries-1869421_640.jpg">
+				<div class="product-info">
+					<div class="product-name">
+						Pannkakor
+					</div>
+					<div class="product-description">
+						Amerikanska pannkakor
+					</div>
+					<div class="product-price">
+						<span class="product-price__value">95</span> <span class="product-price__currency">SEK</span>
+					</div>
+				</div><button class="add-cart">Lägg till i kundvagn</button>
+			</div>
+			<div class="product-card">
+				<img alt="productpic" class="product-img" src="img/apple-pie-5479993_640.jpg">
+				<div class="product-info">
+					<div class="product-name">
+						Äppelpaj
+					</div>
+					<div class="product-description">
+						Knäckbakad paj
+					</div>
+					<div class="product-price">
+						<span class="product-price__value">120</span> <span class="product-price__currency">SEK</span>
+					</div>
+				</div><button class="add-cart">Lägg till i kundvagn</button>
+			</div>
+			<div class="product-card">
+				<img alt="productpic" class="product-img" src="img/noodle-1303003_640.jpg">
+				<div class="product-info">
+					<div class="product-name">
+						Pasta
+					</div>
+					<div class="product-description">
+						Olika pastarätter
+					</div>
+					<div class="product-price">
+						<span class="product-price__value">160</span> <span class="product-price__currency">SEK</span>
+					</div>
+				</div><button class="add-cart">Lägg till i kundvagn</button>
+			</div>
+			<div class="product-card">
+				<img alt="productpic" class="product-img" src="img/hamburger-494706_640.jpg">
+				<div class="product-info">
+					<div class="product-name">
+						Hamburgare
+					</div>
+					<div class="product-description">
+						Höggrevsburgare
+					</div>
+					<div class="product-price">
+						<span class="product-price__value">200</span> <span class="product-price__currency">SEK</span>
+					</div>
+				</div><button class="add-cart">Lägg till i kundvagn</button>
+			</div>
+			<div class="product-card">
+				<img alt="productpic" class="product-img" src="img/bread-4077812_640.jpg">
+				<div class="product-info">
+					<div class="product-name">
+						Croissant
+					</div>
+					<div class="product-description">
+						Franskt bakverk
+					</div>
+					<div class="product-price">
+						<span class="product-price__value">30</span> <span class="product-price__currency">SEK</span>
+					</div>
+				</div><button class="add-cart">Lägg till i kundvagn</button>
+			</div>
+			<div class="product-card">
+				<img alt="productpic" class="product-img" src="img/pizza-3007395_640.jpg">
+				<div class="product-info">
+					<div class="product-name">
+						Pizza
+					</div>
+					<div class="product-description">
+						Surdegspizza
+					</div>
+					<div class="product-price">
+						<span class="product-price__value">180</span> <span class="product-price__currency">SEK</span>
+					</div>
+				</div><button class="add-cart">Lägg till i kundvagn</button>
+			</div>
+			<div class="product-card">
+				<img alt="productpic" class="product-img" src="img/chocolates-1737503_640.jpg">
+				<div class="product-info">
+					<div class="product-name">
+						Chokladpraliner
+					</div>
+					<div class="product-description">
+						Hemmagjorda praliner
+					</div>
+					<div class="product-price">
+						<span class="product-price__value">45</span> <span class="product-price__currency">SEK</span>
+					</div>
+				</div><button class="add-cart">Lägg till i kundvagn</button>
+			</div>
+			<div class="product-card">
+				<img alt="productpic" class="product-img" src="img/churros-2188871_640.jpg">
+				<div class="product-info">
+					<div class="product-name">
+						Churros
+					</div>
+					<div class="product-description">
+						Friterad sockrig deg
+					</div>
+					<div class="product-price">
+						<span class="product-price__value">75</span> <span class="product-price__currency">SEK</span>
+					</div>
+				</div><button class="add-cart">Lägg till i kundvagn</button>
+			</div>
+			<div class="product-card">
+				<img alt="productpic" class="product-img" src="img/food-1209007_640.jpg">
+				<div class="product-info">
+					<div class="product-name">
+						Chiligryta
+					</div>
+					<div class="product-description">
+						Het indonesisk gryta
+					</div>
+					<div class="product-price">
+						<span class="product-price__value">175</span> <span class="product-price__currency">SEK</span>
+					</div>
+				</div><button class="add-cart">Lägg till i kundvagn</button>
+			</div>
+		</section>
+	</main>
+	<footer>
+		<div class="footer" id="footer">
+			<p class="opening"><strong>ÖPPETTIDER:</strong><br>
+			MON......10:00-22:00<br>
+			TUE......10:00-22:00<br>
+			WED......10:00-22:00<br>
+			THU......10:00-22:00<br>
+			FRI......10:00-00:00<br>
+			SAT......11:00-00:00<br>
+			SUN......11:00-18:00</p>
+			<p class="location-1"><strong>LOCATION 1:</strong><br>
+			Jungfrusundsvägen 6,<br>
+			178 38 Ekerö</p>
+			<p class="location-2"><strong>LOCATION 2:</strong><br>
+			Vendevägen 16,<br>
+			182 05 Djursholm</p>
+			<p class="contact"><strong><a class="contact-us" href="contact-us.html">KONTAKTA OSS</a></strong><br>
+			PHONE: 08-111 11 11<br>
+			EMAIL: foodieExpress@medieinstitutet.se<br>
+			PÅ SOCIALA MEDIER<br>
+			<i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i></p>
+		</div>
+		<p class="copyright"><strong>&copy; 2020 BY:</strong> Andrés Santana, Malin Sjöblom, Susanna Dufva, Thomas Olsson</p>
+	</footer>
 </body>
-
 </html>

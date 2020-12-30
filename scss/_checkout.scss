@@ -188,3 +188,13 @@ h3{
       margin-bottom: 20px;
     }
   }
+  @media (min-width: 800px) {
+    .nameCO {
+      font-size: 1rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .nameCO{
+      font-size: 0px;
+    }
+  }

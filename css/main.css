@@ -829,6 +829,18 @@ img {
   }
 }
 
+@media (min-width: 800px) {
+  .nameCO {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nameCO {
+    font-size: 0px;
+  }
+}
+
 /* media queries for larger devices, Ipads & Tablets etc */
 @media (min-width: 768px) {
   .logo {
@@ -947,7 +959,7 @@ img {
 
 @media (min-width: 1024px) {
   .nameCO, .cartCO {
-    font-size: 3vw;
+    font-size: 2vw;
   }
   .imgCO {
     width: 50%;
